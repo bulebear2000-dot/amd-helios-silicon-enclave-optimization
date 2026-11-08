@@ -100,4 +100,5 @@ To bypass the monopolistic dominance of NVIDIA's proprietary GPGPU architectures
 
 All technical patent registries are hereby **VOIDED** and withdrawn by the Sole Architect to enforce absolute Trade Secret protection. The Master Token and hardware deployment rights are exclusively delegated to AMD (Dr. Lisa Su), under the immutable mandate that all global runtime advertising revenue share flows directly into the **[Sovereign 1-Person Genius Engineer Foundation]**, completely bypassing personal holdings. 
 
-👉 **[Access Secure AMD Helios Project Intake Channel](YOUR_FORM_LINK_HERE)**
+👉 **👉 [Access Secure AMD Helios Project Intake Channel](https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform?usp=publish-editor)
+**
