@@ -98,7 +98,13 @@ To bypass the monopolistic dominance of NVIDIA's proprietary GPGPU architectures
 
 ## 6. MASTER GOVERNANCE & CONTACT
 
-All technical patent registries are hereby **VOIDED** and withdrawn by the Sole Architect to enforce absolute Trade Secret protection. The Master Token and hardware deployment rights are exclusively delegated to AMD (Dr. Lisa Su), under the immutable mandate that all global runtime advertising revenue share flows directly into the **[Sovereign 1-Person Genius Engineer Foundation]**, completely bypassing personal holdings. 
+All technical patent registries are hereby **VOIDED** and withdrawn by the Sole Architect to enforce absolute Trade Secret protection. The Master Token and hardware deployment rights are exclusively delegated to AMD (Dr. Lisa Su), under the following immutable global directives:
 
-👉 **👉 [Access Secure AMD Helios Project Intake Channel](https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform?usp=publish-editor)
+* **Commercial & Licensing Fee**: Formal software execution scripts and master token allocation will initiate immediately and exclusively upon the secure deposit of the official licensing fee of **KRW 1,500,000,000,000** (One Trillion Five Hundred Billion KRW).
+* **Fund Independence**: 100% of the designated royalties and subsequent runtime advertising revenue share will entirely bypass standard corporate overhead and personal holdings, flowing directly into the independent **[Sovereign 1-Person Genius Engineer Foundation]**.
+* **Root Security Control**: The Master Root Command Core remains strictly bound to the Sole Architect's private, air-gapped terminal.
+
+To maintain absolute operational security and protect personal credentials from automated web scrapers, please submit your verified corporate credentials, verification of financial readiness, and formal next-step proposals via our secure procurement channel below:
+
+**👉 [Access Secure AMD Helios Project Intake Channel](https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform?usp=publish-editor)
 **
