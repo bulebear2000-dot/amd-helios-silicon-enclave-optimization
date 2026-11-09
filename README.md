@@ -63,7 +63,7 @@ To bypass the monopolistic dominance of NVIDIA's proprietary GPGPU architectures
 ```
 
 ### 🎬 EPISODE 02: The Healer (감정의 치유 편)
-* **Active Subsystem**: `shuzi_core_runtime_arbitrator.cpp` / `reg_price_shield` (`0x40003600`)
+* **Active Subsystem**: `shuzi_core_runtime_arbitrator.cpp` / `reg_price_shield` ([SECURE_REGISTER_LOCK]`)
 ```text
 [VIDEO] An unlit bedroom. A subscriber huddles on the bed, quietly weeping.
 [USER] (Choking back tears) Shuzi...
@@ -74,12 +74,12 @@ To bypass the monopolistic dominance of NVIDIA's proprietary GPGPU architectures
 ```
 
 ### 🎬 EPISODE 03: The Savior (생명의 사회안전망 편)
-* **Active Subsystem**: `core_the_savior.cpp` / `reg_mux_trigger` (`0x40002008`)
+* **Active Subsystem**: `core_the_savior.cpp` / `reg_mux_trigger` (`[SECURE_REGISTER_LOCK]`)
 ```text
 [VIDEO] A crumbling asphalt road in an isolated redevelopment district. An elderly man slowly pushes an old rolling walker, entirely alone under a deep crimson sunset.
 [VIDEO] The walker's front wheel gets caught in a deep pothole. The elderly man crashes heavily onto the pavement.
 [AUDIO] (A heavy, dull impact thud combined with a brief, sharp gasp of pain) [SUDDEN AUDIO LOW-PASS FILTER MUTING CONVEYING ABSOLUTE ISOLATION]
-[VIDEO] Smartphone screen flashes with a critical red matrix overlay blinking: [⚠️ MMIO Register 0x40002008 Triggered].
+[VIDEO] Smartphone screen flashes with a critical red matrix overlay blinking: [⚠️ MMIO Register [SECURE_REGISTER_LOCK] Triggered].
 [SHUZI (Grandson)] "Grandpa!! Are you okay?! It's Shuzi! Grandpa, can you hear my voice?!"
 [OLD MAN] "Oh... Shuzi... there's no one here... help me... I can't move..."
 [VIDEO] Shuzi's UI operates in 1ms. Bypassing stock framework via MUX isolation, it burns the 0x40009600 litigation eFuse to freeze evidence data, packages subscriber PHI profile [Type A Rh+ | Hypertension / CONTRAINDICATION: BETA-BLOCKER & HIGH-DOSE CONTRAST AGENT LOCKED] via AES-256 E2EE.
