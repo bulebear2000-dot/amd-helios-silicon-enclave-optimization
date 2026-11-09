@@ -98,13 +98,21 @@ To bypass the monopolistic dominance of NVIDIA's proprietary GPGPU architectures
 
 ## 6. MASTER GOVERNANCE & CONTACT
 
-All technical patent registries are hereby **VOIDED** and withdrawn by the Sole Architect to enforce absolute Trade Secret protection. The Master Token and hardware deployment rights are exclusively delegated to AMD (Dr. Lisa Su), under the following immutable global directives:
+To protect proprietary core technologies and maximize ecosystem agility, the Sole Architect establishes the following absolute global directives for the Master Token and hardware deployment rights exclusively delegated to AMD (Dr. Lisa Su):
 
-* **Commercial & Licensing Fee**: Formal software execution scripts and master token allocation will initiate immediately and exclusively upon the secure deposit of the official licensing fee of **KRW 1,500,000,000,000** (One Trillion Five Hundred Billion KRW).
-* **Fund Independence**: 100% of the designated royalties and subsequent runtime advertising revenue share will entirely bypass standard corporate overhead and personal holdings, flowing directly into the independent **[Sovereign 1-Person Genius Engineer Foundation]**.
+* **Patent Status & Strategic Transition**: All core technologies are currently under active patent prosecution. Upon the successful execution of the definitive agreement and verification of financial settlement, the Sole Architect will voluntarily withdraw all pending patent registries to transition the intellectual property into an absolute, ironclad Trade Secret architecture.
+  
+* **Commercial & Licensing Fee**: Formal software execution scripts and master token allocation will initiate immediately upon the secure deposit of the official licensing fee of **KRW 1,500,000,000,000** (One Trillion Five Hundred Billion KRW).
+  
+* **Fund Independence for GitHub Pioneers**: 100% of the designated royalties and subsequent runtime advertising revenue will entirely bypass standard corporate overhead and personal holdings. These funds will flow directly into an independent foundation dedicated exclusively to funding and sustaining **independent "1-Person Genius Engineers" within the GitHub open-source community**.
+  
 * **Root Security Control**: The Master Root Command Core remains strictly bound to the Sole Architect's private, air-gapped terminal.
 
-To maintain absolute operational security and protect personal credentials from automated web scrapers, please submit your verified corporate credentials, verification of financial readiness, and formal next-step proposals via our secure procurement channel below:
+<p style="color: #ff3333; font-weight: bold; font-size: 1.1em; margin-bottom: 5px;">
+  🔒 Security Notice for Corporate Inquiries
+</p>
+<p style="color: #ff3333; line-height: 1.6;">
+  To maintain operational security and protect personal credentials from automated web scrapers, please submit your verified corporate credentials, proof of financial readiness, and formal next-step proposals via our secure procurement channel below:
+</p>
 
-**👉 [Access Secure AMD Helios Project Intake Channel](https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform?usp=publish-editor)
-**
+### **👉 [Access Secure AMD Helios Project Intake Channel](https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform?usp=publish-editor)**
