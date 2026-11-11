@@ -3,7 +3,7 @@
 ### PROJECT IDENTIFICATION & INTEGRITY STATUS
 - Project Name: PROJECT SHUZI (v5.9 FINAL)
 - Document Verification ID: SHUZI-2026-IVR-A64X86_V5.9_FINAL
-- Security Regime: TOP SECRET / PATENT SHIELD (TRADE SECRET EXTENSION)
+- Security Regime: PATENT PENDING / CLEAN-ROOM IP (US/KR JURISDICTION
 - Issuing Laboratory: SHUZI & SAFETY GLOBAL SECURITY LABORATORY
 - Status: 100% OPERATIONAL // ALL 40 COMPONENT SIMULATION TESTS SAFELY COMPLETED
 
@@ -23,7 +23,7 @@
 - TEST CASE 2 (Minor): Simulated Bed Slip with Quick Recovery. Classified as Minor Slip. Local alert logged to secure NVRAM; satellite transponder remains in standby.
 - TEST CASE 3 (True Emergency): Critical Hard Fall and Unresponsive State. Classifier detected severe physical impact synchronized with genuine biometric distress cry (850 Hz). Hardware cutoff engaged within 1ms hard-locking execution bus. MPU dynamic layout switched to READ-ONLY, severing stock mobile OS lines and uplinking telemetry directly to EMS.
 
-### [SCENARIO 2] Time-of-Fight Delta Latency Tracking
+### [SCENARIO 2] Time-of-Flight Delta Latency Tracking
 - Scenario A (Standard State): Low user density verified. Delta time (Satellite to EMS) captured at 0.159264 ms. STATUS: GOLDEN_TIME_SECURED.
 - Scenario B (Congested Network): Explosion in active concurrent user requests. Delta time (Satellite to EMS) capped at 2.58017 ms. STATUS: GOLDEN_TIME_SECURED within 1ms hard-routing protocol limits.
 
@@ -46,7 +46,7 @@
 
 ### 3. ZERO-KNOWLEDGE EVIDENCE & VALIDATION POLICY
 - Source Code Integrity: To preserve absolute ecosystem security, all source codes, compilation scripts, and master root command cores remain strictly bound to the Sole Architect's private, air-gapped terminal.
-- Review Restrictions: No preemptive code reviews, uncompiled objects, or raw binary drops will be provided prior to formal financial escrow clearance. Corporate evaluation is limited exclusively to offline SHA-256 signature verification and black-box HIL input/output benchmark testing on the AMD Helios target framework.
+- Review Restrictions: No preemptive code reviews, uncompiled objects, or raw binary drops will be provided prior to Mutual NDA (MNDA) execution. Corporate evaluation is conducted via offline SHA-256 signature verification and isolated remote black-box sandbox testing.
 
 ---
 FORMALLY APPROVED AND CERTIFIED BY:
