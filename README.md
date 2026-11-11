@@ -67,5 +67,5 @@ We welcome technical due diligence and licensing inquiries from qualified semico
 ## 6. Corporate & Licensing Inquiries
 For technical briefings, patent documentation review, or sandbox evaluation requests, please submit verified corporate credentials through our intake channel:
 
-* **Enterprise Intake:**(https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform?usp=publish-editor)
+## Enterprise Intake:(https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform?usp=publish-editor)
 
