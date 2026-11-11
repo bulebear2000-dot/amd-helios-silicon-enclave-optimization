@@ -103,3 +103,6 @@ Aggregate CPU Throughput : 52221109 OPS/SEC
 d552cd1969270764df101acff707cde5a9433900c1f5091751bfb1e215b60362  runtime.log
 ==================================================
 ============================================================
+
+##Note: This benchmark represents a Pre-Silicon Deterministic Logic & State-Machine Verification executed on an isolated 128MB virtual MMIO backplane (/dev/shm). 
+##Physical hardware waveform testing and bare-metal kernel driver execution are strictly reserved for post-contract execution.
