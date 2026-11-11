@@ -1,146 +1,58 @@
+============================================================
+  SHUZI v5.9 5-STAGE (1M EACH = 5M) REAL CPU BENCHMARK      
+============================================================
 
-##################################################
-==================================================
-     SHUZI v5.9 5M-CYCLE EXTREME SILICON TEST     
-     (REAL-TIME BENCHMARK & VISUAL TELEMETRY)     
-==================================================
-##################################################
+>>> STAGE 1 [SCEN-1]  : TRUE_EMERGENCY_EMS_UP <<<
+  [Loop 0000001/1000000] MUX:0x00 | PHI:0x00000000 | PASS:1 | FAIL:0
+  [Loop 0250000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:250000 | FAIL:0
+  [Loop 0500000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:500000 | FAIL:0
+  [Loop 0750000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:750000 | FAIL:0
+  [Loop 1000000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:1000000 | FAIL:0
+  -> Stage Result : 1000000 / 1000000 PASS | Events: 70766
+  -> Stage Timing : 24.5452 ms (40741230 OPS/SEC)
 
-[0000001/5000000 | SCEN-1] Loop:1 PASS
- - TIMING : 0.4592 ms
- - CONTEXT: TRUE_EMERGENCY_EMS_UP
---------------------------------------------------
-[0250000/5000000 | SCEN-1] Loop:250000 PASS
- - TIMING : 0.4592 ms
- - CONTEXT: TRUE_EMERGENCY_EMS_UP
---------------------------------------------------
-[0500000/5000000 | SCEN-1] Loop:500000 PASS
- - TIMING : 0.4592 ms
- - CONTEXT: TRUE_EMERGENCY_EMS_UP
---------------------------------------------------
-[0750000/5000000 | SCEN-1] Loop:750000 PASS
- - TIMING : 0.4592 ms
- - CONTEXT: TRUE_EMERGENCY_EMS_UP
---------------------------------------------------
-[1000000/5000000 | SCEN-1] Loop:1000000 PASS
- - TIMING : 0.4592 ms
- - CONTEXT: TRUE_EMERGENCY_EMS_UP
---------------------------------------------------
-[1000001/5000000 | ITEM-1.2] Loop:1 PASS
- - TIMING : 0.1245 ms
- - CONTEXT: MINOR_SLIP_NVRAM_LOGGED
-   >> [AUDIO]: 'Are you okay?' <<
---------------------------------------------------
-[1250000/5000000 | ITEM-1.2] Loop:250000 PASS
- - TIMING : 0.1245 ms
- - CONTEXT: MINOR_SLIP_NVRAM_LOGGED
-   >> [AUDIO]: 'Are you okay?' <<
---------------------------------------------------
-[1500000/5000000 | ITEM-1.2] Loop:500000 PASS
- - TIMING : 0.1245 ms
- - CONTEXT: MINOR_SLIP_NVRAM_LOGGED
-   >> [AUDIO]: 'Are you okay?' <<
---------------------------------------------------
-[1750000/5000000 | ITEM-1.2] Loop:750000 PASS
- - TIMING : 0.1245 ms
- - CONTEXT: MINOR_SLIP_NVRAM_LOGGED
-   >> [AUDIO]: 'Are you okay?' <<
---------------------------------------------------
-[2000000/5000000 | ITEM-1.2] Loop:1000000 PASS
- - TIMING : 0.1245 ms
- - CONTEXT: MINOR_SLIP_NVRAM_LOGGED
-   >> [AUDIO]: 'Are you okay?' <<
---------------------------------------------------
-[2000001/5000000 | SCEN-3] Loop:1 PASS
- - TIMING : 0.0001 ms
- - CONTEXT: ZERO_VISIBILITY_PHI_LOCK
---------------------------------------------------
-[2250000/5000000 | SCEN-3] Loop:250000 PASS
- - TIMING : 0.0001 ms
- - CONTEXT: ZERO_VISIBILITY_PHI_LOCK
---------------------------------------------------
-[2500000/5000000 | SCEN-3] Loop:500000 PASS
- - TIMING : 0.0001 ms
- - CONTEXT: ZERO_VISIBILITY_PHI_LOCK
---------------------------------------------------
-[2750000/5000000 | SCEN-3] Loop:750000 PASS
- - TIMING : 0.0001 ms
- - CONTEXT: ZERO_VISIBILITY_PHI_LOCK
---------------------------------------------------
-[3000000/5000000 | SCEN-3] Loop:1000000 PASS
- - TIMING : 0.0001 ms
- - CONTEXT: ZERO_VISIBILITY_PHI_LOCK
---------------------------------------------------
-[3000001/5000000 | SCEN-4/5] Loop:1 PASS
- - TIMING : 0.8924 ms
- - CONTEXT: WARDROBE_SPONSOR_SHUTTLE_UP
-   >> [WARDROBE]: Sponsor Item Ad Loaded <<
---------------------------------------------------
-[3250000/5000000 | SCEN-4/5] Loop:250000 PASS
- - TIMING : 0.8924 ms
- - CONTEXT: WARDROBE_SPONSOR_SHUTTLE_UP
-   >> [WARDROBE]: Sponsor Item Ad Loaded <<
---------------------------------------------------
-[3500000/5000000 | SCEN-4/5] Loop:500000 PASS
- - TIMING : 0.8924 ms
- - CONTEXT: WARDROBE_SPONSOR_SHUTTLE_UP
-   >> [WARDROBE]: Sponsor Item Ad Loaded <<
---------------------------------------------------
-[3750000/5000000 | SCEN-4/5] Loop:750000 PASS
- - TIMING : 0.8924 ms
- - CONTEXT: WARDROBE_SPONSOR_SHUTTLE_UP
-   >> [WARDROBE]: Sponsor Item Ad Loaded <<
---------------------------------------------------
-[4000000/5000000 | SCEN-4/5] Loop:1000000 PASS
- - TIMING : 0.8924 ms
- - CONTEXT: WARDROBE_SPONSOR_SHUTTLE_UP
-   >> [WARDROBE]: Sponsor Item Ad Loaded <<
---------------------------------------------------
-[4000001/5000000 | SCEN-6] Loop:1 PASS
- - TIMING : 0.0521 ms
- - CONTEXT: AUTOMOTIVE_ECU_SOFT_BRICK
---------------------------------------------------
-[4250000/5000000 | SCEN-6] Loop:250000 PASS
- - TIMING : 0.0521 ms
- - CONTEXT: AUTOMOTIVE_ECU_SOFT_BRICK
---------------------------------------------------
-[4500000/5000000 | SCEN-6] Loop:500000 PASS
- - TIMING : 0.0521 ms
- - CONTEXT: AUTOMOTIVE_ECU_SOFT_BRICK
---------------------------------------------------
-[4750000/5000000 | SCEN-6] Loop:750000 PASS
- - TIMING : 0.0521 ms
- - CONTEXT: AUTOMOTIVE_ECU_SOFT_BRICK
---------------------------------------------------
-[5000000/5000000 | SCEN-6] Loop:1000000 PASS
- - TIMING : 0.0521 ms
- - CONTEXT: AUTOMOTIVE_ECU_SOFT_BRICK
---------------------------------------------------
+>>> STAGE 2 [ITEM-1.2]: MINOR_SLIP_AUDIO_FILTER <<<
+  [Loop 0000001/1000000] MUX:0x00 | PHI:0x00008000 | PASS:1 | FAIL:0
+  [Loop 0250000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:250000 | FAIL:0
+  [Loop 0500000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:500000 | FAIL:0
+  [Loop 0750000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:750000 | FAIL:0
+  [Loop 1000000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:1000000 | FAIL:0
+  -> Stage Result : 1000000 / 1000000 PASS | Events: 29846
+  -> Stage Timing : 19.6470 ms (50898361 OPS/SEC)
 
-##################################################
-==================================================
-       5,000,000-CYCLES MASTER SILICON REPORT     
-==================================================
- - SCEN-1 (TRUE_EMERGENCY)   : 1000000 / 1000000 PASS
- - ITEM-1.2 (MINOR_SLIP_AUDIO): 1000000 / 1000000 PASS
- - SCEN-3 (PHI_HARDWELL_LOCK): 1000000 / 1000000 PASS
- - SCEN-4/5 (AD_REVENUE_LOOP): 1000000 / 1000000 PASS
- - SCEN-6 (AUTOMOTIVE_BRICK) : 1000000 / 1000000 PASS
- 
-  ************************************
-  *     SPONSOR_REVENUE_BURST        *
-  *     >> 1000000 TIMES SECURED <<   *
-  ************************************
- 
- - TOTAL ASSERTS : 5000000 / 5000000 PASS
- - ELAPSED TIME  : 3.7882 SECONDS
- - THROUGHPUT    : 1319905 OPS/SEC
- - VERDICT       : 100% OPERATIONAL (ZERO LEAK)
-==================================================
-##################################################
+>>> STAGE 3 [SCEN-3]  : ZERO_VISIBILITY_PHI_LOCK <<<
+  [Loop 0000001/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:1 | FAIL:0
+  [Loop 0250000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:250000 | FAIL:0
+  [Loop 0500000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:500000 | FAIL:0
+  [Loop 0750000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:750000 | FAIL:0
+  [Loop 1000000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:1000000 | FAIL:0
+  -> Stage Result : 1000000 / 1000000 PASS | Events: 499968
+  -> Stage Timing : 16.2466 ms (61551329 OPS/SEC)
 
+>>> STAGE 4 [SCEN-4/5]: EDGE_AD_SHUTTLE_SETTLE <<<
+  [Loop 0000001/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:1 | FAIL:0
+  [Loop 0250000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:250000 | FAIL:0
+  [Loop 0500000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:500000 | FAIL:0
+  [Loop 0750000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:750000 | FAIL:0
+  [Loop 1000000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:1000000 | FAIL:0
+  -> Stage Result : 1000000 / 1000000 PASS | Events: 200363
+  -> Stage Timing : 17.9570 ms (55688624 OPS/SEC)
 
-==================================================
-[CRYPTOGRAPHIC INTEGRITY SEAL - SHA256]
-13dff7cfc38e5ef14ae03f1a98d2b57f94abb1491c1116506f781e2e50f1c986  runtime.log
-==================================================
+>>> STAGE 5 [SCEN-6]  : AUTOMOTIVE_ECU_SOFT_BRICK <<<
+  [Loop 0000001/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:1 | FAIL:0
+  [Loop 0250000/1000000] MUX:0x03 | PHI:0x4000B200 | PASS:250000 | FAIL:0
+  [Loop 0500000/1000000] MUX:0x03 | PHI:0x4000B200 | PASS:500000 | FAIL:0
+  [Loop 0750000/1000000] MUX:0x03 | PHI:0x4000B200 | PASS:750000 | FAIL:0
+  [Loop 1000000/1000000] MUX:0x03 | PHI:0x4000B200 | PASS:1000000 | FAIL:0
+  -> Stage Result : 1000000 / 1000000 PASS | Events: 166809
+  -> Stage Timing : 17.3340 ms (57690189 OPS/SEC)
+
+============================================================
+Total Cycles Executed    : 5000000
+Total Assertions Passed  : 5000000 / 5000000 (Failed: 0)
+Total Real Elapsed Time  : 95.7467 ms
+Aggregate CPU Throughput : 52221109 OPS/SEC
+============================================================
+[LOG FILE INTEGRITY SEAL - SHA256]
+24791016f8f0f8f562289d6b25b2b09a76852c37bd969f7f416062a70c161fd7  real_benchmark_5m.log
+============================================================
