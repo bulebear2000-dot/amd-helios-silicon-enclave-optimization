@@ -3,7 +3,7 @@
 ### PROJECT IDENTIFICATION & INTEGRITY STATUS
 - Project Name: PROJECT SHUZI (v5.9 FINAL)
 - Document Verification ID: SHUZI-2026-IVR-A64X86_V5.9_FINAL
-- Security Regime: PATENT PENDING / CLEAN-ROOM IP (US/KR JURISDICTION
+- Security Regime: PATENT PENDING / CLEAN-ROOM IP (US/KR JURISDICTION)
 - Issuing Laboratory: SHUZI & SAFETY GLOBAL SECURITY LABORATORY
 - Status: 100% OPERATIONAL // ALL 40 COMPONENT SIMULATION TESTS SAFELY COMPLETED
 
@@ -29,7 +29,7 @@
 
 ### [SCENARIO 3] Power Stasis, Cache Monitor & Privacy Sandbox Check
 - Emergency Ultra-Power Stasis: Primary AP cores, display, and cellular lines are hardware-severed (PMIC_SHUTDOWN). Satellite transmitter switched to pulse-beacon mode (30s interval), placing device in micro-ampere standby.
-- On-Device Zero-Delay Cache Monitor: Resolves task query locally during network occlusion via internal SRAM database. Cache hit achieved with ultra-low 0.0001ms latency, triggering local decision output.
+- On-Device Zero-Delay Cache Monitor: Resolves task query locally during network occlusion via internal SRAM database. Cache hit achieved with sub-microsecond latency, triggering local decision output.
 - Protected PHI Hardware Sandbox Gate: External mobile OS framework denied access to patient health profiles (Registry 0x4000B200 active). Secure vault unsealed via E2EE preparation only after 260-Pin MUX isolation verification.
 
 ### [SCENARIO 4 & 5] Subway Tunnel Satellite Blackout Bypass & Master Revival
@@ -40,7 +40,7 @@
 - STAGE 1 (Verification): Node 0 authorized with valid AMD Accelerator Bound at 0x8000000000000000. Node 1 unauthenticated hardware blocked/blanked.
 - STAGE 2 & 3 (Sensor & Audio Fusion): Tier 2 Active Fall Vector validated. Audio spectrum analysis differentiates stable prank signatures (210 Hz) from genuine biometric distress cry (850 Hz).
 - STAGE 4 & 5 (Hardening): Market variance caught at register 0x40003600 (REG_AUTO_COUPON active). Core severance executed under locked Trade Secret parameter, actuating physical 260-Pin MUX copper line bypass to sever stock OS communication.
-- STAGE 6 & 7 (Automotive ECU Soft-Brick): Theft telemetry logged on USA Insurance Control Server. Secure 25V rail power-domain suppression engaged, permanently bricking the vehicle across power-cycles. Powertrain returned to primary vehicle systems only after cryptographic token validation via module 320.
+- STAGE 6 & 7 (Automotive ECU Soft-Brick): Theft telemetry logged on USA Insurance Control Server. Secure 25V rail power-domain suppression engaged, reversibly soft-bricking the vehicle across power-cycles. Powertrain returned to primary vehicle systems only after cryptographic token validation via module 320.
 
 ---
 
