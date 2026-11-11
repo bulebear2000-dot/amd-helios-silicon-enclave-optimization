@@ -104,5 +104,76 @@ d552cd1969270764df101acff707cde5a9433900c1f5091751bfb1e215b60362  runtime.log
 ==================================================
 ============================================================
 
+
+
+************************************************************
+  SHUZI v5.9 REV5 5-STAGE (1M EACH = 5M) CPU BENCHMARK      
+************************************************************
+
+>>> STAGE 1 [ITEM-1.4] : TRUE_EMERGENCY_EMS_UP <<<
+  [Loop 0000001/1000000] MUX:0x00 | PHI:0x00000000 | TMR:00000ms | PASS:1 | FAIL:0
+  [Loop 0250000/1000000] MUX:0x00 | PHI:0x00000000 | TMR:00000ms | PASS:250000 | FAIL:0
+  [Loop 0500000/1000000] MUX:0x00 | PHI:0x00000000 | TMR:00000ms | PASS:500000 | FAIL:0
+  [Loop 0750000/1000000] MUX:0x00 | PHI:0x00000000 | TMR:00000ms | PASS:750000 | FAIL:0
+  [Loop 1000000/1000000] MUX:0x00 | PHI:0x00000000 | TMR:00000ms | PASS:1000000 | FAIL:0
+  -> Stage Result : 1000000 / 1000000 PASS | Events: 70812
+  -> Stage Timing : 34.3132 ms (29143342 OPS/SEC)
+
+>>> STAGE 2 [ITEM-1.3] : INTERACTIVE_FALL_PROMPT_ESCALATION <<<
+  [Loop 0000001/1000000] MUX:0x00 | PHI:0x00000000 | TMR:00000ms | PASS:1 | FAIL:0
+  [Loop 0250000/1000000] MUX:0x00 | PHI:0x00000000 | TMR:00000ms | PASS:250000 | FAIL:0
+  [Loop 0500000/1000000] MUX:0x00 | PHI:0x00000000 | TMR:00000ms | PASS:500000 | FAIL:0
+  [Loop 0750000/1000000] MUX:0x02 | PHI:0x00000000 | TMR:03500ms | PASS:750000 | FAIL:0
+  [Loop 1000000/1000000] MUX:0x00 | PHI:0x00000000 | TMR:00000ms | PASS:1000000 | FAIL:0
+  -> Stage Result : 1000000 / 1000000 PASS | Events: 243038
+  -> Stage Timing : 32.3996 ms (30864539 OPS/SEC)
+
+>>> STAGE 3 [SCEN-3]   : ZERO_VISIBILITY_PHI_LOCK <<<
+  [Loop 0000001/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:1 | FAIL:0
+  [Loop 0250000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:250000 | FAIL:0
+  [Loop 0500000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:500000 | FAIL:0
+  [Loop 0750000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:750000 | FAIL:0
+  [Loop 1000000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:1000000 | FAIL:0
+  -> Stage Result : 1000000 / 1000000 PASS | Events: 500000
+  -> Stage Timing : 25.7437 ms (38844467 OPS/SEC)
+
+>>> STAGE 4 [SCEN-4/5] : EDGE_AD_SHUTTLE_SETTLE <<<
+  [Loop 0000001/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:1 | FAIL:0
+  [Loop 0250000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:250000 | FAIL:0
+  [Loop 0500000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:500000 | FAIL:0
+  [Loop 0750000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:750000 | FAIL:0
+  [Loop 1000000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:1000000 | FAIL:0
+  -> Stage Result : 1000000 / 1000000 PASS | Events: 200887
+  -> Stage Timing : 27.4784 ms (36392214 OPS/SEC)
+
+>>> STAGE 5 [SCEN-6]   : AUTOMOTIVE_ECU_SOFT_BRICK <<<
+  [Loop 0000001/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:1 | FAIL:0
+  [Loop 0250000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:250000 | FAIL:0
+  [Loop 0500000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:500000 | FAIL:0
+  [Loop 0750000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:750000 | FAIL:0
+  [Loop 1000000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:1000000 | FAIL:0
+  -> Stage Result : 1000000 / 1000000 PASS | Events: 165942
+  -> Stage Timing : 26.5918 ms (37605636 OPS/SEC)
+
+************************************************************
+Total Cycles Executed        : 5000000
+Total Assertions Passed      : 5000000 / 5000000 (Failed: 0)
+Item 1.4 Direct EMS Triggers : 70812
+Item 1.3 Prompt User Acked   : 169987 (False Alarm Prevented)
+Item 1.3 Timeout Escalated   : 73051 (15.0s Auto-EMS)
+Item 1.2 Minor Slip Filtered : 54389
+SCEN-4/5 Edge Ad Settled     : 200887
+SCEN-6 ECU Soft-Brick Locks  : 165942
+Total Real Elapsed Time      : 146.5267 ms
+Aggregate CPU Throughput     : 34123485 OPS/SEC
+REV5 Master Token (SHA-256)  :
+5c03bd34cd7c445bcd5d8695fb5cca2e18a0ee07a81258c79c9fced804c8af30
+************************************************************
+
+[LOG FILE INTEGRITY SEAL - SHA256]
+a0121d7e77276449b628d7401201f4b2ac29410fa543b6aa4e06455bb383d929  5M_EXTREME_SILICON_TEST_REV5.log
+
+## Note: Pre-Silicon Deterministic Logic & State-Machine Verification (REV5).
+
 ## Note: This benchmark represents a Pre-Silicon Deterministic Logic & State-Machine Verification executed on an isolated 128MB virtual MMIO backplane (/dev/shm). 
 ## Physical hardware waveform testing and bare-metal kernel driver execution are strictly reserved for post-contract execution.
