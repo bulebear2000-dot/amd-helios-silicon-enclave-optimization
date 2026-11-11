@@ -1,7 +1,7 @@
 ## EXECUTIVE SUMMARY: PROJECT SHUZI (v5.9 FINAL)
 ### Enterprise Procurement, IP Governance & Compliance Overview
 
-1. TECHNOLOGY IDENTIFICATION & IP GOVERNANCE
+## 1. TECHNOLOGY IDENTIFICATION & IP GOVERNANCE
 
 * Project Name: Project Shuzi (v5.9 FINAL)
 * IP Provenance: 100% Clean-Room Developed. Zero third-party or open-source dependencies; strict US/KR jurisdiction compliance to mitigate supply-chain and CFIUS risks.
