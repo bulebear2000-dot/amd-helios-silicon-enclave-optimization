@@ -33,15 +33,17 @@ Compiled from 39 modular structural files (52 ecosystem components) into nine (9
 ---
 
 ## 3. Pre-Silicon Benchmark Summary (5M-Cycle Audit)
-All core state-machine modules were subjected to a 5-stage, 5,000,000-cycle deterministic stress test.
+
+All core state-machine modules underwent a 5,000,000-cycle deterministic stress test across three verification suites (`5M_EXTREME_FUZZ_TEST.log`, `5M_EXTREME_SILICON_TEST.log`, and `SHUZI_5M_AUDIT.log`), achieving 100% pass rates across boundary fuzzing, timer escalation, and full-spectrum ECU audits.
+
 
 | Test Suite | Executed Cycles | Pass / Fail | Elapsed Time | Throughput (OPS/SEC) | Key Validation Scope |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| **Core CPU State-Machine** | 5,000,000 | 5M / 0 | 95.75 ms | 52.22M | 5-stage emergency & ECU fault scenarios |
-| **128MB MMIO & Crypto Audit** | 5,000,000 | 5M / 0 | 128.22 ms | 38.99M | Backplane memory isolation & register hashing |
-| **REV5 Timer & Escalation** | 5,000,000 | 5M / 0 | 146.53 ms | 34.12M | Interactive user-ack timeout & auto-EMS routing |
+| **Core CPU State-Machine** | 5,000,000 | 5M / 0 | 131.12 ms | 38.13M | 5-stage emergency & ECU fault scenarios (`5M_EXTREME_FUZZ_TEST.log`) |
+| **REV5 Timer & Escalation** | 5,000,000 | 5M / 0 | 151.44 ms | 33.02M | Interactive user-ack timeout & auto-EMS routing (`5M_EXTREME_SILICON_TEST.log`) |
+| **Full-Spectrum & ECU Audit** | 5,000,000 | 5M / 0 | 4,687.43 ms | 1.07M (VEC/S) | Compact EMS lock, ECU soft-brick & Module 320 recovery (`SHUZI_5M_AUDIT.log`) |
 
-*Note: Metrics reflect pre-silicon deterministic logic verification on an isolated 128MB virtual MMIO backplane. Physical hardware waveform validation and bare-metal kernel driver integration are scheduled for post-MNDA partner evaluation.*
+*Note: Metrics reflect pre-silicon deterministic logic verification on an isolated 128MB virtual MMIO backplane (`/dev/shm`). Physical hardware waveform validation and bare-metal kernel driver integration are scheduled for post-MNDA partner evaluation.*
 
 ---
 
