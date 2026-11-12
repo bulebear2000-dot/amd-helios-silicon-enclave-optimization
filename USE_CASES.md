@@ -10,7 +10,7 @@ Beyond low-level hardware isolation and state-machine determinism, **Project Shu
 * **Target Sector:** Public Safety, Mobile OEMs, Wearables, & Telecom Carriers
 * **Operational Challenge:** Conventional smartphone emergency alerts rely on high-level OS applications that are vulnerable to UI freezes, background process termination, and high false-positive rates in noisy environments.
 * **Shuzi Architecture Solution:**
-  * Isolates genuine human biometric distress vocalizations (~850Hz fundamental pitch band) from ambient noise (up to 95dB) and non-emergency audio (~210Hz) within **0.5 seconds**.
+  * Isolates genuine human biometric distress vocalizations (~850Hz high-stress vocal/distress band) from ambient noise (up to 95dB) and non-emergency audio (~210Hz) within **0.5 seconds**.
   * Actuates hardware MUX switching (`260-Pin MUX`) to bypass compromised or frozen OS layers, locking critical registers (`MPU READ-ONLY`) and routing encrypted telemetry directly to Emergency Medical Services (EMS).
   * Incorporates an interactive escalation timer (`TMR`) that prevents false dispatches via user acknowledgment while guaranteeing autonomous failover if unresponsive.
 
