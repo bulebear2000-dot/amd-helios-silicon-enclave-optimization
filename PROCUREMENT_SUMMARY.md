@@ -13,9 +13,9 @@
 * Verifiable Audit Trail: Generates immutable SHA-256 cryptographic register signatures for forensic integrity and regulatory compliance.
 
 ## 3. COMMERCIAL EVALUATION & LICENSING PROTOCOL
-1. **Mutual NDA (MNDA):** Bilateral non-disclosure execution with verified corporate entities.
-2. **Remote API Sandbox Evaluation:** Black-box vector testing hosted exclusively within US/KR isolated servers.
-3. **Commercial PoC & HIL Integration:** Custom hardware-in-the-loop (HIL) validation binaries provided upon milestone agreement.
+1. **Mutual NDA (MNDA):** Bilateral non-disclosure agreement execution prior to data exchange.
+2. **Asynchronous Black-Box Evaluation:** Vector testing conducted via ASCII CSV format with SHA-256 verification (no live APIs, pre-contract binaries, or meetings).
+3. **Commercial Licensing & IP Transfer:** Full source code, binaries, and master tokens transferred upon contract execution and escrow settlement.
 
 ## 4. LEGAL SAFE HARBOR & REPRESENTATION DISCLAIMER
 * **Simulation Metrics:** All performance and risk-mitigation figures reflect deterministic outcomes under controlled pre-silicon simulation environments (41st Final Run Report) and serve as architectural milestones rather than absolute commercial warranties.
