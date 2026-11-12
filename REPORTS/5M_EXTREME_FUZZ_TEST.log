@@ -59,10 +59,6 @@ SCEN-6 ECU Soft-Brick Locks  : 889851
 Total Real Elapsed Time      : 131.0161 ms
 Aggregate CPU Throughput     : 38163245 OPS/SEC
 REV5 Master Token (SHA-256)  :
-4fc93597c3863624a44742546039b90497fb5161bd53465f09b68e1ca3e2a2ba
 ************************************************************
-
-[LOG FILE INTEGRITY SEAL - SHA256]
-165c28616893d9425793b8728b610bebef1689bd51f6ed98214c19e505ed6b60  5M_EXTREME_SILICON_TEST_REV5.log
 
 ## Note: Pre-Silicon Deterministic Logic & State-Machine Verification (REV5).
