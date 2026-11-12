@@ -54,11 +54,6 @@ Total Real Elapsed Time  : 95.7467 ms
 Aggregate CPU Throughput : 52221109 OPS/SEC
 ============================================================
 [LOG FILE INTEGRITY SEAL - SHA256]
-24791016f8f0f8f562289d6b25b2b09a76852c37bd969f7f416062a70c161fd7  real_benchmark_5m.log
-
-
-
-
 
 ==================================================
   SHUZI v5.9 128MB MMIO & CRYPTO 5M-CYCLE AUDIT   
@@ -94,16 +89,13 @@ Aggregate CPU Throughput : 52221109 OPS/SEC
  - Bus Throughput : 38995561 OPS/SEC
 --------------------------------------------------
  [LIVE REGISTER STREAM SHA-256 SIGNATURE]
- ec79df3b4fbfeb5dde52d27378bdd783d6990623f205eab03e205f7849b6cfaa
 ==================================================
 
 
 ==================================================
 [CRYPTOGRAPHIC INTEGRITY SEAL - SHA256]
-d552cd1969270764df101acff707cde5a9433900c1f5091751bfb1e215b60362  runtime.log
-==================================================
-============================================================
 
+==================================================
 
 
 ************************************************************
@@ -166,12 +158,7 @@ SCEN-4/5 Edge Ad Settled     : 200887
 SCEN-6 ECU Soft-Brick Locks  : 165942
 Total Real Elapsed Time      : 146.5267 ms
 Aggregate CPU Throughput     : 34123485 OPS/SEC
-REV5 Master Token (SHA-256)  :
-5c03bd34cd7c445bcd5d8695fb5cca2e18a0ee07a81258c79c9fced804c8af30
 ************************************************************
-
-[LOG FILE INTEGRITY SEAL - SHA256]
-a0121d7e77276449b628d7401201f4b2ac29410fa543b6aa4e06455bb383d929  5M_EXTREME_SILICON_TEST_REV5.log
 
 ## Note: Pre-Silicon Deterministic Logic & State-Machine Verification (REV5).
 
