@@ -1,104 +1,4 @@
-============================================================
-  SHUZI v5.9 5-STAGE (1M EACH = 5M) REAL CPU BENCHMARK      
-============================================================
-
->>> STAGE 1 [SCEN-1]  : TRUE_EMERGENCY_EMS_UP <<<
-  [Loop 0000001/1000000] MUX:0x00 | PHI:0x00000000 | PASS:1 | FAIL:0
-  [Loop 0250000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:250000 | FAIL:0
-  [Loop 0500000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:500000 | FAIL:0
-  [Loop 0750000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:750000 | FAIL:0
-  [Loop 1000000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:1000000 | FAIL:0
-  -> Stage Result : 1000000 / 1000000 PASS | Events: 70766
-  -> Stage Timing : 24.5452 ms (40741230 OPS/SEC)
-
->>> STAGE 2 [ITEM-1.2]: MINOR_SLIP_AUDIO_FILTER <<<
-  [Loop 0000001/1000000] MUX:0x00 | PHI:0x00008000 | PASS:1 | FAIL:0
-  [Loop 0250000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:250000 | FAIL:0
-  [Loop 0500000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:500000 | FAIL:0
-  [Loop 0750000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:750000 | FAIL:0
-  [Loop 1000000/1000000] MUX:0x00 | PHI:0x00008000 | PASS:1000000 | FAIL:0
-  -> Stage Result : 1000000 / 1000000 PASS | Events: 29846
-  -> Stage Timing : 19.6470 ms (50898361 OPS/SEC)
-
->>> STAGE 3 [SCEN-3]  : ZERO_VISIBILITY_PHI_LOCK <<<
-  [Loop 0000001/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:1 | FAIL:0
-  [Loop 0250000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:250000 | FAIL:0
-  [Loop 0500000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:500000 | FAIL:0
-  [Loop 0750000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:750000 | FAIL:0
-  [Loop 1000000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:1000000 | FAIL:0
-  -> Stage Result : 1000000 / 1000000 PASS | Events: 499968
-  -> Stage Timing : 16.2466 ms (61551329 OPS/SEC)
-
->>> STAGE 4 [SCEN-4/5]: EDGE_AD_SHUTTLE_SETTLE <<<
-  [Loop 0000001/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:1 | FAIL:0
-  [Loop 0250000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:250000 | FAIL:0
-  [Loop 0500000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:500000 | FAIL:0
-  [Loop 0750000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:750000 | FAIL:0
-  [Loop 1000000/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:1000000 | FAIL:0
-  -> Stage Result : 1000000 / 1000000 PASS | Events: 200363
-  -> Stage Timing : 17.9570 ms (55688624 OPS/SEC)
-
->>> STAGE 5 [SCEN-6]  : AUTOMOTIVE_ECU_SOFT_BRICK <<<
-  [Loop 0000001/1000000] MUX:0x01 | PHI:0x4000B200 | PASS:1 | FAIL:0
-  [Loop 0250000/1000000] MUX:0x03 | PHI:0x4000B200 | PASS:250000 | FAIL:0
-  [Loop 0500000/1000000] MUX:0x03 | PHI:0x4000B200 | PASS:500000 | FAIL:0
-  [Loop 0750000/1000000] MUX:0x03 | PHI:0x4000B200 | PASS:750000 | FAIL:0
-  [Loop 1000000/1000000] MUX:0x03 | PHI:0x4000B200 | PASS:1000000 | FAIL:0
-  -> Stage Result : 1000000 / 1000000 PASS | Events: 166809
-  -> Stage Timing : 17.3340 ms (57690189 OPS/SEC)
-
-============================================================
-Total Cycles Executed    : 5000000
-Total Assertions Passed  : 5000000 / 5000000 (Failed: 0)
-Total Real Elapsed Time  : 95.7467 ms
-Aggregate CPU Throughput : 52221109 OPS/SEC
-============================================================
-[LOG FILE INTEGRITY SEAL - SHA256]
-
-==================================================
-  SHUZI v5.9 128MB MMIO & CRYPTO 5M-CYCLE AUDIT   
-==================================================
-
-[CYCLE 1000000 / 5000000] MMIO STATE VERIFIED
- - EMS: 70766 | Slip: 108757 | Ad: 164487 | ECU: 44320
---------------------------------------------------
-[CYCLE 2000000 / 5000000] MMIO STATE VERIFIED
- - EMS: 141669 | Slip: 217324 | Ad: 328950 | ECU: 88865
---------------------------------------------------
-[CYCLE 3000000 / 5000000] MMIO STATE VERIFIED
- - EMS: 212622 | Slip: 325317 | Ad: 493770 | ECU: 133294
---------------------------------------------------
-[CYCLE 4000000 / 5000000] MMIO STATE VERIFIED
- - EMS: 283321 | Slip: 433747 | Ad: 658155 | ECU: 178185
---------------------------------------------------
-[CYCLE 5000000 / 5000000] MMIO STATE VERIFIED
- - EMS: 354144 | Slip: 541999 | Ad: 821762 | ECU: 222683
---------------------------------------------------
-
-==================================================
-     SHUZI v5.9 FINAL DETERMINISTIC AUDIT         
-==================================================
- - MMIO Backplane : 128MB (/dev/shm) BOUND
- - Total Cycles   : 5000000
- - Pass / Fail    : 5000000 / 0
- - True Emergency : 354144
- - Minor Slip 1.2 : 541999 (Audio Prompt OK)
- - Edge Ad Settled: 821762 (SKU_PREMIUM_CAP)
- - ECU Soft-Brick : 222683
- - Elapsed Time   : 128.2197 ms
- - Bus Throughput : 38995561 OPS/SEC
---------------------------------------------------
- [LIVE REGISTER STREAM SHA-256 SIGNATURE]
-==================================================
-
-
-==================================================
-[CRYPTOGRAPHIC INTEGRITY SEAL - SHA256]
-
-==================================================
-
-
-************************************************************
+***********************************************************
   SHUZI v5.9 REV5 5-STAGE (1M EACH = 5M) CPU BENCHMARK      
 ************************************************************
 
@@ -109,7 +9,7 @@ Aggregate CPU Throughput : 52221109 OPS/SEC
   [Loop 0750000/1000000] MUX:0x00 | PHI:0x00000000 | TMR:00000ms | PASS:750000 | FAIL:0
   [Loop 1000000/1000000] MUX:0x00 | PHI:0x00000000 | TMR:00000ms | PASS:1000000 | FAIL:0
   -> Stage Result : 1000000 / 1000000 PASS | Events: 70812
-  -> Stage Timing : 34.3132 ms (29143342 OPS/SEC)
+  -> Stage Timing : 38.2727 ms (26128263 OPS/SEC)
 
 >>> STAGE 2 [ITEM-1.3] : INTERACTIVE_FALL_PROMPT_ESCALATION <<<
   [Loop 0000001/1000000] MUX:0x00 | PHI:0x00000000 | TMR:00000ms | PASS:1 | FAIL:0
@@ -118,7 +18,7 @@ Aggregate CPU Throughput : 52221109 OPS/SEC
   [Loop 0750000/1000000] MUX:0x02 | PHI:0x00000000 | TMR:03500ms | PASS:750000 | FAIL:0
   [Loop 1000000/1000000] MUX:0x00 | PHI:0x00000000 | TMR:00000ms | PASS:1000000 | FAIL:0
   -> Stage Result : 1000000 / 1000000 PASS | Events: 243038
-  -> Stage Timing : 32.3996 ms (30864539 OPS/SEC)
+  -> Stage Timing : 32.9609 ms (30339017 OPS/SEC)
 
 >>> STAGE 3 [SCEN-3]   : ZERO_VISIBILITY_PHI_LOCK <<<
   [Loop 0000001/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:1 | FAIL:0
@@ -127,7 +27,7 @@ Aggregate CPU Throughput : 52221109 OPS/SEC
   [Loop 0750000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:750000 | FAIL:0
   [Loop 1000000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:1000000 | FAIL:0
   -> Stage Result : 1000000 / 1000000 PASS | Events: 500000
-  -> Stage Timing : 25.7437 ms (38844467 OPS/SEC)
+  -> Stage Timing : 25.8203 ms (38729154 OPS/SEC)
 
 >>> STAGE 4 [SCEN-4/5] : EDGE_AD_SHUTTLE_SETTLE <<<
   [Loop 0000001/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:1 | FAIL:0
@@ -136,7 +36,7 @@ Aggregate CPU Throughput : 52221109 OPS/SEC
   [Loop 0750000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:750000 | FAIL:0
   [Loop 1000000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:1000000 | FAIL:0
   -> Stage Result : 1000000 / 1000000 PASS | Events: 200887
-  -> Stage Timing : 27.4784 ms (36392214 OPS/SEC)
+  -> Stage Timing : 27.0047 ms (37030588 OPS/SEC)
 
 >>> STAGE 5 [SCEN-6]   : AUTOMOTIVE_ECU_SOFT_BRICK <<<
   [Loop 0000001/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:1 | FAIL:0
@@ -145,7 +45,7 @@ Aggregate CPU Throughput : 52221109 OPS/SEC
   [Loop 0750000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:750000 | FAIL:0
   [Loop 1000000/1000000] MUX:0x01 | PHI:0x4000B200 | TMR:00000ms | PASS:1000000 | FAIL:0
   -> Stage Result : 1000000 / 1000000 PASS | Events: 165942
-  -> Stage Timing : 26.5918 ms (37605636 OPS/SEC)
+  -> Stage Timing : 27.3771 ms (36526890 OPS/SEC)
 
 ************************************************************
 Total Cycles Executed        : 5000000
@@ -156,8 +56,10 @@ Item 1.3 Timeout Escalated   : 73051 (15.0s Auto-EMS)
 Item 1.2 Minor Slip Filtered : 54389
 SCEN-4/5 Edge Ad Settled     : 200887
 SCEN-6 ECU Soft-Brick Locks  : 165942
-Total Real Elapsed Time      : 146.5267 ms
-Aggregate CPU Throughput     : 34123485 OPS/SEC
+Total Real Elapsed Time      : 151.4357 ms
+Aggregate CPU Throughput     : 33017308 OPS/SEC
+REV5 Master Token (SHA-256)  :
+5c03bd34cd7c445bcd5d8695fb5cca2e18a0ee07a81258c79c9fced804c8af30
 ************************************************************
 
 ## Note: Pre-Silicon Deterministic Logic & State-Machine Verification (REV5).
