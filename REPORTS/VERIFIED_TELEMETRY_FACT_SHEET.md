@@ -46,7 +46,7 @@
 
 ### 3. ZERO-KNOWLEDGE EVIDENCE & VALIDATION POLICY
 - Source Code Integrity: To preserve absolute ecosystem security, all source codes, compilation scripts, and master root command cores remain strictly bound to the Sole Architect's private, air-gapped terminal.
-- Review Restrictions: No preemptive code reviews, uncompiled objects, or raw binary drops will be provided prior to Mutual NDA (MNDA) execution.- Review Restrictions: No preemptive code reviews, uncompiled objects, or raw binary drops will be provided prior to Mutual NDA (MNDA) execution. Corporate evaluation is conducted strictly via Asynchronous Pure ASCII CSV exchange and offline SHA-256 signature verification—no live API access, pre-contract binaries, or video meetings are provided.
+- Review Restrictions: No preemptive code reviews, uncompiled objects, or raw binary drops will be provided prior to Mutual NDA (MNDA) execution.-Corporate evaluation is conducted strictly via Asynchronous Pure ASCII CSV exchange and offline SHA-256 signature verification—no live API access, pre-contract binaries, or video meetings are provided.
 
 
 ---
