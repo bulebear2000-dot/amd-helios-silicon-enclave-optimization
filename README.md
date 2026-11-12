@@ -60,8 +60,8 @@ To protect proprietary algorithms and prevent unauthorized reverse engineering, 
 We welcome technical due diligence and licensing inquiries from qualified semiconductor, automotive, and enterprise infrastructure partners under the following standard protocol:
 
 1. **Mutual NDA (MNDA):** Execution of a standard bilateral non-disclosure agreement with verified corporate entities.
-2. **Black-Box Remote Sandbox Evaluation:** Upon MNDA execution, partners are granted access to an isolated remote API evaluation enclave (hosted strictly within US/KR jurisdictions) to inject custom test vectors and verify latency, throughput, and state-machine determinism in real time.
-3. **Commercial PoC & Licensing:** Custom Hardware-in-the-Loop (HIL) evaluation binaries and licensing terms are structured following successful sandbox validation.
+2. **Asynchronous Black-Box Evaluation (Pure ASCII CSV):** Upon MNDA execution, partners submit custom 6-column Pure ASCII CSV test vectors at least 2 hours prior to the scheduled evaluation window (KST / UTC+9). Execution outputs and SHA-256 integrity seals are returned asynchronously to eliminate US/KR time-zone barriers and prevent reverse engineering—**no pre-contract binary distribution, live API access, or video meetings are provided.**
+3. **Commercial Licensing & Full IP Transfer:** Upon execution of a definitive licensing/acquisition agreement and verified escrow settlement, complete clean-room source code (39 modular structural files), production binaries, and cryptographic master tokens are transferred in full.
 
 ---
 
