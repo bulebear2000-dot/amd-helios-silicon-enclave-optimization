@@ -66,7 +66,7 @@ We welcome technical due diligence and licensing inquiries from qualified semico
 
 1. **Mutual NDA (MNDA):** Execution of a standard bilateral non-disclosure agreement with verified corporate entities.
 2. **Asynchronous Black-Box Evaluation (Pure ASCII CSV):** Upon MNDA execution, partners submit custom 6-column Pure ASCII CSV test vectors at least 2 hours prior to the scheduled evaluation window (KST / UTC+9). Execution outputs and SHA-256 integrity seals are returned asynchronously to eliminate US/KR time-zone barriers and prevent reverse engineering—**no pre-contract binary distribution, live API access, or video meetings are provided.**
-3. **Commercial Licensing & Full IP Transfer:** Upon execution of a definitive licensing/acquisition agreement and verified escrow settlement, complete clean-room source code (39 modular structural files), production binaries, and cryptographic master tokens are transferred in full.
+3. **Commercial Licensing & Full IP Transfer:** Upon execution of a definitive licensing/acquisition agreement and verified irrevocable wire settlement, complete clean-room source code (39 modular structural files), production binaries, and cryptographic master tokens are transferred in full.
 
 ---
 
