@@ -46,11 +46,14 @@ All core state-machine modules were subjected to a 5-stage, 5,000,000-cycle dete
 ---
 
 ## 4. Repository Documentation & Reports
-* **[Verified Telemetry Fact Sheet (41st Run)](REPORTS/VERIFIED_TELEMETRY_FACT_SHEET.md):** Detailed scenario-by-scenario simulation metrics, latency deltas, and register lock states.
-* **[5M Extreme Silicon Test Log](REPORTS/5M_EXTREME_SILICON_TEST.log):** Raw 5,000,000-cycle execution audit log with SHA-256 cryptographic integrity seals.
-* **[5M Extreme Fuzzing Stress Log](REPORTS/5M_EXTREME_FUZZ_TEST.log):** Out-of-bounds noise & extreme boundary fuzzing audit (0–99G / 0–20kHz, 5M cycles, 0 failures).
-* **[Enterprise Procurement & IP Summary](PROCUREMENT_SUMMARY.md):** Patent status, clean-room IP governance, risk mitigation ROI, and HIL evaluation requirements.
-* **[Commercial Use Cases & Integration Scenarios](USE_CASES.md):** Real-world operational workflows across emergency response, automotive security, and offline edge settlement.
+• Verified Telemetry Fact Sheet (41st Run): Detailed scenario-by-scenario Pre-Silicon SIL simulation metrics across 52 ecosystem components, latency deltas, and register lock states.
+• 5M Extreme Silicon Test Log (REV5): Raw 5,000,000-cycle state-machine execution and timer escalation audit log.
+• 5M Full-Spectrum & ECU Audit Log: Compact 5,000,000-cycle EMS lock, ECU soft-brick, and Module 320 recovery audit log.
+• 5M Extreme Stress Audit Log: Out-of-bounds noise & extreme boundary fuzzing audit (0–99G / 0–20kHz, 5M cycles, 0 failures).
+• Real CPU Benchmark Log: Baseline 5,000,000-cycle deterministic state-transition timing and throughput benchmark.
+• Cryptographic Integrity Manifest: Standard SHA-256 checksums for verifying all raw log files (sha256sum -c SHA256SUMS.txt).
+• Enterprise Procurement & IP Summary: Patent status, clean-room IP governance, risk mitigation ROI, and HIL evaluation requirements.
+• Commercial Use Cases & Integration Scenarios: Real-world operational workflows across emergency response, automotive security, and offline edge settlement.
 
 ---
 
