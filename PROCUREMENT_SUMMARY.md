@@ -14,7 +14,7 @@
 
 ## 3. COMMERCIAL EVALUATION & LICENSING PROTOCOL
 1. **Mutual NDA (MNDA):** Bilateral non-disclosure agreement execution prior to data exchange.
-2. **Asynchronous Black-Box Evaluation:** Vector testing conducted via ASCII CSV format with SHA-256 verification (no live APIs, pre-contract binaries, or meetings).
+2. **Asynchronous Black-Box Evaluation:** Vector testing conducted via ASCII CSV format with SHA-256 verification (no live APIs, pre-contract binaries, or pre-MNDA meetings; partners are encouraged to submit extreme out-of-bounds fuzzing vectors).
 3. **Commercial Licensing & IP Transfer:** Full source code, binaries, and master tokens transferred upon contract execution and escrow settlement.
 
 ## 4. LEGAL SAFE HARBOR & REPRESENTATION DISCLAIMER
