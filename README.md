@@ -60,6 +60,8 @@ All core state-machine modules were subjected to a 5-stage, 5,000,000-cycle dete
 ## 5. Intellectual Property Protection & Evaluation Protocol
 To protect proprietary algorithms and prevent unauthorized reverse engineering, **raw source code and unencrypted production binaries are not hosted in this public repository.**
 
+Partners are explicitly encouraged to inject arbitrary out-of-bounds values, malformed stimulus vectors, extreme boundary spikes, and high-frequency fuzzing sequences into the 6-column CSV payload to verify zero-crash determinism.
+
 We welcome technical due diligence and licensing inquiries from qualified semiconductor, automotive, and enterprise infrastructure partners under the following standard protocol:
 
 1. **Mutual NDA (MNDA):** Execution of a standard bilateral non-disclosure agreement with verified corporate entities.
