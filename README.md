@@ -40,10 +40,6 @@ Compiled from 39 modular structural files (52 ecosystem components) into nine (9
 
 Project Shuzi (v8.4) completed cold-start (drop_caches) black-box verification across 1,031,877,880 total stimulus vectors (~44.5 GB combined raw input; 44G + 463M), incorporating malformed line lengths (MAX_LINE_BYTES: 32,839), null-byte injections (22,708,252 instances), and oversized buffer payloads (996,898 instances exceeding 256B).
 
-Quarantine & 1B Scale Telemetry (v8.4)
-
-Full scale benchmarks and telemetry data, including the 10M Precision Chaos and 1B Trojan Chaos workload metrics, security invariants (PRANK: 0, VULN: 0, etc.), cryptographic verification artifacts, and architecture scaling notes for commodity Linux hosts, are structured in the detailed markdown tables and logs provided in the project documentation.
-
 ### Dual-Layer Quarantine & 1-Billion Vector Audit (`v8.4`)
 
 | Audit Suite | Executed Vectors | Pass / Crash | Peak Memory (Delta) | Throughput (VEC/S) | Worst Latency | Blocked Threats & Anomalies Neutralized |
@@ -59,7 +55,9 @@ Full scale benchmarks and telemetry data, including the 10M Precision Chaos and 
   * `1B`: `6880aa490760e3e0494891ac6fc8a1b532bd8f8a1080021b2e2b1ed6331ac344`
 * **Zero Security Escalation:** `ESC: 0 | VULN: 0 | SILENT: 0 | DMG: 0 | ECU_BRICK: 0 | MOD_320: 0` across all 1,031,877,880 combined vectors.
 
-*Note: v8.4 1B/10M audits were executed under Cold-Start conditions on a standard Linux desktop environment within a `SOCKET_LOCKED` 512MB sandbox (`10M` elapsed: 15.12s; `1B` elapsed: 1,553.26s). Physical hardware waveform validation and bare-metal kernel driver integration are scheduled for post-MNDA partner evaluation.*
+*Note: Quarantine & 1B Scale Telemetry (v8.4)
+
+Full scale benchmarks and telemetry data, including the 10M Precision Chaos and 1B Trojan Chaos workload metrics, security invariants (PRANK: 0, VULN: 0, etc.), cryptographic verification artifacts, and architecture scaling notes for commodity Linux hosts, are structured in the detailed markdown tables and logs provided in the project documentation.*
 
 ---
 
