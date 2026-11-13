@@ -73,6 +73,29 @@ Project Shuzi (v8.4) offers a public black-box testing track that requires no ND
 
 ### Track A: Public Open Black-Box CSV Challenge (No NDA Required)
 Developers can submit custom 6-column ASCII CSV payloads (`test_vectors.csv`) to test the v8.4 quarantine engine and receive telemetry reports without signing an NDA.
+### Track A: Public Open Black-Box CSV Challenge (No NDA Required)
+
+Think you can break the v8.4 deterministic state machine, trigger an unhandled exception, or cause a memory leak? Build your own generator and submit custom **6-column ASCII CSV payloads** (`test_vectors.csv`) to stress-test our quarantine engine—no NDA required.
+
+#### Expected 6-Column CSV Schema
+```text
+timestamp_ms,sensor_value,frequency_hz,signal_dbm,state_tag,alert_flag
+```
+
+#### Baseline Valid Examples
+```csv
+1731500001000,1.2,210.0,-65.0,STANDBY,0
+1731500002000,8.1,850.0,-20.0,DISTRESS,1
+1731500003000,0.5,210.0,-80.0,PRANK,0
+```
+
+#### Challenge Rules & Attack Surface
+
+timestamp_ms,sensor_value,frequency_hz,signal_dbm,state_tag,alert_fla
+* **Anything Goes:** Feel free to inject `NaN`, `±Infinity`, `Int64` overflows, null bytes (`0x00`), ANSI escape sequences, unclosed quotes, 32KB+ buffer-probing lines, column explosions, timestamp reversals, or 1ms state-machine thrashing.
+* **What You Get Back:** Once processed through our isolated black-box enclave, you will receive a full telemetry report including throughput, worst-case latency, RSS memory delta, and SHA-256 cryptographic integrity seals.
+* **Submission:** Use the intake channel below to upload or link your `test_vectors.csv` payload.
+
 
 ### Track B: Enterprise Technical Due Diligence & Commercial Licensing
 For verified corporate and semiconductor partners:
