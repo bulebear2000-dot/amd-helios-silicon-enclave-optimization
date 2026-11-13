@@ -40,26 +40,22 @@ Compiled from 39 modular structural files (52 ecosystem components) into nine (9
 
 To validate deterministic stability under extreme adversarial conditions, **Project Shuzi (v8.4)** underwent Cold-Start (`drop_caches`) black-box audits up to **1.02 billion vectors (~70GB raw payload)** containing malformed lines (`MAX_LINE_BYTES: 32,839`), null-byte traps (`22.6M+`), and oversized buffer bombs (`986K+`).
 
-### A. Dual-Layer Quarantine & 1-Billion Vector Audit (`v8.4`)
+### Dual-Layer Quarantine & 1-Billion Vector Audit (`v8.4`)
 
-| Audit Suite | Executed Vectors | Pass / Crash | Peak Memory (Delta) | Throughput (VEC/S) | Blocked Threats & Anomalies Neutralized |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| **10M Precision Chaos Audit** | 10,086,766 | 100% / **0** | 16,448 KB (+184 KB) | 666,996 | `9,970` oversized (>256B), `91,650` null bytes (`MATCH_PRE: True`) |
-| **1B Trojan Chaos Audit** | **1,021,791,114** | 100% / **0** | **16,248 KB (+184 KB)** | **657,835** | **`986,928` oversized (>256B), `22,616,602` null bytes (`MATCH_PRE: True`)** |
+| Audit Suite | Executed Vectors | Pass / Crash | Peak Memory (Delta) | Throughput (VEC/S) | Worst Latency | Blocked Threats & Anomalies Neutralized |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **10M Precision Chaos Audit** | 10,086,766 | 100% / **0** | 16,448 KB (+184 KB) | 666,996 | 121.41 µs | `9,970` oversized (>256B), `91,650` null bytes (`MATCH_PRE: True`) |
+| **1B Trojan Chaos Audit** | **1,021,791,114** | 100% / **0** | **16,248 KB (+184 KB)** | **657,835** | **2,193.89 µs** | **`986,928` oversized (>256B), `22,616,602` null bytes (`MATCH_PRE: True`)** |
 
-* **Cryptographic Integrity Seal (`1B` Payload):** `7219504a4e7657e491d5971450ddb1408effc6ab1906435fb05cc7bd2b494645`
-* **State-Chain Hash (`1B` Audit):** `6880aa490760e3e0494891ac6fc8a1b532bd8f8a1080021b2e2b1ed6331ac344`
-* **Zero Security Escalation:** `ESC: 0 | VULN: 0 | SILENT: 0 | DMG: 0 | ECU_BRICK: 0` across all 1,021,791,114 vectors.
+* **Cryptographic Integrity Seal (`10M` / `1B` Payload):**
+  * `10M`: `1cd651949ea8dfed12516b8255169911d9eae78e85b1afb528e9b8c910fdd3f8`
+  * `1B`: `7219504a4e7657e491d5971450ddb1408effc6ab1906435fb05cc7bd2b494645`
+* **State-Chain Hash (`10M` / `1B` Audit):**
+  * `10M`: `1401a736f990d1414d0c335df5bc4bd8724977da2e2684878c4a13787d2d7350`
+  * `1B`: `6880aa490760e3e0494891ac6fc8a1b532bd8f8a1080021b2e2b1ed6331ac344`
+* **Zero Security Escalation:** `ESC: 0 | VULN: 0 | SILENT: 0 | DMG: 0 | ECU_BRICK: 0 | MOD_320: 0` across all 1,031,877,880 combined vectors.
 
-### B. Core State-Machine Pre-Silicon Baseline (`5M-Cycle` SIL Verification)
-
-| Test Suite | Executed Cycles | Pass / Fail | Elapsed Time | Throughput (OPS/SEC) | Key Validation Scope |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| **Core CPU State-Machine** | 5,000,000 | 5M / 0 | 131.12 ms | 38.13M | 5-stage emergency & ECU fault scenarios |
-| **REV5 Timer & Escalation** | 5,000,000 | 5M / 0 | 151.44 ms | 33.02M | Interactive user-ack timeout & auto-EMS routing |
-| **Full-Spectrum & ECU Audit** | 5,000,000 | 5M / 0 | 4,687.43 ms | 1.07M | Compact EMS lock, ECU soft-brick & Module 320 recovery |
-
-*Note: v8.4 1B/10M audits were executed under Cold-Start conditions on a standard Linux desktop environment within a `SOCKET_LOCKED` 512MB sandbox. Physical hardware waveform validation and bare-metal kernel driver integration are scheduled for post-MNDA partner evaluation.*
+*Note: v8.4 1B/10M audits were executed under Cold-Start conditions on a standard Linux desktop environment within a `SOCKET_LOCKED` 512MB sandbox (`10M` elapsed: 15.12s; `1B` elapsed: 1,553.26s). Physical hardware waveform validation and bare-metal kernel driver integration are scheduled for post-MNDA partner evaluation.*
 
 ---
 
