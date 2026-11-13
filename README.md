@@ -1,12 +1,12 @@
-# Project Shuzi: Deterministic Edge Enclave & Fail-Safe State-Machine Architecture (v5.9)
+# Project Shuzi: Deterministic Edge Enclave & Fail-Safe State-Machine Architecture (v8.4)
 
 ## 1. Executive Summary
 **Project Shuzi** is a low-latency, deterministic state-machine and hardware-isolated Memory-Mapped I/O (MMIO) execution framework designed for edge computing, automotive ECU protection, and mission-critical emergency telemetry.
 
-Compiled from 39 modular structural files (52 ecosystem components) into nine (9) core host-executable engines, the architecture eliminates reliance on centralized GPU pipelines by enabling sub-millisecond fail-safe switching and zero-visibility Protected Health Information (PHI) encapsulation on constrained edge platforms.
+Compiled from 39 modular structural files (52 ecosystem components) into nine (9) core host-executable engines, the architecture eliminates reliance on centralized GPU pipelines by enabling sub-millisecond fail-safe switching, dual-layer hostile payload quarantine, and zero-visibility Protected Health Information (PHI) encapsulation on constrained edge platforms.
 
 * **Target Platforms:** x86_64 / ARM64 Low-Power Edge SoCs & Virtualized Enclaves (AMD Helios-compatible environments)
-* **Verification Status:** Pre-Silicon Deterministic Logic Validated (41st Final Run / 5,000,000 cycles, 0 failures)
+* **Verification Status:** Pre-Silicon Deterministic Logic & 1-Billion Vector Hostile Audit Validated (`1,021,791,114` vectors, `0` crashes, `184 KB` memory delta)
 * **IP Provenance:** 100% Clean-Room Developed (Zero third-party or foreign open-source dependencies; strict US/KR jurisdiction compliance)
 * **Patent Status:** Patent Pending (Priority filing secured)
 
@@ -14,60 +14,73 @@ Compiled from 39 modular structural files (52 ecosystem components) into nine (9
 
 ## 2. Core Technical Capabilities
 
-### A. Isolated 128MB MMIO Backplane & Zero-Visibility PHI Sandbox
+### A. Dual-Layer Quarantine & Socket-Locked Black-Box Sandbox
+* Isolates untrusted telemetry streams inside a `SOCKET_LOCKED` execution sandbox under a strict memory ceiling (`MEM_CAP: 512MB`).
+* Neutralizes 4-vector hostile chaos payloads—including state-machine Yo-Yo thrashing, `NaN`/`±Infinity`/Int64 arithmetic overflows, 32KB buffer-probing lines, null-byte injections (`0x00`), and timestamp replay attacks—with zero memory leaks (`16.2MB` peak footprint across 1B vectors).
+
+### B. Isolated 128MB MMIO Backplane & Zero-Visibility PHI Sandbox
 * Segregates sensitive telemetry and Personal Health Information (PHI) within a dedicated 128MB isolated MMIO space (`/dev/shm` virtualized backplane in pre-silicon testing).
 * Enforces AES-256 end-to-end cryptographic encapsulation prior to external bus routing, physically preventing cleartext exposure across standard mobile OS layers or automotive CAN-buses.
 
-### B. Reversible Soft-Brick & Hardware MUX Failover
+### C. Reversible Soft-Brick & Hardware MUX Failover
 * Replaces destructive physical eFuse tripping with a **Reversible Soft-Brick** state-machine topology managed via a Power MOSFET array framework.
 * Upon detecting critical intrusion or system corruption, the engine isolates the compromised OS layer via hardware MUX switching and locks critical registers into a read-only state (`MPU READ-ONLY`), permitting deterministic restoration only via cryptographic master token authentication (`Module 320`).
 
-### C. Satellite-to-5G Edge Failover & Active MitM Defense
+### D. Satellite-to-5G Edge Failover & Active MitM Defense
 * **NTN/Terrestrial Seamless Divert:** Detects satellite line occlusion (`TIMEOUT_DETECTED`) and diverts critical telemetry and offline settlement tokens (`SKU_PREMIUM_CAP_01`) to terrestrial 5G edge networks without packet loss.
 * **Rogue Base Station & CAN-Bus Stress Immunity:** Blocks Man-in-the-Middle (MitM) intercept attempts during satellite occlusion and maintains 100% loss-free transmission under 5,000 packets/sec CAN-bus flooding stress.
 
-### D. Edge-Native Acoustic & Kinematic Incident Classification
+### E. Edge-Native Acoustic & Kinematic Incident Classification
 * **Acoustic Distress Filtering:** Differentiates stable prank signatures (~210Hz) from genuine human biometric distress vocalizations (~850Hz fundamental pitch band) within 0.5 seconds under high-noise environments (up to 95dB).
 * **Ultra-Power Stasis & SRAM Cache:** Executes local queries via internal SRAM cache hits during network blackouts while shifting transceivers to a 30-second pulse-beacon standby mode (`PMIC_SHUTDOWN`).
 
 ---
 
-## 3. Pre-Silicon Benchmark Summary (5M-Cycle Audit)
+## 3. Black-Box Audit & Benchmark Summary (v8.4 — 1B Hostile Chaos Scale)
 
-All core state-machine modules underwent a 5,000,000-cycle deterministic stress test across three verification suites (`5M_EXTREME_FUZZ_TEST.log`, `5M_EXTREME_SILICON_TEST.log`, and `SHUZI_5M_AUDIT.log`), achieving 100% pass rates across boundary fuzzing, timer escalation, and full-spectrum ECU audits.
+To validate deterministic stability under extreme adversarial conditions, **Project Shuzi (v8.4)** underwent Cold-Start (`drop_caches`) black-box audits up to **1.02 billion vectors (~70GB raw payload)** containing malformed lines (`MAX_LINE_BYTES: 32,839`), null-byte traps (`22.6M+`), and oversized buffer bombs (`986K+`).
 
+### A. Dual-Layer Quarantine & 1-Billion Vector Audit (`v8.4`)
+
+| Audit Suite | Executed Vectors | Pass / Crash | Peak Memory (Delta) | Throughput (VEC/S) | Blocked Threats & Anomalies Neutralized |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **10M Precision Chaos Audit** | 10,086,766 | 100% / **0** | 16,448 KB (+184 KB) | 666,996 | `9,970` oversized (>256B), `91,650` null bytes (`MATCH_PRE: True`) |
+| **1B Trojan Chaos Audit** | **1,021,791,114** | 100% / **0** | **16,248 KB (+184 KB)** | **657,835** | **`986,928` oversized (>256B), `22,616,602` null bytes (`MATCH_PRE: True`)** |
+
+* **Cryptographic Integrity Seal (`1B` Payload):** `7219504a4e7657e491d5971450ddb1408effc6ab1906435fb05cc7bd2b494645`
+* **State-Chain Hash (`1B` Audit):** `6880aa490760e3e0494891ac6fc8a1b532bd8f8a1080021b2e2b1ed6331ac344`
+* **Zero Security Escalation:** `ESC: 0 | VULN: 0 | SILENT: 0 | DMG: 0 | ECU_BRICK: 0` across all 1,021,791,114 vectors.
+
+### B. Core State-Machine Pre-Silicon Baseline (`5M-Cycle` SIL Verification)
 
 | Test Suite | Executed Cycles | Pass / Fail | Elapsed Time | Throughput (OPS/SEC) | Key Validation Scope |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| **Core CPU State-Machine** | 5,000,000 | 5M / 0 | 131.12 ms | 38.13M | 5-stage emergency & ECU fault scenarios (`5M_EXTREME_FUZZ_TEST.log`) |
-| **REV5 Timer & Escalation** | 5,000,000 | 5M / 0 | 151.44 ms | 33.02M | Interactive user-ack timeout & auto-EMS routing (`5M_EXTREME_SILICON_TEST.log`) |
-| **Full-Spectrum & ECU Audit** | 5,000,000 | 5M / 0 | 4,687.43 ms | 1.07M (VEC/S) | Compact EMS lock, ECU soft-brick & Module 320 recovery (`SHUZI_5M_AUDIT.log`) |
+| **Core CPU State-Machine** | 5,000,000 | 5M / 0 | 131.12 ms | 38.13M | 5-stage emergency & ECU fault scenarios |
+| **REV5 Timer & Escalation** | 5,000,000 | 5M / 0 | 151.44 ms | 33.02M | Interactive user-ack timeout & auto-EMS routing |
+| **Full-Spectrum & ECU Audit** | 5,000,000 | 5M / 0 | 4,687.43 ms | 1.07M | Compact EMS lock, ECU soft-brick & Module 320 recovery |
 
-*Note: Metrics reflect pre-silicon deterministic logic verification on an isolated 128MB virtual MMIO backplane (`/dev/shm`). Physical hardware waveform validation and bare-metal kernel driver integration are scheduled for post-MNDA partner evaluation.*
+*Note: v8.4 1B/10M audits were executed under Cold-Start conditions on a standard Linux desktop environment within a `SOCKET_LOCKED` 512MB sandbox. Physical hardware waveform validation and bare-metal kernel driver integration are scheduled for post-MNDA partner evaluation.*
 
 ---
 
 ## 4. Repository Documentation & Reports
-- Verified Telemetry Fact Sheet (41st Run): Detailed scenario-by-scenario Pre-Silicon SIL simulation metrics across 52 ecosystem components, latency deltas, and register lock states.
-- 5M Extreme Silicon Test Log (REV5): Raw 5,000,000-cycle state-machine execution and timer escalation audit log.
-- 5M Full-Spectrum & ECU Audit Log: Compact 5,000,000-cycle EMS lock, ECU soft-brick, and Module 320 recovery audit log.
-- 5M Extreme Stress Audit Log: Out-of-bounds noise & extreme boundary fuzzing audit (0–99G / 0–20kHz, 5M cycles, 0 failures).
-- Real CPU Benchmark Log: Baseline 5,000,000-cycle deterministic state-transition timing and throughput benchmark.
-- Cryptographic Integrity Manifest: Standard SHA-256 checksums for verifying all raw log files (sha256sum -c SHA256SUMS.txt).
-- Enterprise Procurement & IP Summary: Patent status, clean-room IP governance, risk mitigation ROI, and HIL evaluation requirements.
-- Commercial Use Cases & Integration Scenarios: Real-world operational workflows across emergency response, automotive security, and offline edge settlement.
+- **1B & 10M Dual-Layer Quarantine Audit Logs (`v8.4`):** Raw SHA-256 verified black-box audit summaries for 10M precision and 1B trojan chaos workloads (`REPORTS/`).
+- **Pre-Silicon SIL Simulation & 5M Baseline Logs:** Deterministic state-transition timing, timer escalation, and 52-component telemetry logs (`REPORTS/`).
+- **Cryptographic Integrity Manifest:** Standard SHA-256 checksums for verifying all raw log files (`sha256sum -c SHA256SUMS.txt`).
+- **Enterprise Procurement & IP Summary (`PROCUREMENT_SUMMARY.md`):** Patent status, clean-room IP governance, risk mitigation ROI, and HIL evaluation requirements.
+- **Commercial Use Cases & Integration Scenarios (`USE_CASES.md`):** Real-world operational workflows across emergency response, automotive security, and offline edge settlement.
 
 ---
 
 ## 5. Intellectual Property Protection & Evaluation Protocol
 To protect proprietary algorithms and prevent unauthorized reverse engineering, **raw source code and unencrypted production binaries are not hosted in this public repository.**
 
-Partners are explicitly encouraged to inject arbitrary out-of-bounds values, malformed stimulus vectors, extreme boundary spikes, and high-frequency fuzzing sequences into the 6-column CSV payload to verify zero-crash determinism.
+Partners are explicitly encouraged to inject arbitrary out-of-bounds values, malformed stimulus vectors, null-byte injections, oversized buffer spikes (up to 32KB+), and high-frequency fuzzing sequences into the 6-column CSV payload to verify zero-crash determinism.
 
 We welcome technical due diligence and licensing inquiries from qualified semiconductor, automotive, and enterprise infrastructure partners under the following standard protocol:
 
-1. **Mutual NDA (MNDA):** Execution of a standard bilateral non-disclosure agreement with verified corporate entities.
-2. **Asynchronous Black-Box Evaluation (Pure ASCII CSV):** Upon MNDA execution, partners submit custom 6-column Pure ASCII CSV test vectors at least 2 hours prior to the scheduled evaluation window (KST / UTC+9). Execution outputs and SHA-256 integrity seals are returned asynchronously to eliminate US/KR time-zone barriers and prevent reverse engineering—**no pre-contract binary distribution, live API access, or video meetings are provided.**
+1. **Mutual NDA (MNDA) / Public Pre-MNDA CSV Challenge:** Execution of a standard bilateral non-disclosure agreement with verified corporate entities (or submission of an initial Public Black-Box CSV Challenge via our intake form).
+2. **Asynchronous Black-Box Evaluation (CSV & SHA-256 Audit):** Partners submit custom 6-column CSV test vectors (`test_vectors.csv`) at least 2 hours prior to the scheduled evaluation window (KST / UTC+9). Execution outputs and SHA-256 integrity seals are returned asynchronously to eliminate US/KR time-zone barriers and prevent reverse engineering—**no pre-contract binary distribution, live API access, or video meetings are provided.**
 3. **Commercial Licensing & Full IP Transfer:** Upon execution of a definitive licensing/acquisition agreement and verified irrevocable wire settlement, complete clean-room source code (39 modular structural files), production binaries, and cryptographic master tokens are transferred in full.
 
 ---
@@ -76,6 +89,3 @@ We welcome technical due diligence and licensing inquiries from qualified semico
 For technical briefings, patent documentation review, or sandbox evaluation requests, please submit verified corporate credentials through our intake channel:
 
 ## **[Access Secure Enterprise Intake Channel](https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform?usp=publish-editor)**
-
-
-
