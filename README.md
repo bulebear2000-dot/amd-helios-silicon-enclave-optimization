@@ -69,7 +69,7 @@ Project Shuzi (v8.4) completed cold-start (drop_caches) black-box verification a
 
 ## 5. Open Black-Box CSV Challenge & Enterprise Protocol
 
-Project Shuzi (v8.4) offers a public black-box testing track that requires no NDA alongside an enterprise-level due diligence track.
+Project Shuzi (v8.4) provides a public black-box testing track for 6-column ASCII CSV telemetry payloads (`timestamp_ms,sensor_value,frequency_hz,signal_dbm,state_tag,alert_flag`) without requiring an NDA.
 
 ### Track A: Public Open Black-Box CSV Challenge (No NDA Required)
 Developers can submit custom 6-column ASCII CSV payloads (`test_vectors.csv`) to test the v8.4 quarantine engine and receive telemetry reports without signing an NDA.
