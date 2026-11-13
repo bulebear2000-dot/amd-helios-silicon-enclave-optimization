@@ -38,7 +38,11 @@ Compiled from 39 modular structural files (52 ecosystem components) into nine (9
 
 ## 3. Black-Box Audit & Benchmark Summary (v8.4 — 1B Hostile Chaos Scale)
 
-To validate deterministic stability under extreme adversarial conditions, **Project Shuzi (v8.4)** underwent Cold-Start (`drop_caches`) black-box audits up to **1.02 billion vectors (~70GB raw payload)** containing malformed lines (`MAX_LINE_BYTES: 32,839`), null-byte traps (`22.6M+`), and oversized buffer bombs (`986K+`).
+Project Shuzi (v8.4) completed cold-start (drop_caches) black-box verification across 1,031,877,880 total stimulus vectors (~44.5 GB combined raw input; 44G + 463M), incorporating malformed line lengths (MAX_LINE_BYTES: 32,839), null-byte injections (22,708,252 instances), and oversized buffer payloads (996,898 instances exceeding 256B).
+
+Quarantine & 1B Scale Telemetry (v8.4)
+
+Full scale benchmarks and telemetry data, including the 10M Precision Chaos and 1B Trojan Chaos workload metrics, security invariants (PRANK: 0, VULN: 0, etc.), cryptographic verification artifacts, and architecture scaling notes for commodity Linux hosts, are structured in the detailed markdown tables and logs provided in the project documentation.
 
 ### Dual-Layer Quarantine & 1-Billion Vector Audit (`v8.4`)
 
