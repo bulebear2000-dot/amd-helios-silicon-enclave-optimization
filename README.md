@@ -67,20 +67,23 @@ Project Shuzi (v8.4) completed cold-start (drop_caches) black-box verification a
 
 ---
 
-## 5. Intellectual Property Protection & Evaluation Protocol
-To protect proprietary algorithms and prevent unauthorized reverse engineering, **raw source code and unencrypted production binaries are not hosted in this public repository.**
+## 5. Open Black-Box CSV Challenge & Enterprise Protocol
 
-Partners are explicitly encouraged to inject arbitrary out-of-bounds values, malformed stimulus vectors, null-byte injections, oversized buffer spikes (up to 32KB+), and high-frequency fuzzing sequences into the 6-column CSV payload to verify zero-crash determinism.
+Project Shuzi (v8.4) offers a public black-box testing track that requires no NDA alongside an enterprise-level due diligence track.
 
-We welcome technical due diligence and licensing inquiries from qualified semiconductor, automotive, and enterprise infrastructure partners under the following standard protocol:
+### Track A: Public Open Black-Box CSV Challenge (No NDA Required)
+Developers can submit custom 6-column ASCII CSV payloads (`test_vectors.csv`) to test the v8.4 quarantine engine and receive telemetry reports without signing an NDA.
 
-1. **Mutual NDA (MNDA) / Public Pre-MNDA CSV Challenge:** Execution of a standard bilateral non-disclosure agreement with verified corporate entities (or submission of an initial Public Black-Box CSV Challenge via our intake form).
-2. **Asynchronous Black-Box Evaluation (CSV & SHA-256 Audit):** Partners submit custom 6-column CSV test vectors (`test_vectors.csv`) at least 2 hours prior to the scheduled evaluation window (KST / UTC+9). Execution outputs and SHA-256 integrity seals are returned asynchronously to eliminate US/KR time-zone barriers and prevent reverse engineering—**no pre-contract binary distribution, live API access, or video meetings are provided.**
-3. **Commercial Licensing & Full IP Transfer:** Upon execution of a definitive licensing/acquisition agreement and verified irrevocable wire settlement, complete clean-room source code (39 modular structural files), production binaries, and cryptographic master tokens are transferred in full.
+### Track B: Enterprise Technical Due Diligence & Commercial Licensing
+For verified corporate and semiconductor partners:
+1. **Mutual NDA (MNDA):** Bilateral non-disclosure agreement.
+2. **Dedicated HIL Evaluation:** Hardware-level validation.
+3. **Commercial Licensing & Full IP Transfer:** Transfer of source code and master tokens upon settlement.
 
 ---
 
-## 6. Corporate & Licensing Inquiries
-For technical briefings, patent documentation review, or sandbox evaluation requests, please submit verified corporate credentials through our intake channel:
+## 6. Open Challenge Submission & Corporate Inquiries
+
+To submit custom CSV payloads for the **Public Black-Box Challenge (No NDA)**, or to request enterprise technical briefings and patent documentation under MNDA, please use our intake channel:
 
 ## **[Access Secure Enterprise Intake Channel](https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform?usp=publish-editor)**
