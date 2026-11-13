@@ -1,8 +1,8 @@
 # COMMERCIAL USE CASES & INTEGRATION SCENARIOS
-### Project Shuzi (v5.9) — Real-World Operational Workflows
+### Project Shuzi (v8.4) — Real-World Operational Workflows
 
 ## Overview
-Beyond low-level hardware isolation and state-machine determinism, **Project Shuzi** is architected to solve critical operational bottlenecks across emergency response, healthcare data privacy, offline edge commerce, and automotive security.
+Beyond low-level hardware isolation and state-machine determinism, **Project Shuzi (v8.4)** is architected to solve critical operational bottlenecks across emergency response, healthcare data privacy, offline edge commerce, and automotive security.
 
 ---
 
