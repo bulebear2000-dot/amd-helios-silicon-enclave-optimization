@@ -61,7 +61,6 @@ Project Shuzi (v8.4) completed cold-start (drop_caches) black-box verification a
 
 ## 4. Repository Documentation & Reports
 - **1B & 10M Dual-Layer Quarantine Audit Logs (`v8.4`):** Raw SHA-256 verified black-box audit summaries for 10M precision and 1B trojan chaos workloads (`REPORTS/`).
-- **Pre-Silicon SIL Simulation & 5M Baseline Logs:** Deterministic state-transition timing, timer escalation, and 52-component telemetry logs (`REPORTS/`).
 - **Cryptographic Integrity Manifest:** Standard SHA-256 checksums for verifying all raw log files (`sha256sum -c SHA256SUMS.txt`).
 - **Enterprise Procurement & IP Summary (`PROCUREMENT_SUMMARY.md`):** Patent status, clean-room IP governance, risk mitigation ROI, and HIL evaluation requirements.
 - **Commercial Use Cases & Integration Scenarios (`USE_CASES.md`):** Real-world operational workflows across emergency response, automotive security, and offline edge settlement.
