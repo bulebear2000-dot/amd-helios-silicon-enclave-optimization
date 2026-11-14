@@ -68,6 +68,8 @@ Project Shuzi (v8.4) provides a public black-box testing track for 6-column ASCI
 * **What You Get Back:** Once processed through our isolated black-box enclave, you will receive a full telemetry report including throughput, worst-case latency, RSS memory delta, and SHA-256 cryptographic integrity seals.
 
 #### Expected 6-Column CSV Schema & Baseline Examples
+#### Expected 6-Column CSV Schema & Baseline Examples
+
 ```csv
 timestamp_ms,sensor_value,frequency_hz,signal_dbm,state_tag,alert_flag
 1731500001000,1.2,210.0,-65.0,STANDBY,0
@@ -76,7 +78,9 @@ timestamp_ms,sensor_value,frequency_hz,signal_dbm,state_tag,alert_flag
 ```
 
 ### Track B: Enterprise Technical Due Diligence & Commercial Licensing
+
 For verified corporate and semiconductor partners:
+
 1. **Mutual NDA (MNDA):** Bilateral non-disclosure agreement.
 2. **Dedicated HIL Evaluation:** Hardware-level validation on target silicon platforms.
 3. **Commercial Licensing & Full IP Transfer:** Transfer of source code and master tokens upon settlement.
@@ -86,6 +90,5 @@ For verified corporate and semiconductor partners:
 ## 6. Open Challenge Submission & Corporate Inquiries
 
 To submit custom CSV payloads for the **Public Black-Box Challenge (No NDA)**, or to request enterprise technical briefings and patent documentation under MNDA, please use our intake channel:
-
 ### **[Access Secure Enterprise Intake Channel](https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform?usp=publish-editor)**
 
