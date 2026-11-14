@@ -21,4 +21,4 @@
 
 ## 4. SECURE INTAKE & SUBMISSION CHANNEL
 
-• Asynchronous Enterprise Intake Portal: (https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform?usp=publish-editor)
+• **Asynchronous Enterprise Intake Portal: (https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform?usp=publish-editor)**
