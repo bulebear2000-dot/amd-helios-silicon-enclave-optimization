@@ -1,9 +1,9 @@
 # Project Shuzi (v8.4) — Deterministic Edge Enclave & Multi-Billion Vector Streaming Audit
 
-[![Architecture](https://shields.io)]()
-[![Memory](https://shields.io)]()
-[![Throughput](https://shields.io)]()
-[![Status](https://shields.io)]()
+![Architecture](https://shields.io)
+![Memory](https://shields.io)
+![Throughput](https://shields.io)
+![Status](https://shields.io)
 
 **Project Shuzi (v8.4)** is a clean-room, deterministic state-machine and Memory-Mapped I/O (MMIO) execution architecture engineered for high-density data center telemetry, edge computing, automotive ECU protection, and zero-visibility Protected Health Information (PHI) encapsulation.
 
@@ -45,16 +45,16 @@ Every execution across 1B single-core and 4B multi-core runs produced identical 
 * `run_verify_v5.py` — Deterministic 1-Billion row (~80 GB) hostile chaos dataset generator & single-core audit launcher.
 * `run_multicore_4p.sh` — 4x physical P-Core (`CPU 0, 2, 4, 6`) Shared-Nothing parallel scaling harness (`4.03B` aggregate vectors).
 * `logs/` — Raw cryptographic audit logs (`SHUZI_V8_4_DUAL_AUDIT_*.log`, `audit_pcore_*.out`).
-
 * **Zero Security Escalation:** All security metrics (`ESC`, `VULN`, `SILENT`, `DMG`, `ECU_BRICK`, `MOD_320`) remain `0` across all **4,034,671,456** aggregate vectors (`EMS_LOCK: 0`, `MED_PACKET_TX: 0`, `100% SYNCED: True`).
 
 ---
 
 ## 4. Repository Documentation & Reports
-- **1B & 10M Dual-Layer Quarantine Audit Logs (`v8.4`):** Raw SHA-256 verified black-box audit summaries for 10M precision and 1B trojan chaos workloads (`REPORTS/`).
-- **Cryptographic Integrity Manifest:** Standard SHA-256 checksums for verifying all raw log files (`sha256sum -c SHA256SUMS.txt`).
-- **Enterprise Procurement & IP Summary (`PROCUREMENT_SUMMARY.md`):** Patent status, clean-room IP governance, risk mitigation ROI, and HIL evaluation requirements.
-- **Commercial Use Cases & Integration Scenarios (`USE_CASES.md`):** Real-world operational workflows across emergency response, automotive security, and offline edge settlement.
+
+* **1B & 10M Dual-Layer Quarantine Audit Logs (`v8.4`):** Raw SHA-256 verified black-box audit summaries for 10M precision and 1B trojan chaos workloads (`REPORTS/`).
+* **Cryptographic Integrity Manifest:** Standard SHA-256 checksums for verifying all raw log files (`sha256sum -c SHA256SUMS.txt`).
+* **Enterprise Procurement & IP Summary (`PROCUREMENT_SUMMARY.md`):** Patent status, clean-room IP governance, risk mitigation ROI, and HIL evaluation requirements.
+* **Commercial Use Cases & Integration Scenarios (`USE_CASES.md`):** Real-world operational workflows across emergency response, automotive security, and offline edge settlement.
 
 ---
 
