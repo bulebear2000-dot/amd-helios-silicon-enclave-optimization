@@ -44,15 +44,14 @@ Project Shuzi (v8.4) completed cold-start (drop_caches) black-box verification a
 
 | Audit Suite | Executed Vectors | Pass / Crash | Peak Memory (Delta) | Throughput (VEC/S) | Worst Latency | Blocked Threats & Anomalies Neutralized |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **10M Precision Chaos Audit** | 10,086,766 | 100% / **0** | 16,448 KB (+184 KB) | 666,996 | 121.41 µs | `9,970` oversized (>256B), `91,650` null bytes (`MATCH_PRE: True`) |
-| **1B Trojan Chaos Audit** | **1,021,791,114** | 100% / **0** | **16,248 KB (+184 KB)** | **657,835** | **2,193.89 µs** | **`986,928` oversized (>256B), `22,616,602` null bytes (`MATCH_PRE: True`)** |
+| **1B Precision Chaos Audit (`taskset -c 2`)** | **1,008,667,864** | 100% / **0** | **16,488 KB (+184 KB)** | **652,674** | **2,225.16 µs (`>50µs: 62`)** | **`998,354` oversized (>256B), `9,167,429` null bytes (`MATCH_PRE: True`)** |
 
-* **Cryptographic Integrity Seal (`10M` / `1B` Payload):**
-  * `10M`: `1cd651949ea8dfed12516b8255169911d9eae78e85b1afb528e9b8c910fdd3f8`
-  * `1B`: `7219504a4e7657e491d5971450ddb1408effc6ab1906435fb05cc7bd2b494645`
-* **State-Chain Hash (`10M` / `1B` Audit):**
-  * `10M`: `1401a736f990d1414d0c335df5bc4bd8724977da2e2684878c4a13787d2d7350`
-  * `1B`: `6880aa490760e3e0494891ac6fc8a1b532bd8f8a1080021b2e2b1ed6331ac344`
+* **Cryptographic Integrity Seal (`1B` Payload):**
+  * `PRE_SHA256 / RUN_SHA256`: `e8ee5dd69cf238eefb541c23c2f02b1a00a9609deeeb429d66d05386e0669d1f`
+* **State-Chain & Audit Output Hash (`1B` Audit):**
+  * `STATE_CHAIN`: `232d3fe1d555581c473e63c75c6d578e8fcba871701c6b98c8365b0cf8a65d30`
+  * `OUT_SHA256`: `b558dd290fd0cb81790062844c09148e557fed57f498aa1a4e5ef4a6ac024a11`
+
 * **Zero Security Escalation:** `ESC: 0 | VULN: 0 | SILENT: 0 | DMG: 0 | ECU_BRICK: 0 | MOD_320: 0` across all 1,031,877,880 combined vectors.
 
 *Note on Target Architecture & Scaling Invariance: Designed for AMD Helios rack-scale virtualized environments, these v8.4 audits were intentionally executed on an unpinned, resource-constrained commodity Linux laptop (non-RTOS, Cold-Start drop_caches, SOCKET_LOCKED 512MB sandbox; 10M elapsed: 15,122.67 ms [>50µs: 6], 1B elapsed: 1,553,263.34 ms [>50µs: 115]) to prove worst-case single-instance resilience without specialized hardware. Because memory footprint remains strictly bounded (16.2 MB RSS, +184 KB static delta across 44 GB I/O) with zero internal lock contention, single-node throughput scales linearly across high-density virtualized compute nodes.*
