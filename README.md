@@ -1,9 +1,11 @@
 # Project Shuzi (v8.4) — Deterministic Edge Enclave & Multi-Billion Vector Streaming Audit
 
-![Architecture](https://shields.io)
-![Memory](https://shields.io)
-![Throughput](https://shields.io)
-![Status](https://shields.io)
+<p align="left">
+  <img src="https://shields.io" alt="Architecture" />
+  <img src="https://shields.io" alt="Memory" />
+  <img src="https://shields.io" alt="Throughput" />
+  <img src="https://shields.io" alt="Status" />
+</p>
 
 **Project Shuzi (v8.4)** is a clean-room, deterministic state-machine and Memory-Mapped I/O (MMIO) execution architecture engineered for high-density data center telemetry, edge computing, automotive ECU protection, and zero-visibility Protected Health Information (PHI) encapsulation.
 
