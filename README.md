@@ -72,6 +72,7 @@ Project Shuzi (v8.4) completed cold-start (drop_caches) black-box verification a
 Project Shuzi (v8.4) provides a public black-box testing track for 6-column ASCII CSV telemetry payloads (`timestamp_ms,sensor_value,frequency_hz,signal_dbm,state_tag,alert_flag`) without requiring an NDA.
 
 ### Track A: Public Open Black-Box CSV Challenge (No NDA Required)
+* **Payload Size Limit:** Maximum **50 GB** per uncompressed CSV submission (sufficient for up to ~1B vectors). Larger payloads should be streamed or capped at 50 GB.
 Developers can submit custom 6-column ASCII CSV payloads (`test_vectors.csv`) to test the v8.4 quarantine engine and receive telemetry reports without signing an NDA.
 
 Think you can break the v8.4 deterministic state machine, trigger an unhandled exception, or cause a memory leak? Build your own generator and submit custom **6-column ASCII CSV payloads** (`test_vectors.csv`) to stress-test our quarantine engine—no NDA required.
