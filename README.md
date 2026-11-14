@@ -68,7 +68,6 @@ Project Shuzi (v8.4) provides a public black-box testing track for 6-column ASCI
 * **What You Get Back:** Once processed through our isolated black-box enclave, you will receive a full telemetry report including throughput, worst-case latency, RSS memory delta, and SHA-256 cryptographic integrity seals.
 
 #### Expected 6-Column CSV Schema & Baseline Examples
-#### Expected 6-Column CSV Schema & Baseline Examples
 
 ```csv
 timestamp_ms,sensor_value,frequency_hz,signal_dbm,state_tag,alert_flag
