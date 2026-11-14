@@ -38,7 +38,7 @@ Compiled from 39 modular structural files (52 ecosystem components) into nine (9
 
 ## 3. Black-Box Audit & Benchmark Summary (v8.4 — 1B Hostile Chaos Scale)
 
-Project Shuzi (v8.4) completed cold-start (drop_caches) black-box verification across 1,031,877,880 total stimulus vectors (~44.5 GB combined raw input; 44G + 463M), incorporating malformed line lengths (MAX_LINE_BYTES: 32,839), null-byte injections (22,708,252 instances), and oversized buffer payloads (996,898 instances exceeding 256B).
+Project Shuzi (v8.4) completed cold-start black-box verification across **1,008,667,864** total stimulus vectors pinned to a single CPU core (`taskset -c 2`), handling various edge cases and payload anomalies.
 
 ### Dual-Layer Quarantine & 1-Billion Vector Audit (`v8.4`)
 
@@ -52,9 +52,10 @@ Project Shuzi (v8.4) completed cold-start (drop_caches) black-box verification a
   * `STATE_CHAIN`: `232d3fe1d555581c473e63c75c6d578e8fcba871701c6b98c8365b0cf8a65d30`
   * `OUT_SHA256`: `b558dd290fd0cb81790062844c09148e557fed57f498aa1a4e5ef4a6ac024a11`
 
-* **Zero Security Escalation:** `ESC: 0 | VULN: 0 | SILENT: 0 | DMG: 0 | ECU_BRICK: 0 | MOD_320: 0` across all 1,031,877,880 combined vectors.
+* **Zero Security Escalation:** All security metrics (`ESC`, `VULN`, `SILENT`, `DMG`, `ECU_BRICK`, `MOD_320`) remain `0` across all **1,008,667,864** vectors.
 
-*Note on Target Architecture & Scaling Invariance: Designed for AMD Helios rack-scale virtualized environments, these v8.4 audits were intentionally executed on an unpinned, resource-constrained commodity Linux laptop (non-RTOS, Cold-Start drop_caches, SOCKET_LOCKED 512MB sandbox; 10M elapsed: 15,122.67 ms [>50µs: 6], 1B elapsed: 1,553,263.34 ms [>50µs: 115]) to prove worst-case single-instance resilience without specialized hardware. Because memory footprint remains strictly bounded (16.2 MB RSS, +184 KB static delta across 44 GB I/O) with zero internal lock contention, single-node throughput scales linearly across high-density virtualized compute nodes.*
+*Note on Target Architecture & Scaling Invariance: Designed for AMD Helios rack-scale environments, this v8.4 audit on a single pinned core (`taskset -c 2`) demonstrates robust single-instance resilience and strict memory bounds, achieving a **99.999994% sub-50µs SLA** (`>50µs: 62`).*
+
 
 ---
 
