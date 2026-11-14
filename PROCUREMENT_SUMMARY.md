@@ -12,11 +12,13 @@
 * **Healthcare Data Compliance:** Isolates Personal Health Information (PHI) inside a hardware-enforced 128MB MMIO sandbox with AES-256 end-to-end encryption.
 * **Verifiable Audit Trail:** Generates immutable SHA-256 cryptographic register signatures and state-chain hashes (`1B+` vector scale) for forensic integrity and regulatory compliance.
 
-## 3. COMMERCIAL EVALUATION & LICENSING PROTOCOL
-1. **Mutual NDA (MNDA):** Bilateral non-disclosure agreement execution prior to data exchange.
-2. **Asynchronous Black-Box Evaluation:** Vector testing conducted via 6-column ASCII CSV format with SHA-256 verification (no live APIs, pre-contract binaries, or pre-MNDA meetings; partners are encouraged to submit extreme out-of-bounds fuzzing vectors).
-3. **Commercial Licensing & IP Transfer:** Full source code (39 modular structural files), binaries, and cryptographic master tokens transferred upon contract execution and verified irrevocable settlement.
 
-## 4. LEGAL SAFE HARBOR & REPRESENTATION DISCLAIMER
-* **Simulation & Audit Metrics:** All performance and risk-mitigation figures reflect deterministic outcomes under controlled pre-silicon simulation and v8.4 1B-scale black-box audit environments and serve as architectural milestones rather than absolute commercial warranties.
-* **Limitation of Liability:** This document is provided for preliminary B2B/B2G evaluation only. Formal commercial terms, HIL equipment requirements, and indemnification frameworks are governed exclusively by a subsequent Definitive Agreement signed by both parties.
+## 3. COMMERCIAL EVALUATION & LICENSING PROTOCOL
+
+* 1. Track A (No NDA Required): Asynchronous vector testing via 6-column Pure ASCII CSV format (up to 50–80GB) with SHA-256 verification.
+* 2. Track B (Mutual NDA & Technical Due Diligence): Bilateral NDA for custom test vector scheduling, architecture review, and target silicon HIL evaluation.
+* 3. Commercial Licensing & Full IP Transfer: Transfer of 39 modular structural source files, binaries, and master tokens upon settlement.
+
+## 4. SECURE INTAKE & SUBMISSION CHANNEL
+
+• Asynchronous Enterprise Intake Portal: https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform
