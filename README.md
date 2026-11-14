@@ -1,10 +1,5 @@
 # Project Shuzi (v8.4) — Deterministic Edge Enclave & Multi-Billion Vector Streaming Audit
 
-![Architecture](./badges/arch.svg)
-![Peak RSS](./badges/mem.svg)
-![Throughput](./badges/perf.svg)
-![Security](./badges/sec.svg)
-
 **Project Shuzi (v8.4)** is a clean-room, deterministic state-machine and Memory-Mapped I/O (MMIO) execution architecture engineered for high-density data center telemetry, edge computing, automotive ECU protection, and zero-visibility Protected Health Information (PHI) encapsulation.
 
 > **Notice:** This repository contains non-confidential performance benchmarks, cryptographic audit logs, and public adversarial verification harnesses. Proprietary C++ source modules and binary executables are withheld and available solely under a Mutual Non-Disclosure Agreement (MNDA).
