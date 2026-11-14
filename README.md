@@ -5,6 +5,11 @@
 > **Notice:** This repository contains non-confidential performance benchmarks, cryptographic audit logs, and public adversarial verification harnesses. Proprietary C++ source modules and binary executables are withheld and available solely under a Mutual Non-Disclosure Agreement (MNDA).
 
 ---
+## Core Technical Capabilities
+• Dual-Layer Quarantine & Socket-Locked Sandbox: Isolates untrusted telemetry streams inside a SOCKET_LOCKED execution sandbox under a strict 512MB memory ceiling, neutralizing buffer bombs, arithmetic traps, null-byte injections, and timestamp replay attacks with zero memory leaks.
+• Isolated 128MB MMIO Backplane & Zero-Visibility PHI Sandbox: Segregates sensitive telemetry and Personal Health Information (PHI) within a dedicated 128MB isolated MMIO space, enforcing AES-256 end-to-end cryptographic encapsulation prior to external bus routing.
+• Reversible Soft-Brick & Hardware MUX Failover: Replaces destructive physical eFuse tripping with a Reversible Soft-Brick state-machine topology, isolating compromised OS layers via hardware MUX switching and permitting restoration only via cryptographic master token authentication (Module 320).
+• Satellite-to-5G Edge Failover & Active MitM Defense: Detects satellite line occlusion and diverts critical telemetry to terrestrial 5G edge networks without packet loss, blocking Man-in-the-Middle (MitM) intercept attempts and 5,000 packets/sec CAN-bus flooding stress.
 
 ## 1. Benchmark Highlights (1B Single-Core & 4B Multi-Core Scaling)
 
