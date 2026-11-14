@@ -1,5 +1,3 @@
-# Project Shuzi: Deterministic Edge Enclave & Fail-Safe State-Machine Architecture (v8.4)
-
 # Project Shuzi (v8.4) — Deterministic Edge Enclave & Multi-Billion Vector Streaming Audit
 
 [![Architecture](https://shields.io)]()
