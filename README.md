@@ -45,7 +45,7 @@ Every execution across 1B, 4B, and 10B multi-core runs produced invariant crypto
 * **Worker 2 State Digest (`W2 @ CPU04`):** `b8ab689d98464a50...` (Bit-Exact Parity Across 2.5B+ Vectors)
 * **Worker 3 State Digest (`W3 @ CPU06`):** `47ee82e93121d1d8...` (Bit-Exact Parity Across 2.5B+ Vectors)
 * **Audit Log Artifact:** `SHUZI_V8_5_EXTREME_60DDOS_50SOS_10B.log`
-* **Output Audit Log Seal (`OUT_SHA256`):** `<678f09e6d28bcec6a14aba610ccbc86d93f17925e247504b8682b1acdc91f820>`
+* **Output Audit Log Seal (`OUT_SHA256`):** `678f09e6d28bcec6a14aba610ccbc86d93f17925e247504b8682b1acdc91f820`
 ---
 
 * **Zero Security Escalation:** All security metrics (`ESC`, `VULN`, `SILENT`, `DMG`, `ECU_BRICK`, `MOD_320`) remain `0` across all **10,000,000,050** vectors in v8.5 and **4,034,671,456** aggregate vectors in v8.4 (`100% SYNCED: True`).
@@ -57,11 +57,6 @@ In `v8.5-EXTREME`, the architecture demonstrates simultaneous high-speed DDoS sh
 * **L1 Outer Quarantine (`outer_l1_filter`):** Immediately drops **6,003,125,000** (60%) malformed/volumetric DDoS vectors at wire speed using zero-allocation `std::string_view` parsing and strict physical boundary gating.
 * **L2 Deterministic State Machine (`ShuziHybridEngine`):** Evaluates all **3,996,875,050** surviving vectors in real time, locking onto **50 / 50** interleaved genuine SOS distress vectors (`EMS_LOCK: 50`, `MED_PACKET_TX: 50`) with **zero false positives (`L2_BLOCKED: 0`)** and **zero ECU soft-bricks (`ECU_BRICK: 0`)**.
 * **Hardware Affinity & Cycle-Accurate Telemetry:** Eliminating hybrid E-Core scheduling asymmetry (`CPU 0, 2, 4, 6` exclusive P-Core pinning) and replacing OS timer calls with x86 `__rdtsc` counters boosted throughput by **+63.6%** while proving bit-exact state-hash invariance (`GOLDEN_SHA: MATCH`).
-
-### Why `BLOCKED = 1,008,667,864` Across Pure Trojan Streams (`v8.4` Fail-Closed Mode)
-Project Shuzi is engineered as a **life-critical, real-time sensor fusion and deterministic safety state machine**—not a stateless string parser.
-* **Zero-Trust Fail-Closed Quarantine:** In pure adversarial chaos benchmarks (`v8.4` 1B/4B), synthetic baseline rows were randomly shuffled alongside 15% hostile trojan payloads (32KB line bombs, null-byte injections, arithmetic traps, and replay spoofing). Immediately upon detecting broken temporal continuity or the first adversarial trigger, the engine enforces a **Zero-Trust Fail-Closed lockdown**, quarantining all subsequent unverified vectors (`BLOCKED: 1,008,667,864`) with zero false emergency dispatches (`EMS_LOCK: 0`).
-* **Positive Continuity Verification (`BLOCKED = 0`):** Under strict monotonic physical continuity (`SHUZI_V8_4_DUAL_AUDIT_20261115_143814.log`), all **1,000,000,000** valid vectors passed quarantine inspection (`BLOCKED: 0`), filtering **35,050** prank events (`PRANK: 35050`), executing **100** timeout escalations (`ESC: 100`), and triggering **30,100** verified emergency actuations (`EMS_LOCK: 30100`).
 
 ### Intellectual Property & Repository Scope
 * **Public Artifacts:** `hostile_vector_generator.py` (public chaos test schema), `PROCUREMENT_SUMMARY.md`, `USE_CASES.md`, public audit logs (`SHUZI_V8_5_EXTREME_60DDOS_50SOS_10B.log`, `REPORTS/`), and cryptographic SHA-256 verification digests.
