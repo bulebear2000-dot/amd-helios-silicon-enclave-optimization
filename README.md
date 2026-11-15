@@ -47,12 +47,11 @@ Every execution across 1B single-core and 4B multi-core runs produced identical 
 ## 3. Audit Log Architecture & Zero-Trust Fail-Closed Semantics
 
 ### Why `BLOCKED = 1,008,667,864` Across the Entire Stream?
-### Positive Continuity Verification (`BLOCKED = 0` & Active State Actuation)
-To demonstrate that Project Shuzi (v8.4) is an active sensor-fusion state machine rather than a blind drop-all filter, a dedicated **1,000,000,000-vector positive continuity audit** (`SHUZI_V8_4_DUAL_AUDIT_20261115_143814.log`) was executed under strict monotonic physical continuity with zero injected anomalies (`OVERSIZED=0`, `NULL_BYTES=0`):
-
 * **Zero False Blocks (`BLOCKED: 0`):** All **1,000,000,000** valid vectors passed quarantine inspection without a single false lock.
 * **Deterministic Event Classification & Actuation:** Across 1B continuous frames, the engine accurately filtered **35,050** benign noise/prank events (`PRANK: 35050`), executed **100** unacknowledged timeout escalations (`ESC: 100`), and triggered **30,100** verified emergency actuations (`EMS_LOCK: 30100`) with 100% synchronized medical packet encapsulation (`MED_PACKET_TX: 30100`, `100% SYNCED: True`).
 * **Bounded $O(1)$ Footprint Under Full Actuation:** Even under full state-machine evaluation at **639,730 VEC/S**, memory remained strictly bounded at **16.0 MB** (`16,372 KB`, `+312 KB` delta) with **0 crashes**.
+* ### Positive Continuity Verification (`BLOCKED = 0` & Active State Actuation)
+To demonstrate that Project Shuzi (v8.4) is an active sensor-fusion state machine rather than a blind drop-all filter, a dedicated **1,000,000,000-vector positive continuity audit** (`SHUZI_V8_4_DUAL_AUDIT_20261115_143814.log`) was executed under strict monotonic physical continuity with zero injected anomalies (`OVERSIZED=0`, `NULL_BYTES=0`):
 
 Project Shuzi (v8.4) is engineered as a **life-critical, real-time sensor fusion and deterministic safety state machine**—not a stateless string parser. 
 
