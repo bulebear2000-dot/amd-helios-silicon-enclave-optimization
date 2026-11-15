@@ -11,7 +11,7 @@ Beyond low-level hardware isolation and state-machine determinism, **Project Shu
 * **Operational Challenge:** Conventional smartphone emergency alerts rely on high-level OS applications that are vulnerable to UI freezes, background process termination, and high false-positive rates in noisy environments.
 * **Shuzi Architecture Solution:**
   * Isolates genuine human biometric distress vocalizations (~850Hz high-stress vocal/distress band) from ambient noise (up to 95dB) and non-emergency audio (~210Hz) within **0.5 seconds**.
-  * Actuates hardware MUX switching (`260-Pin MUX`) to bypass compromised or frozen OS layers, locking critical registers (`MPU READ-ONLY`) and routing encrypted telemetry directly to Emergency Medical Services (EMS).
+  * Actuates dedicated hardware bus MUX switching to bypass compromised or frozen OS layers, locking critical registers (`MPU READ-ONLY`) and routing encrypted telemetry directly to Emergency Medical Services (EMS).
   * Incorporates an interactive escalation timer (`TMR`) that prevents false dispatches via user acknowledgment while guaranteeing autonomous failover if unresponsive.
 
 ---
@@ -40,5 +40,5 @@ Beyond low-level hardware isolation and state-machine determinism, **Project Shu
 * **Operational Challenge:** Modern connected vehicles face rising CAN-bus injection attacks and relay thefts, while traditional hardware security responses (such as physical eFuse tripping) permanently destroy expensive ECU hardware.
 * **Shuzi Architecture Solution:**
   * Sustains 100% loss-free bus communication under **5,000 packets/sec CAN-bus flooding stress** while blocking Man-in-the-Middle (MitM) intercept attempts.
-  * Upon detecting unauthorized intrusion or theft vectors, engages **Reversible Soft-Brick** state-machine locks (suppressing the 25V ECU power rail domain across power cycles) rather than permanently damaging the silicon.
+  * Upon detecting unauthorized intrusion or theft vectors, engages **Reversible Soft-Brick** state-machine locks (suppressing the 12V/24V ECU power rail domain with >25V over-voltage clamp across power cycles) rather than permanently damaging the silicon.
   * Restores normal powertrain and bus operations exclusively upon cryptographic master token authentication (`Module 320`).
