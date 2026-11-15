@@ -3,7 +3,7 @@
 
 ## 1. TECHNOLOGY IDENTIFICATION & IP GOVERNANCE
 
-* **Project Name:** Project Shuzi (v8.4)
+* **Project Name:** Project Shuzi (v8.5)
 * **IP Provenance:** 100% Clean-Room Developed. Zero third-party or foreign open-source dependencies; strict US/KR jurisdiction compliance to mitigate supply-chain and CFIUS risks.
 * **Patent Status:** Patent Pending (Priority filing secured).
 
