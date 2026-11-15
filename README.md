@@ -47,18 +47,19 @@ Every execution across 1B single-core and 4B multi-core runs produced identical 
 ## 3. Audit Log Architecture & Zero-Trust Fail-Closed Semantics
 
 ### Why `BLOCKED = 1,008,667,864` Across the Entire Stream?
-* **Zero False Blocks (`BLOCKED: 0`):** All **1,000,000,000** valid vectors passed quarantine inspection without a single false lock.
-* **Deterministic Event Classification & Actuation:** Across 1B continuous frames, the engine accurately filtered **35,050** benign noise/prank events (`PRANK: 35050`), executed **100** unacknowledged timeout escalations (`ESC: 100`), and triggered **30,100** verified emergency actuations (`EMS_LOCK: 30100`) with 100% synchronized medical packet encapsulation (`MED_PACKET_TX: 30100`, `100% SYNCED: True`).
-* **Bounded $O(1)$ Footprint Under Full Actuation:** Even under full state-machine evaluation at **639,730 VEC/S**, memory remained strictly bounded at **16.0 MB** (`16,372 KB`, `+312 KB` delta) with **0 crashes**.
-* ### Positive Continuity Verification (`BLOCKED = 0` & Active State Actuation)
-To demonstrate that Project Shuzi (v8.4) is an active sensor-fusion state machine rather than a blind drop-all filter, a dedicated **1,000,000,000-vector positive continuity audit** (`SHUZI_V8_4_DUAL_AUDIT_20261115_143814.log`) was executed under strict monotonic physical continuity with zero injected anomalies (`OVERSIZED=0`, `NULL_BYTES=0`):
-
-Project Shuzi (v8.4) is engineered as a **life-critical, real-time sensor fusion and deterministic safety state machine**—not a stateless string parser. 
+Project Shuzi (v8.4) is engineered as a **life-critical, real-time sensor fusion and deterministic safety state machine**—not a stateless string parser.
 
 * **Strict Temporal & Physical Continuity:** Every ingestion step enforces strict physical plausibility, monotonic temporal continuity, and cryptographic signature alignment across multi-sensor telemetry fields (`timestamp_ms`, `sensor_value`, `frequency_hz`, `signal_dbm`, `state_tag`, `alert_flag`).
 * **Zero-Trust Fail-Closed Quarantine:** In the 1B/4B adversarial chaos benchmarks, synthetic baseline rows were randomly shuffled alongside 15% hostile trojan payloads (32KB line bombs, null-byte injections, arithmetic traps, and replay spoofing). Immediately upon detecting broken temporal continuity or the first adversarial trigger, the engine's `SECURITY_DEF` boundary enforces a **Zero-Trust Fail-Closed lockdown**, quarantining all subsequent unverified vectors (`BLOCKED: 1,008,667,864`).
 * **Zero False-Positive Safety Guarantee (`EMS_LOCK: 0`):** The primary engineering objective under hostile flooding is preventing catastrophic false actuation. Across **4.03 billion** adversarial vectors, the state machine maintained **100% deterministic synchronization (`100% SYNCED: True`)** with **zero false emergency dispatches (`EMS_LOCK: 0`)** and **zero corrupted telemetry transmissions (`MED_PACKET_TX: 0`)**.
 * **Multi-Profile Invariance (`profile=0` vs. `profile=1`):** Both the Standard Profile (`profile=0`) and the High-Sensitivity / Vulnerable Cohort Profile (`profile=1`, `VULN_FAST_EMS`) demonstrated identical fail-closed quarantine integrity and bounded $O(1)$ memory invariance under identical adversarial stress.
+
+### Positive Continuity Verification (`BLOCKED = 0` & Active State Actuation)
+To demonstrate that Project Shuzi (v8.4) is an active sensor-fusion state machine rather than a blind drop-all filter, a dedicated **1,000,000,000-vector positive continuity audit** (`SHUZI_V8_4_DUAL_AUDIT_20261115_143814.log`) was executed under strict monotonic physical continuity with zero injected anomalies (`OVERSIZED=0`, `NULL_BYTES=0`):
+
+* **Zero False Blocks (`BLOCKED: 0`):** All **1,000,000,000** valid vectors passed quarantine inspection without a single false lock.
+* **Deterministic Event Classification & Actuation:** Across 1B continuous frames, the engine accurately filtered **35,050** benign noise/prank events (`PRANK: 35050`), executed **100** unacknowledged timeout escalations (`ESC: 100`), and triggered **30,100** verified emergency actuations (`EMS_LOCK: 30100`) with 100% synchronized medical packet encapsulation (`MED_PACKET_TX: 30100`, `100% SYNCED: True`).
+* **Bounded $O(1)$ Footprint Under Full Actuation:** Even under full state-machine evaluation at **639,730 VEC/S**, memory remained strictly bounded at **16.0 MB** (`16,372 KB`, `+312 KB` delta) with **0 crashes**.
 
 ### Intellectual Property & Repository Scope
 * **Public Artifacts:** `hostile_vector_generator.py` (public chaos test schema), `PROCUREMENT_SUMMARY.md`, `USE_CASES.md`, and cryptographic SHA-256 verification digests.
