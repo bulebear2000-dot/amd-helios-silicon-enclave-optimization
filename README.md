@@ -20,6 +20,7 @@ All benchmarks were executed inside a `SOCKET_LOCKED` Dual-Layer Quarantine sand
 | **10M Smoke** | 1x P-Core (`CPU 2`) | 10,086,766 | ~0.8 GB | **663,776 VEC/S** | Baseline (10M) | **16.0 MB** (`16,044 KB`) | **0** |
 | **1B Single** | 1x P-Core (`CPU 2`) | 1,008,667,864 | ~80 GB | **665,738 VEC/S** | **100.3%** linear retention | **16.0 MB** (`16,044 KB`) | **0** |
 | **4B Parallel** | 4x P-Cores (`CPU 0,2,4,6`) | 4,034,671,456 | ~320 GB | **2,438,097 VEC/S** | **93.16%** (`3.73x` on 4 cores) | **~16.0 MB** (`15,972–16,108 KB`) | **0** |
+| **1B Positive Continuity** | 1x P-Core (`CPU 2`) | 1,000,000,000 | ~13.0 GB | **639,730 VEC/S** | `BLOCKED: 0` / `EMS_LOCK: 30,100` (`ESC: 100`, `PRANK: 35,050`) | **16.0 MB** (`16,372 KB`) | **0** |
 
 ---
 
@@ -37,6 +38,7 @@ Every execution across 1B single-core and 4B multi-core runs produced identical 
   * `audit_pcore_2.out` (4B Parallel Core 2): `59766befccb2b226cd7fc2aea878274b4be675c348fd820924ef71d67e444dbd`
   * `audit_pcore_4.out` (4B Parallel Core 4): `d8b25c461070140477324239ca70c52528269dd87142e713b69fe5ba102a6615`
   * `audit_pcore_6.out` (4B Parallel Core 6): `d02978a95bd91804c3ee3bc0f4eb86024ee86d5e9e7f0d9d7b2b834666aefbe1`
+  * `SHUZI_V8_4_DUAL_AUDIT_20261115_143814.log` (1B Positive Continuity Run):           `4a7cafdcc1e682ef54722cd84e5bcf8c29a4f2c730d065eb5b44125fe1a2c020` (`PRE_SHA256`: `5353adddce20a117b2a93996abb6b117db9f52819137cb56f5a74df6a88cefd2`)
 
 ---
 
