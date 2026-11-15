@@ -1,0 +1,19 @@
+==========================================================
+SHUZI v8.4 - DUAL-LAYER QUARANTINE & BLACK-BOX AUDIT
+TARGET_FILE   : shuzi_real_pos_1b_20261115_143232.csv
+SANDBOX_MODE  : SOCKET_LOCKED | MEM_CAP: 512MB
+==========================================================
+PRE_SHA256    : 5353adddce20a117b2a93996abb6b117db9f52819137cb56f5a74df6a88cefd2
+RAW_LINES     : 1,000,000,001 | MAX_LINE_BYTES: 70
+ANOMALIES     : OVERSIZED(>256B)=0 | NULL_BYTES=0
+----------------------------------------------------------
+RUN_SHA256    : 5353adddce20a117b2a93996abb6b117db9f52819137cb56f5a74df6a88cefd2 (MATCH_PRE: True)
+STATE_CHAIN   : 3bd5ce48145631dba9ece84632da6746153dde8dff56c87515624932597ce4c2
+TOTAL_VECTORS : 1,000,000,000 (CRASH: 0)
+MEMORY_GUARD  : START=16060KB | PEAK=16372KB | END=16372KB (DELTA=312KB)
+EMS_LOCK      : 30100 (ESC:100, VULN:0, SILENT:0, DMG:0)
+MED_PACKET_TX : 30100 (100% SYNCED: True)
+SECURITY_DEF  : PRANK=35050 | BLOCKED=0 | ECU_BRICK=0 | MOD_320=0
+THROUGHPUT    : 639730 VEC/S (ELAPSED: 1563158.43 ms)
+WORST_LATENCY : 151.30 us (>50us: 37)
+==========================================================
