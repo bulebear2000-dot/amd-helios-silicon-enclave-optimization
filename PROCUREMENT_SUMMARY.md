@@ -1,4 +1,4 @@
-# EXECUTIVE SUMMARY: PROJECT SHUZI (v8.4)
+# EXECUTIVE SUMMARY: PROJECT SHUZI (v8.5)
 ### Enterprise Procurement, IP Governance & Compliance Overview
 
 ## 1. TECHNOLOGY IDENTIFICATION & IP GOVERNANCE
