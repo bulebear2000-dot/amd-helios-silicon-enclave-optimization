@@ -20,14 +20,11 @@ Building upon the `v8.4` Zero-Trust Fail-Closed foundation, **v8.5-EXTREME** int
 
 All benchmarks were executed inside a `SOCKET_LOCKED` Dual-Layer Quarantine sandbox (`MEM_CAP: 512 MB`) pinned to dedicated physical P-Cores (`CPU 0, 2, 4, 6` @ 4.5 GHz) against hostile datasets containing 32KB/4KB line bombs, `NaN`/`Infinity`/`INT64_MAX` traps, null bytes (`0x00`), ANSI escape sequences, 1ms state-thrashing bursts, and timestamp replay spoofing.
 
+
 | Audit Tier & Version | Topology | Total Vectors | Workload Profile | Aggregate Throughput | Scaling / Verification | Peak RSS | Crashes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **v8.5 10B Extreme (Optimized)** | **4x P-Cores (`CPU 0,2,4,6`)** | **10,000,000,050** | **60% DDoS + 50 Real SOS** | **73,257,343 VEC/S** | **`GOLDEN_SHA: MATCH`** (`136.51s` wall) | **234.4 MB** (`239,988 KB`) | **0** |
 | **v8.5 10B Extreme (Baseline)** | 4x Hybrid (`CPU 2,4,6,8`) | 10,000,000,050 | 60% DDoS + 50 Real SOS | **44,771,221 VEC/S** | `EMS_LOCK: 50/50` (`223.36s` wall) | **180.1 MB** (`184,444 KB`) | **0** |
-| **v8.4 4B Parallel** | 4x P-Cores (`CPU 0,2,4,6`) | 4,034,671,456 | ~320 GB Chaos Stream | **2,438,097 VEC/S** | **93.16%** (`3.73x` on 4 cores) | **~16.0 MB** (`15,972–16,108 KB`) | **0** |
-| **v8.4 1B Single** | 1x P-Core (`CPU 2`) | 1,008,667,864 | ~80 GB Chaos Stream | **665,738 VEC/S** | **100.3%** linear retention | **16.0 MB** (`16,044 KB`) | **0** |
-| **v8.4 1B Positive Continuity** | 1x P-Core (`CPU 2`) | 1,000,000,000 | ~13.0 GB Clean Stream | **639,730 VEC/S** | `BLOCKED: 0` / `EMS_LOCK: 30,100` | **16.0 MB** (`16,372 KB`) | **0** |
-| **v8.4 10M Smoke** | 1x P-Core (`CPU 2`) | 10,086,766 | ~0.8 GB Chaos Stream | **663,776 VEC/S** | Baseline (10M) | **16.0 MB** (`16,044 KB`) | **0** |
 
 ### v8.5-EXTREME Per-Core Telemetry Breakdown (`SHUZI_V8_5_EXTREME_60DDOS_50SOS_10B.log`)
 * **Worker 0 (`CPU 00`):** `18,318,616 VEC/S` | Worst Latency (`__rdtsc`): `227.60 us` | `SOS_LOCK: 13` | `SHA256: 121f38ab4222648b...`
@@ -48,20 +45,7 @@ Every execution across 1B, 4B, and 10B multi-core runs produced invariant crypto
 * **Worker 2 State Digest (`W2 @ CPU04`):** `b8ab689d98464a50...` (Bit-Exact Parity Across 2.5B+ Vectors)
 * **Worker 3 State Digest (`W3 @ CPU06`):** `47ee82e93121d1d8...` (Bit-Exact Parity Across 2.5B+ Vectors)
 * **Audit Log Artifact:** `SHUZI_V8_5_EXTREME_60DDOS_50SOS_10B.log`
-
-### v8.4 Legacy Baseline Seals (1B & 4B Runs)
-* **Input Dataset (`PRE_SHA256`):** `6dd8a0602198b7f7963081989b9c6fddd2e38e8be58a78935ac7fb70393886df`
-* **Runtime Verification (`RUN_SHA256`):** `6dd8a0602198b7f7963081989b9c6fddd2e38e8be58a78935ac7fb70393886df` (`MATCH_PRE: True`)
-* **Deterministic `STATE_CHAIN` (All 5 Runs Identical):** `232d3fe1d555581c473e63c75c6d578e8fcba871701c6b98c8365b0cf8a65d30`
-* **Output Audit Log Seals (`OUT_SHA256`):**
-  * `SHUZI_V8_4_DUAL_AUDIT_20261114_235908.log` (1B Peak Run): `6f013ed183a7c620a8bb7e8f32e7bafe7bb38960151d6bb77cb8e588570a413d`
-  * `SHUZI_V8_4_DUAL_AUDIT_20261114_222242.log` (1B Baseline): `69eaf1616fea1d2d0dcd5ae86e97f612eb16d76ccf4c50e90909a373ab183bbf`
-  * `audit_pcore_0.out` (4B Parallel Core 0): `518729d03a6f544c8dc9fd721d3cfe2cb6f006d8cab10d7e452cfefc80bef798`
-  * `audit_pcore_2.out` (4B Parallel Core 2): `59766befccb2b226cd7fc2aea878274b4be675c348fd820924ef71d67e444dbd`
-  * `audit_pcore_4.out` (4B Parallel Core 4): `d8b25c461070140477324239ca70c52528269dd87142e713b69fe5ba102a6615`
-  * `audit_pcore_6.out` (4B Parallel Core 6): `d02978a95bd91804c3ee3bc0f4eb86024ee86d5e9e7f0d9d7b2b834666aefbe1`
-  * `SHUZI_V8_4_DUAL_AUDIT_20261115_143814.log` (1B Positive Continuity Run): `4a7cafdcc1e682ef54722cd84e5bcf8c29a4f2c730d065eb5b44125fe1a2c020` (`PRE_SHA256`: `5353adddce20a117b2a93996abb6b117db9f52819137cb56f5a74df6a88cefd2`)
-
+* **Output Audit Log Seal (`OUT_SHA256`):** `<678f09e6d28bcec6a14aba610ccbc86d93f17925e247504b8682b1acdc91f820>`
 ---
 
 * **Zero Security Escalation:** All security metrics (`ESC`, `VULN`, `SILENT`, `DMG`, `ECU_BRICK`, `MOD_320`) remain `0` across all **10,000,000,050** vectors in v8.5 and **4,034,671,456** aggregate vectors in v8.4 (`100% SYNCED: True`).
