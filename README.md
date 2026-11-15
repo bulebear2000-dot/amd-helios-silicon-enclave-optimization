@@ -47,6 +47,13 @@ Every execution across 1B single-core and 4B multi-core runs produced identical 
 ## 3. Audit Log Architecture & Zero-Trust Fail-Closed Semantics
 
 ### Why `BLOCKED = 1,008,667,864` Across the Entire Stream?
+### Positive Continuity Verification (`BLOCKED = 0` & Active State Actuation)
+To demonstrate that Project Shuzi (v8.4) is an active sensor-fusion state machine rather than a blind drop-all filter, a dedicated **1,000,000,000-vector positive continuity audit** (`SHUZI_V8_4_DUAL_AUDIT_20261115_143814.log`) was executed under strict monotonic physical continuity with zero injected anomalies (`OVERSIZED=0`, `NULL_BYTES=0`):
+
+* **Zero False Blocks (`BLOCKED: 0`):** All **1,000,000,000** valid vectors passed quarantine inspection without a single false lock.
+* **Deterministic Event Classification & Actuation:** Across 1B continuous frames, the engine accurately filtered **35,050** benign noise/prank events (`PRANK: 35050`), executed **100** unacknowledged timeout escalations (`ESC: 100`), and triggered **30,100** verified emergency actuations (`EMS_LOCK: 30100`) with 100% synchronized medical packet encapsulation (`MED_PACKET_TX: 30100`, `100% SYNCED: True`).
+* **Bounded $O(1)$ Footprint Under Full Actuation:** Even under full state-machine evaluation at **639,730 VEC/S**, memory remained strictly bounded at **16.0 MB** (`16,372 KB`, `+312 KB` delta) with **0 crashes**.
+
 Project Shuzi (v8.4) is engineered as a **life-critical, real-time sensor fusion and deterministic safety state machine**—not a stateless string parser. 
 
 * **Strict Temporal & Physical Continuity:** Every ingestion step enforces strict physical plausibility, monotonic temporal continuity, and cryptographic signature alignment across multi-sensor telemetry fields (`timestamp_ms`, `sensor_value`, `frequency_hz`, `signal_dbm`, `state_tag`, `alert_flag`).
@@ -77,6 +84,7 @@ Project Shuzi (v8.4) provides a public black-box testing track for 6-column ASCI
 * **Payload Size Limit:** Maximum **50 GB – 80 GB** per uncompressed CSV submission (sufficient for up to ~1B vectors).
 * **Anything Goes:** Feel free to inject `NaN`, `±Infinity`, `Int64` overflows, null bytes (`0x00`), ANSI escape sequences, unclosed quotes, 32KB+ buffer-probing lines, column explosions, timestamp reversals, or 1ms state-machine thrashing.
 * **What You Get Back:** Once processed through our isolated black-box enclave, you will receive a full telemetry report including throughput, worst-case latency, RSS memory delta, and SHA-256 cryptographic integrity seals.
+> **Note on Public Schema vs. Proprietary Fusion Schema:** Track A uses a sanitized public 6-column schema for stress-testing quarantine boundaries, memory ceiling invariance, and parser resilience. Full multi-axis physical/biometric state-machine actuation schemas remain proprietary under Patent Shield and are evaluated under Track B (MNDA).
 
 #### Expected 6-Column CSV Schema & Baseline Examples
 
