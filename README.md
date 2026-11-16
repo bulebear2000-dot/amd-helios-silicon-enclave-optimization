@@ -25,6 +25,8 @@ All benchmarks were executed inside a `SOCKET_LOCKED` Dual-Layer Quarantine sand
 Originally engineered for deterministic server enclave optimization, **v8.5-EXTREME** was cross-validated across 7 bare-metal and virtualized targets (`x86_64` and `ARM64`) under the identical **10,000,000,050** hostile vector workload (`4-Core` parity), achieving **100% Bit-Exact `GOLDEN_SHA: MATCH`** across every silicon architecture:
 
 | Rank / Target Silicon Platform | ISA | Execution Mode | Wall Time | Aggregate Throughput | Worst Latency | Peak RSS | GOLDEN SHA |
+
+| Rank / Target Silicon Platform | ISA | Execution Mode | Wall Time | Aggregate Throughput | Worst Latency | Peak RSS | GOLDEN SHA |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **1. Intel Core (P-Core Pinned)** | `x86_64` | Bare-metal | `136.51s` (2m 16s) | **73,257,343 VEC/S** | `227.60 us` | `234.4 MB` | **100% MATCH** |
 | **2. Intel Core (Baseline)** | `x86_64` | Bare-metal | `223.36s` (3m 43s) | **44,771,221 VEC/S** | — | `180.1 MB` | **100% MATCH** |
@@ -32,7 +34,8 @@ Originally engineered for deterministic server enclave optimization, **v8.5-EXTR
 | **4. NVIDIA Compute (Neoverse)** | `ARM64` | Virtualized | `2,348.53s` (39m 08s) | **4,257,976 VEC/S** | `861.26 us` | `187.8 MB` | **100% MATCH** |
 | **5. Apple Silicon (ARMv8.5-A)** | `ARM64` | Virtualized | `2,365.70s` (39m 25s) | **4,227,081 VEC/S** | `855.08 us` | `187.7 MB` | **100% MATCH** |
 | **6. AMD Helios (EPYC-Rome)** | `x86_64` | Virtualized | `6,354.45s` (1h 45m) | **1,573,701 VEC/S** | — | `~188.0 MB` | **100% MATCH** |
-| **7. Intel Xeon** | `x86_64` | Virtualized | `6,464.88s` (1h 47m) | **1,546,818 VEC/S** | — | `~188.0 MB` | **100% MATCH** |
+| **7. Intel Xeon (Virtualized)** | `x86_64` | Virtualized | `6,464.88s` (1h 47m) | **1,546,818 VEC/S** | `611.96 us` | `190.2 MB` | **100% MATCH** |
+
 
 * **Key Architectural Insight:** Inside virtualized environments, **ARM64** platforms (Qualcomm Snapdragon, NVIDIA Neoverse, Apple Silicon) outperform virtualized `x86_64` server nodes by **2.7x–3.5x**, while bare-metal physical P-Core pinning unlocks **73.26M VEC/S** with deterministic `O(1)` memory footprint (`<235 MB`).
 
@@ -69,15 +72,15 @@ In `v8.5-EXTREME`, the architecture demonstrates simultaneous high-speed DDoS sh
 * **L2 Deterministic State Machine (`ShuziHybridEngine`):** Evaluates all **3,996,875,050** surviving vectors in real time, locking onto **50 / 50** interleaved genuine SOS distress vectors (`EMS_LOCK: 50`, `MED_PACKET_TX: 50`) with **zero false positives (`L2_BLOCKED: 0`)** and **zero ECU soft-bricks (`ECU_BRICK: 0`)**.
 * **Hardware Affinity & Cycle-Accurate Telemetry:** Eliminating hybrid E-Core scheduling asymmetry (`CPU 0, 2, 4, 6` exclusive P-Core pinning) and replacing OS timer calls with x86 `__rdtsc` counters boosted throughput by **+63.6%** while proving bit-exact state-hash invariance (`GOLDEN_SHA: MATCH`).
 
-### Intellectual Property & Repository Scope
+### Intellectual Property & Strict Black-Box Governance
 * **Public Artifacts:** `hostile_vector_generator.py` (public chaos test schema), `PROCUREMENT_SUMMARY.md`, `USE_CASES.md`, public audit logs (`SHUZI_V8_5_EXTREME_60DDOS_50SOS_10B.log`, `REPORTS/`), and cryptographic SHA-256 verification digests.
-* **Protected IP (Available Under MNDA):** Core C++ state-machine binaries, internal orchestration harnesses, and full raw execution traces are withheld to protect pending patents and proprietary silicon-enclave logic. Qualified enterprise and semiconductor partners may request full source/binary inspection under a **Mutual Non-Disclosure Agreement (MNDA)** via Track B below.
+* **Protected IP & No-Release Policy Prior to Settlement:** Core C++ state-machine binaries, internal orchestration harnesses, and full raw execution traces are strictly withheld to protect pending patents and proprietary silicon-enclave logic. **Source code and binary executables are never released under NDA or escrow agreements alone.** Pre-settlement validation is conducted exclusively via **Track A (Black-Box Challenge-Response CSV Audit)**, and full IP/binary handover occurs **strictly upon verified Telegraphic Transfer (T/T) settlement** under Track B (including an optional **Pre-Publication Patent Buyout & Voluntary Withdrawal** prior to the 18-month publication window).
 
 ---
 
 ## 4. Repository Documentation & Reports
 
-* **10B Extreme & 1B/10M Dual-Layer Quarantine Audit Logs (`v8.5-EXTREME` & `v8.4`):** Raw SHA-256 verified black-box audit summaries for 10B DDoS+SOS extreme stress (`SHUZI_V8_5_EXTREME_60DDOS_50SOS_10B.log`), 10M precision, and 1B trojan chaos workloads (`REPORTS/`).
+* **10B Extreme & 1B/10M Dual-Layer Quarantine Audit Logs (`v8.5-EXTREME` & `v8.4`):** Raw SHA-256 verified black-box audit summaries across all 5 silicon vendors (`REPORTS/`).
 * **Cryptographic Integrity Manifest:** Standard SHA-256 checksums for verifying all raw log files (`sha256sum -c SHA256SUMS.txt`).
 * **Enterprise Procurement & IP Summary (`PROCUREMENT_SUMMARY.md`):** Patent status, clean-room IP governance, risk mitigation ROI, and HIL evaluation requirements.
 * **Commercial Use Cases & Integration Scenarios (`USE_CASES.md`):** Real-world operational workflows across emergency response, automotive security, and offline edge settlement.
@@ -86,13 +89,13 @@ In `v8.5-EXTREME`, the architecture demonstrates simultaneous high-speed DDoS sh
 
 ## 5. Open Black-Box CSV Challenge & Enterprise Protocol
 
-Project Shuzi (v8.5-EXTREME) provides a public black-box testing track for 6-column ASCII CSV telemetry payloads (`timestamp_ms,sensor_value,frequency_hz,signal_dbm,state_tag,alert_flag`) without requiring an NDA.
+Project Shuzi (v8.5-EXTREME) conducts all pre-settlement technical validations exclusively via **Asynchronous File Exchange (Pure ASCII CSV input/output) and SHA-256 verification**—eliminating time-zone barriers and maintaining strict air-gapped IP isolation.
 
 ### Track A: Public Open Black-Box CSV Challenge (No NDA Required)
 * **Payload Size Limit:** Maximum **50 GB – 80 GB** per uncompressed CSV submission (sufficient for up to ~1B vectors; multi-pass 10B+ streaming supported).
 * **Anything Goes:** Feel free to inject `NaN`, `±Infinity`, `Int64` overflows, null bytes (`0x00`), ANSI escape sequences, unclosed quotes, 32KB+ buffer-probing lines, column explosions, timestamp reversals, or 1ms state-machine thrashing.
 * **What You Get Back:** Once processed through our isolated black-box enclave, you will receive a full telemetry report including throughput, worst-case `__rdtsc` latency, RSS memory delta, and SHA-256 cryptographic integrity seals (`GOLDEN_SHA`).
-> **Note on Public Schema vs. Proprietary Fusion Schema:** Track A uses a sanitized public 6-column schema for stress-testing quarantine boundaries, memory ceiling invariance, and parser resilience. Full multi-axis physical/biometric state-machine actuation schemas remain proprietary under Patent Shield and are evaluated under Track B (MNDA).
+> **Note on Public Schema vs. Proprietary Fusion Schema:** Track A uses a sanitized public 6-column schema for stress-testing quarantine boundaries, memory ceiling invariance, and parser resilience. Full multi-axis physical/biometric state-machine actuation schemas remain proprietary under Patent Shield and are transferred strictly upon commercial settlement under Track B.
 
 #### Expected 6-Column CSV Schema & Baseline Examples
 
@@ -103,19 +106,17 @@ timestamp_ms,sensor_value,frequency_hz,signal_dbm,state_tag,alert_flag
 1731500003000,0.5,210.0,-80.0,PRANK,0
 ```
 
-### Track B: Enterprise Technical Due Diligence & Commercial Licensing
+### Track B: Enterprise Custom Black-Box Audit & Commercial Acquisition
 
-For verified corporate and semiconductor partners:
+For verified corporate and semiconductor partners (Zero binary/source exposure prior to settlement):
 
-1. **Mutual NDA (MNDA):** Bilateral non-disclosure agreement.
-2. **Dedicated HIL Evaluation:** Hardware-level validation on target silicon platforms.
-3. **Commercial Licensing & Full IP Transfer:** Transfer of source code and master tokens upon settlement.
+1. **Asynchronous Custom Black-Box Evaluation (MNDA Optional):** Partner submits custom 6-column Pure ASCII CSV stress vectors at least 2 hours prior to the scheduled KST slot; Inventor executes inside the isolated enclave and returns cryptographically sealed `GOLDEN_SHA` audit logs. **Compiled binaries and source code are never released under NDA or escrow alone.**
+2. **Definitive Agreement & Telegraphic Transfer (T/T) Settlement:** Execution of exclusive licensing or full IP buyout agreement with verified upfront T/T settlement.
+3. **Full IP Handover & Pre-Publication Patent Sealing:** Immediately upon verified T/T receipt, transfer of full C++ source code, Master Tokens (`Module 320`), and HIL Mass Production specifications—with an optional **Pre-Publication Patent Buyout & Voluntary Withdrawal** (within the 18-month non-public window) to permanently seal the core architecture as a proprietary trade secret.
 
 ---
 
 ## 6. Open Challenge Submission & Corporate Inquiries
 
-To submit custom CSV payloads for the **Public Black-Box Challenge (No NDA)**, or to request enterprise technical briefings and patent documentation under MNDA, please use our intake channel:
+To submit custom CSV payloads for the **Public Black-Box Challenge (Track A)**, or to schedule a **Track B Asynchronous Enterprise Evaluation / IP Acquisition inquiry**, please use our secure intake channel:
 ### **[Access Secure Enterprise Intake Channel](https://docs.google.com/forms/d/e/1FAIpQLScdm_8xb3I5zMYN7EsDksdNFwrgrdi9eIfVo3IcS2RM3S5QYw/viewform?usp=publish-editor)**
-
-
