@@ -4,7 +4,8 @@
 
 Building upon the `v8.4` Zero-Trust Fail-Closed foundation, **v8.5-EXTREME** introduces zero-copy contiguous memory arenas, physical P-Core thread pinning (`CPU 0, 2, 4, 6`), and cycle-accurate hardware TSC (`__rdtsc`) telemetry—scaling aggregate throughput to **73.26 Million VEC/S** across **10,000,000,050 (10B+)** hostile vectors with bit-exact cryptographic parity (`GOLDEN_SHA: MATCH`).
 
-> **Notice:** This repository contains non-confidential performance benchmarks, cryptographic audit logs, and public adversarial verification harnesses. Proprietary C++ source modules and binary executables are withheld and available solely under a Mutual Non-Disclosure Agreement (MNDA).
+> **Notice:** This repository contains non-confidential performance benchmarks, cryptographic audit logs, and public adversarial verification harnesses. Proprietary C++ source modules and binary executables are strictly withheld and are **never** released under NDA or escrow agreements alone. Full source code and master tokens are transferred **strictly upon verified Telegraphic Transfer (T/T) settlement**.
+.
 
 ---
 ## Core Technical Capabilities
