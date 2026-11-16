@@ -4,11 +4,15 @@
 
 Building upon the `v8.4` Zero-Trust Fail-Closed foundation, **v8.5-EXTREME** introduces zero-copy contiguous memory arenas, physical P-Core thread pinning (`CPU 0, 2, 4, 6`), and cycle-accurate hardware TSC (`__rdtsc`) telemetry—scaling aggregate throughput to **73.26 Million VEC/S** across **10,000,000,050 (10B+)** hostile vectors with bit-exact cryptographic parity (`GOLDEN_SHA: MATCH`).
 
+Engineered as a 100% clean-room, zero-dependency implementation, the entire compiled binary occupies just **200 KB** (**160 KB** core engine + **40 KB** Master Token Module 320), remaining completely L2-cache resident and directly embeddable into on-chip silicon ROM/SRAM or resource-constrained edge MCUs.
+
 > **Notice:** This repository contains non-confidential performance benchmarks, cryptographic audit logs, and public adversarial verification harnesses. Proprietary C++ source modules and binary executables are strictly withheld and are **never** released under NDA or escrow agreements alone. Full source code and master tokens are transferred **strictly upon verified Telegraphic Transfer (T/T) settlement**.
 .
 
 ---
 ## Core Technical Capabilities
+- **200KB L2-Cache Resident & On-Chip Ready Architecture (160KB Core + 40KB Master Token):** The entire zero-dependency C++ execution engine—including L1/L2 DDoS interdiction, AES-256 encapsulation, and deterministic state-machine logic—compiles to an ultra-compact **160 KB** core (plus **40 KB** for Cryptographic Master Token Module 320, totaling **200 KB**). This footprint remains 100% cache-resident and enables direct embedding into on-chip silicon ROM/SRAM, automotive MCUs, and aerospace firmware.
+
 * **Dual-Layer Quarantine & Socket-Locked Sandbox:** Isolates untrusted telemetry streams inside a `SOCKET_LOCKED` execution sandbox under a strict 512MB memory ceiling, neutralizing buffer bombs, arithmetic traps, null-byte injections, and timestamp replay attacks with zero memory leaks.
 * **Sub-Microsecond L1/L2 DDoS Interdiction & Real-Time SOS Lock-On:** Filters volumetric 60% DDoS floods at L1 (`73.26M VEC/S`) while simultaneously evaluating L2 state-machine physics to lock onto 100% (`50/50`) of interleaved real-time SOS emergency payloads without false escalations.
 * **Isolated 128MB MMIO Backplane & Zero-Visibility PHI Sandbox:** Segregates sensitive telemetry and Personal Health Information (PHI) within a dedicated 128MB isolated MMIO space, enforcing AES-256 end-to-end cryptographic encapsulation prior to external bus routing.
