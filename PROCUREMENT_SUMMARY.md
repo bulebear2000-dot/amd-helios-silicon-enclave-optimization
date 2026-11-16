@@ -34,7 +34,7 @@ Unlike conventional hardware-security or ultra-low-latency silicon proposals tha
 
 1. **Track A — Open Black-Box CSV Verification (No NDA Required):** Asynchronous hostile-vector stress testing via 6-column Pure ASCII CSV format (up to 50–80GB per payload; multi-pass 10B+ streaming supported) with cryptographically sealed SHA-256 telemetry verification.
 2. **Track B — Enterprise Custom Black-Box Audit (Zero Pre-Settlement Exposure):** Corporate and semiconductor partners may submit custom 6-column Pure ASCII CSV edge-case datasets under an optional Mutual NDA (MNDA) for scheduled isolated enclave execution. *(Note: Compiled binaries and source code are strictly air-gapped and are never released under NDA or escrow agreements alone.)*
-3. **Commercial Settlement & Full IP Handover:** Immediately upon verified Telegraphic Transfer (T/T) settlement of exclusive licensing or full IP buyout terms, the Sole Architect transfers the complete **complete proprietary C++ source code, **Master Tokens**, and the **Mass Production HIL Verification & Governance Specification**.
+3. 3. **Commercial Settlement & Full IP Handover:** Immediately upon verified Telegraphic Transfer (T/T) settlement of exclusive licensing or full IP buyout terms, the Sole Architect transfers the **complete proprietary C++ source code**, compiled binaries, **Master Tokens**, and the **Mass Production HIL Verification & Governance Specification**.
 
 ### 4. SECURE INTAKE & SUBMISSION CHANNEL
 
