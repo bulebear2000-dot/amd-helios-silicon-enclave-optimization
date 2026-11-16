@@ -26,16 +26,21 @@ All benchmarks were executed inside a `SOCKET_LOCKED` Dual-Layer Quarantine sand
 Originally engineered for deterministic server enclave optimization, **v8.5-EXTREME** was cross-validated across 7 bare-metal and virtualized targets (`x86_64` and `ARM64`) under the identical **10,000,000,050** hostile vector workload (`4-Core` parity), achieving **100% Bit-Exact `GOLDEN_SHA: MATCH`** across every silicon architecture:
 
 | Rank / Target Silicon Platform | ISA | Execution Mode | Wall Time | Aggregate Throughput | Worst Latency | Peak RSS | GOLDEN SHA |
-
-| Rank / Target Silicon Platform | ISA | Execution Mode | Wall Time | Aggregate Throughput | Worst Latency | Peak RSS | GOLDEN SHA |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1. Intel Core (P-Core Pinned)** | `x86_64` | Bare-metal | `136.51s` (2m 16s) | **73,257,343 VEC/S** | `227.60 us` | `234.4 MB` | **100% MATCH** |
-| **2. Intel Core (Baseline)** | `x86_64` | Bare-metal | `223.36s` (3m 43s) | **44,771,221 VEC/S** | — | `180.1 MB` | **100% MATCH** |
-| **3. Qualcomm Snapdragon** | `ARM64` | Virtualized | `1,839.16s` (30m 39s) | **5,437,275 VEC/S** | `788.26 us` | `187.5 MB` | **100% MATCH** |
-| **4. NVIDIA Compute (Neoverse)** | `ARM64` | Virtualized | `2,348.53s` (39m 08s) | **4,257,976 VEC/S** | `861.26 us` | `187.8 MB` | **100% MATCH** |
-| **5. Apple Silicon (ARMv8.5-A)** | `ARM64` | Virtualized | `2,365.70s` (39m 25s) | **4,227,081 VEC/S** | `855.08 us` | `187.7 MB` | **100% MATCH** |
-| **6. AMD Helios (EPYC-Rome)** | `x86_64` | Virtualized | `6,354.45s` (1h 45m) | **1,573,701 VEC/S** | — | `~188.0 MB` | **100% MATCH** |
-| **7. Intel Xeon (Virtualized)** | `x86_64` | Virtualized | `6,464.88s` (1h 47m) | **1,546,818 VEC/S** | `611.96 us` | `190.2 MB` | **100% MATCH** |
+| **1. Intel Core (P-Core Pinned - HP Victus Laptop)** | `x86_64` | Bare-metal | `136.51s` (2m 16s) | **73,257,343 VEC/s** | `227.60 μs` | `234.4 MB` | **100% MATCH** |
+| **2. Intel Core (Baseline - HP Victus Laptop)** | `x86_64` | Bare-metal | `223.36s` (3m 43s) | **44,771,221 VEC/s** | `N/A (Baseline)` | `180.1 MB` | **100% MATCH** |
+| **3. Qualcomm Snapdragon** | `ARM64` | Virtualized | `1,839.16s` (30m 39s) | **5,437,275 VEC/s** | `788.26 μs` | `187.5 MB` | **100% MATCH** |
+| **4. NVIDIA Compute (Neoverse)** | `ARM64` | Virtualized | `2,348.53s` (39m 08s) | **4,257,976 VEC/s** | `861.26 μs` | `187.8 MB` | **100% MATCH** |
+| **5. Apple Silicon (ARMv8.5-A)** | `ARM64` | Virtualized | `2,365.70s` (39m 25s) | **4,227,081 VEC/s** | `855.08 μs` | `187.7 MB` | **100% MATCH** |
+| **6. AMD Helios (EPYC-Rome) [Virtualized Cloud]** | `x86_64` | Virtualized | `6,354.45s` (1h 45m) | **1,573,701 VEC/s** | — | `~188.0 MB` | **100% MATCH** |
+| **7. Intel Xeon (Virtualized Cloud VM)** | `x86_64` | Virtualized | `6,464.88s` (1h 47m) | **1,546,818 VEC/s** | `611.96 μs` | `190.2 MB` | **100% MATCH** |
+
+#### Architectural Insights & Benchmark Notes
+* **Bare-Metal vs. Virtualized Gap (Up to 47.4x):** Direct bare-metal execution with physical P-Core pinning on the **HP Victus Laptop** achieves **73.26M VEC/s** (`136.51s`), outperforming virtualized cloud x86_64 nodes (**Intel Xeon Virtualized Cloud VM** at `1.55M VEC/s`) by **47.4x** due to the complete elimination of hypervisor scheduling overhead, noisy-neighbor contention, and E-core migration.
+* **ARM64 Virtualized Tier Advantage (2.7x–3.5x):** Within virtualized environments, `ARM64` targets (**Qualcomm Snapdragon**, **NVIDIA Neoverse**, **Apple Silicon**) sustain **4.23M–5.44M VEC/s**, outperforming virtualized `x86_64` cloud server VMs (**AMD EPYC-Rome**, **Intel Xeon** at `~1.55M VEC/s`) by **2.7x–3.5x**.
+* **Latency Telemetry Notation (`N/A` & `—`):** `N/A (Baseline)` indicates the unpinned reference run prior to worst-case tail-latency instrumentation; `—` denotes environments where hardware-level tail-latency telemetry was restricted by the cloud hypervisor.
+* **Disclaimer:** *Independent benchmark conducted under standardized 4-core parity workloads; results reflect specific hardware/hypervisor test configurations and do not represent official vendor endorsements.*
+
 
 
 * **Key Architectural Insight:** Inside virtualized environments, **ARM64** platforms (Qualcomm Snapdragon, NVIDIA Neoverse, Apple Silicon) outperform virtualized `x86_64` server nodes by **2.7x–3.5x**, while bare-metal physical P-Core pinning unlocks **73.26M VEC/S** with deterministic `O(1)` memory footprint (`<235 MB`).
