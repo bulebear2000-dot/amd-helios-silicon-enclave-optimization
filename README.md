@@ -7,7 +7,6 @@ Building upon the `v8.4` Zero-Trust Fail-Closed foundation, **v8.5-EXTREME** int
 Engineered as a 100% clean-room, zero-dependency implementation, the entire compiled binary occupies just **200 KB** (**160 KB** core engine + **40 KB** Master Token Module 320), remaining completely L2-cache resident and directly embeddable into on-chip silicon ROM/SRAM or resource-constrained edge MCUs.
 
 > **Notice:** This repository contains non-confidential performance benchmarks, cryptographic audit logs, and public adversarial verification harnesses. Proprietary C++ source modules and binary executables are strictly withheld and are **never** released under NDA or escrow agreements alone. Full source code and master tokens are transferred **strictly upon verified Telegraphic Transfer (T/T) settlement**.
-.
 
 ---
 ## Core Technical Capabilities
