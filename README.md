@@ -41,11 +41,6 @@ Originally engineered for deterministic server enclave optimization, **v8.5-EXTR
 * **Latency Telemetry Notation (`N/A` & `—`):** `N/A (Baseline)` indicates the unpinned reference run prior to worst-case tail-latency instrumentation; `—` denotes environments where hardware-level tail-latency telemetry was restricted by the cloud hypervisor.
 * **Disclaimer:** *Independent benchmark conducted under standardized 4-core parity workloads; results reflect specific hardware/hypervisor test configurations and do not represent official vendor endorsements.*
 
-
-
-* **Key Architectural Insight:** Inside virtualized environments, **ARM64** platforms (Qualcomm Snapdragon, NVIDIA Neoverse, Apple Silicon) outperform virtualized `x86_64` server nodes by **2.7x–3.5x**, while bare-metal physical P-Core pinning unlocks **73.26M VEC/S** with deterministic `O(1)` memory footprint (`<235 MB`).
-
-
 ### v8.5-EXTREME Per-Core Telemetry Breakdown (`SHUZI_V8_5_EXTREME_60DDOS_50SOS_10B.log`)
 * **Worker 0 (`CPU 00`):** `18,318,616 VEC/S` | Worst Latency (`__rdtsc`): `227.60 us` | `SOS_LOCK: 13` | `SHA256: 121f38ab4222648b...`
 * **Worker 1 (`CPU 02`):** `18,422,146 VEC/S` | Worst Latency (`__rdtsc`): `205.08 us` | `SOS_LOCK: 13` | `SHA256: 16efc3422236eb53...`
