@@ -25,7 +25,6 @@ Unlike conventional hardware-security or ultra-low-latency silicon proposals tha
 
 ### 2. ENTERPRISE VALUE PROPOSITION & RISK MITIGATION ROI
 
-* **Extreme-Scale Throughput & Sub-Microsecond Determinism:** Sustains **73.26 Million VEC/S** across **10B+** (`10,000,000,050`) hostile vectors under simultaneous 60% volumetric DDoS flooding while locking onto **100% (`50/50`)** of interleaved real-time SOS distress signals with zero false escalations.
 * **Extreme-Scale Throughput, Thermal Efficiency & Sub-Microsecond Determinism:** Sustains **73.26 Million VEC/S** under 60% volumetric DDoS flooding (locking onto **50/50** SOS payloads) and scales up to **98.07 Million VEC/S** under extreme **90% adversarial jamming saturation** (locking onto **70/70** standard and obfuscated stealth SOS signals with zero false escalations). Its **200 KB L2-cache resident footprint** completes 10B+ native execution within a **77.0 °C air-cooled thermal envelope** (**2.06M VEC/Joule**), directly reducing data center power and cooling OPEX.
 
 * **Automotive Security:** Enforces deterministic ECU 12V/24V power-domain suppression (with >25V over-voltage transient clamping) and loss-free transmission under 5,000 packets/sec CAN-bus flooding stress.
