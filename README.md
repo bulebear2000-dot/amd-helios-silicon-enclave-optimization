@@ -48,7 +48,21 @@ Benchmarks executed in a `SOCKET_LOCKED` sandbox (`MEM_CAP: 512 MB`) against hos
 * **Server Bare-Metal Headroom:** Enterprise server silicon is projected to exceed **80M–120M+ VEC/s** upon native HIL/EVK allocation.
 * **RISC (`ARM64`) Translation Efficiency:** Fixed-width 32-bit ARM64 targets translated **2.7x–3.5x faster** than variable-length x86_64 CISC binaries under software emulation.
 * **Disclaimer:** *Independent benchmark conducted under standardized 4-core parity workloads; results do not represent official vendor endorsements.*
+* ### C. Extreme Jamming Saturation & Isolated Thermal/Power Audit (`v8.5-EXTREME`)
 
+To validate resilience under near-total signal saturation (**90% Adversarial Jamming/DDoS + 10% Valid Telemetry**, including **50 Standard SOS** and **20 Obfuscated Stealth SOS** payloads across **10,000,000,210 vectors**), the engine was audited with isolated hardware power (`RAPL`) and thermal (`hwmon`) telemetry:
+
+| Execution Environment | Wall Time | Aggregate Throughput | SOS Lock-On (Standard + Stealth) | Avg Power (Pure Delta) | Peak Package Temp | Energy Efficiency |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Native x86_64 (4x P-Core Pinned)** | **101.96s** | **98,073,069 VEC/s** | **70 / 70 (100%)** | 47.44 W (+42.30 W) | **77.0 °C** (Air-Cooled) | **2,066,543 VEC/J** (2.31M Delta) |
+| **Qualcomm ARM64 (QEMU ISA Emulation)** | 892.91s | 11,199,386 VEC/s | **70 / 70 (100%)** | 45.93 W (+40.79 W) | 91.0 °C (15m Sustained) | 243,830 VEC/J (274K Delta) |
+
+#### Key Engineering Takeaways for Data Center & Edge Silicon
+* **Inverse Jamming Scaling (L1 Early-Drop):** Increasing hostile jamming traffic from 60% to 90% boosted aggregate throughput by **+33.9% (`73.26M` → `98.07M VEC/s`)**. Malformed packets are rejected at L1 in sub-microsecond cycles without waking heavy L2 state-machine pipelines.
+* **Sub-Throttling Thermal Envelope (`77.0 °C`):** Because the entire **200 KB** binary remains 100% resident inside CPU L2 cache without DRAM bus thrashing, native 10B+ execution completes within standard air-cooled thermal limits (`77.0 °C` peak), directly addressing modern data center power and cooling regulations.
+* **Audit Log Integrity Seals (`SHA-256`):**
+  * `1a6b72fa1cd0fdbbec6ac8a1043aab6f3bcd044f6ee23f7c156a6a04b80539e9` — `GEMINI_BOMB_NATIVE_X86_10B.log`
+  * `48fe755e51dbda532706800ddc27ac1d38c811104abe3e2d07470776ab59dd15` — `GEMINI_BOMB_QUALCOMM_ARM64_10B.log`
 
 ### v8.5-EXTREME Per-Core Telemetry Breakdown (`SHUZI_V8_5_EXTREME_60DDOS_50SOS_10B.log`)
 * **Worker 0 (`CPU 00`):** `18,318,616 VEC/S` | Worst Latency (`__rdtsc`): `227.60 us` | `SOS_LOCK: 13` | `SHA256: 121f38ab4222648b...`
