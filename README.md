@@ -48,7 +48,8 @@ Benchmarks executed in a `SOCKET_LOCKED` sandbox (`MEM_CAP: 512 MB`) against hos
 * **Server Bare-Metal Headroom:** Enterprise server silicon is projected to exceed **80M–120M+ VEC/s** upon native HIL/EVK allocation.
 * **RISC (`ARM64`) Translation Efficiency:** Fixed-width 32-bit ARM64 targets translated **2.7x–3.5x faster** than variable-length x86_64 CISC binaries under software emulation.
 * **Disclaimer:** *Independent benchmark conducted under standardized 4-core parity workloads; results do not represent official vendor endorsements.*
-* ### C. Extreme Jamming Saturation & Isolated Thermal/Power Audit (`v8.5-EXTREME`)
+
+### C. Extreme Jamming Saturation & Isolated Thermal/Power Audit (`v8.5-EXTREME`)
 
 To validate resilience under near-total signal saturation (**90% Adversarial Jamming/DDoS + 10% Valid Telemetry**, including **50 Standard SOS** and **20 Obfuscated Stealth SOS** payloads across **10,000,000,210 vectors**), the engine was audited with isolated hardware power (`RAPL`) and thermal (`hwmon`) telemetry:
 
