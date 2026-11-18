@@ -51,12 +51,12 @@ Benchmarks executed in a `SOCKET_LOCKED` sandbox (`MEM_CAP: 512 MB`) against hos
 
 ### C. Extreme Jamming Saturation & Isolated Thermal/Power Audit (`v8.5-EXTREME`)
 
-To validate resilience under near-total signal saturation (**90% Adversarial Jamming/DDoS + 10% Valid Telemetry**, including **50 Standard SOS** and **20 Obfuscated Stealth SOS** payloads across **10,000,000,210 vectors**), the engine was audited with isolated hardware power (`RAPL`) and thermal (`hwmon`) telemetry:
+To validate resilience under near-total signal saturation (**90% Adversarial Jamming/DDoS + 10% Valid Telemetry**, including **50 Standard SOS** and **20 Obfuscated Stealth SOS** payloads across **10,000,000,210 vectors** per architecture; **20,000,000,420 cumulative vectors** over a continuous **993s** run), the engine was audited with isolated hardware power (`RAPL`) and thermal (`hwmon`) telemetry:
 
-| Execution Environment | Wall Time | Aggregate Throughput | SOS Lock-On (Standard + Stealth) | Avg Power (Pure Delta) | Peak Package Temp | Energy Efficiency |
+| Execution Environment | Wall Time | Aggregate Throughput | SOS Lock-On (Standard + Stealth) | Avg Power (Continuous Run) | Peak Package Temp | Energy Efficiency |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Native x86_64 (4x P-Core Pinned)** | **101.96s** | **98,073,069 VEC/s** | **70 / 70 (100%)** | 47.44 W (+42.30 W) | **77.0 °C** (Air-Cooled) | **2,066,543 VEC/J** (2.31M Delta) |
-| **Qualcomm ARM64 (QEMU ISA Emulation)** | 892.91s | 11,199,386 VEC/s | **70 / 70 (100%)** | 45.93 W (+40.79 W) | 91.0 °C (15m Sustained) | 243,830 VEC/J (274K Delta) |
+| **Native x86_64 (4x P-Core Pinned)** | **101.96s** | **98,073,069 VEC/s** | **70 / 70 (100%)** | **46.09 W** (+40.95 W Delta) | **91.0 °C** (993s Peak) | **2,167,712 VEC/J** |
+| **Qualcomm ARM64 (QEMU ISA Emulation)** | 892.91s | 11,199,386 VEC/s | **70 / 70 (100%)** | **46.09 W** (+40.95 W Delta) | 91.0 °C (15m Sustained) | 242,989 VEC/J |
 
 #### Key Engineering Takeaways for Data Center & Edge Silicon
 * **Inverse Jamming Scaling (L1 Early-Drop):** Increasing hostile jamming traffic from 60% to 90% boosted aggregate throughput by **+33.9% (`73.26M` → `98.07M VEC/s`)**. Malformed packets are rejected at L1 in sub-microsecond cycles without waking heavy L2 state-machine pipelines.
