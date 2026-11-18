@@ -60,8 +60,9 @@ To validate resilience under near-total signal saturation (**90% Adversarial Jam
 
 #### Key Engineering Takeaways for Data Center & Edge Silicon
 * **Inverse Jamming Scaling (L1 Early-Drop):** Increasing hostile jamming traffic from 60% to 90% boosted aggregate throughput by **+33.9% (`73.26M` → `98.07M VEC/s`)**. Malformed packets are rejected at L1 in sub-microsecond cycles without waking heavy L2 state-machine pipelines.
-* **Sub-Throttling Thermal Envelope (`77.0 °C`):** Because the entire **200 KB** binary remains 100% resident inside CPU L2 cache without DRAM bus thrashing, native 10B+ execution completes within standard air-cooled thermal limits (`77.0 °C` peak), directly addressing modern data center power and cooling regulations.
+* **Sub-Throttling Thermal Envelope (`91.0 °C`):** Because the entire **200 KB** binary remains 100% resident inside CPU L2 cache without DRAM bus thrashing, continuous 20B+ execution (993s sustained load) completes without thermal throttling (`91.0 °C` peak @ 46.09W avg), directly addressing modern data center power and cooling regulations.
 * **Audit Log Integrity Seals (`SHA-256`):**
+
   * `1a6b72fa1cd0fdbbec6ac8a1043aab6f3bcd044f6ee23f7c156a6a04b80539e9` — `GEMINI_BOMB_NATIVE_X86_10B.log`
   * `48fe755e51dbda532706800ddc27ac1d38c811104abe3e2d07470776ab59dd15` — `GEMINI_BOMB_QUALCOMM_ARM64_10B.log`
 
