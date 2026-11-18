@@ -116,11 +116,14 @@ In `v8.5-EXTREME`, the architecture demonstrates simultaneous high-speed DDoS sh
 
 Project Shuzi (v8.5-EXTREME) conducts all pre-settlement technical validations exclusively via **Asynchronous File Exchange (Pure ASCII CSV input/output) and SHA-256 verification**—eliminating time-zone barriers and maintaining strict air-gapped IP isolation.
 
-### Track A: Public Open Black-Box CSV Challenge (No NDA Required)
-* **Payload Size Limit:** Maximum **50 GB – 80 GB** per uncompressed CSV submission (sufficient for up to ~1B vectors; multi-pass 10B+ streaming supported).
+### Track A: Public Open Black-Box Challenge (No NDA Required)
+* **Submission Options (Zero-Bandwidth Generator Recommended):**
+  * **Option 1 — Lightweight Python Stream Generator (`< 50 KB`, Recommended for 1B–10B+):** Instead of uploading massive multi-gigabyte files, submit a pure-Python generator script (standard library only, conforming to our 6-column `stdout` schema in `hostile_vector_generator.py`). We pipe your generator directly inside an air-gapped enclave for instant 1B–10B+ live vector streaming.
+  * **Option 2 — Direct CSV Payload:** Submit compressed or uncompressed Pure ASCII CSV files (up to **50 GB – 80 GB** max, or lightweight samples under 1 GB).
 * **Anything Goes:** Feel free to inject `NaN`, `±Infinity`, `Int64` overflows, null bytes (`0x00`), ANSI escape sequences, unclosed quotes, 32KB+ buffer-probing lines, column explosions, timestamp reversals, or 1ms state-machine thrashing.
 * **What You Get Back:** Once processed through our isolated black-box enclave, you will receive a full telemetry report including throughput, worst-case `__rdtsc` latency, RSS memory delta, and SHA-256 cryptographic integrity seals (`GOLDEN_SHA`).
-> **Note on Public Schema vs. Proprietary Fusion Schema:** Track A uses a sanitized public 6-column schema for stress-testing quarantine boundaries, memory ceiling invariance, and parser resilience. Full multi-axis physical/biometric state-machine actuation schemas remain proprietary under Patent Shield and are transferred strictly upon commercial settlement under Track B.
+
+> **Note on Public Schema vs. Proprietary Fusion Schema:** Track A uses a sanitized public 6-column schema for stress-testing quarantine boundaries, memory ceiling invariance, and parser resilience. Full multi-axis physical/biometric state-machine actuation schemas remain proprietary and are transferred strictly upon commercial settlement under Track B.
 
 #### Expected 6-Column CSV Schema & Baseline Examples
 
