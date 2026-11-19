@@ -49,7 +49,7 @@ Scaling 10x beyond the 10B baseline, **Project Shuzi (v8.5-EXTREME)** was subjec
 - **Aggregate Throughput:** **67,670,954 VEC/s** (`L1_DROP: 60,031,250,000` | `L2_CLEAN: 39,968,750,050`)
 - **Emergency SOS Capture Rate:** **50 / 50 (100% LOCK-ON)** | `EMS_SYNCED: True` | `ESC: 0, VULN: 0, L2_BLOCKED: 0, ECU_BRICK: 0`
 - **Bounded Memory Footprint:** `START=3,484 KB` → `END=184,388 KB` (`DELTA=180,904 KB`, zero leaks over 24+ minutes)
-- **Thermal-Equilibrium Flat Power Profile (RAPL):** Maintained a rock-solid **45.01W – 45.80W (±0.1W variance)** steady-state power draw across 1,329+ consecutive seconds without thermal throttling, consuming **66,706.16 J (0.0185 kWh)** total (~**1.51M VEC/J**, or **~$0.00148 USD** per 100B vectors at $0.08/kWh).
+- **Thermal-Equilibrium Flat Power Profile (RAPL):** Maintained a rock-solid **45.01W – 45.80W (±0.1W variance)** steady-state power draw across 1,329+ consecutive seconds without thermal throttling, consuming **66,706.16 J (0.0185 kWh)** total (**1.51M VEC/J**, or **~$0.00148 USD** per 100B vectors at $0.08/kWh).
 
 #### 100B Per-Core Telemetry Breakdown (`SHUZI_V8_5_EXTREME_60DDOS_50SOS_100B.log`)
 - **Worker 0 (`CPU00`):** `16,927,110 VEC/S` | Worst Latency: `223.83 us` | `SOS_LOCK: 13` | `SHA256: 55ee81d6a7a0e40f...`
