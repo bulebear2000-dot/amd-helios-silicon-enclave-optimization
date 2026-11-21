@@ -2,7 +2,7 @@
 
 - **Architecture:** Project Shuzi (`v8.5-EXTREME`)
 - **Target Hardware Registers:** `REG_AUTO_COUPON_ADDR` & `REG_PRICE_SHIELD_ADDR` 
-- **Workload Generator:** Hardware-Speed `Deterministic PRNG' (10,000,000,000 Non-Deterministic Transactions)
+- **Workload Generator:** Hardware-Speed Deterministic PRNG (10,000,000,000 Non-Deterministic Transactions)
 - **Audit Status:** Verified Exact Cent Parity (`0 Cent Drift` / `0 Faults`)
 
 ---
