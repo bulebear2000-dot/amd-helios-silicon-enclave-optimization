@@ -62,6 +62,26 @@ Scaling 10x beyond the 10B baseline, **Project Shuzi (v8.5-EXTREME)** was subjec
 - `8deed9436ec31cc5a30772d3d142bb57758e44f2b707bfe0393bc8e5a9750826` — `SHUZI_V8_5_EXTREME_60DDOS_50SOS_100B.log`
 - `69642221c58152669bbc84b643da15f8a34c222e882ad09bdc5f29986760d93f` — `100b_thermal_power_stream.csv`
 
+- ### E. 1-Trillion (1T) Extended Continuous Thermal & Power Soak Audit
+
+Extending endurance verification 10x beyond the 100B soak baseline, the engine completed a continuous **1,000,000,000,000 TX (1 Trillion)** stream over **20,250.67s (~5h 37m)** under strict OS isolation (`MLOCK=ON`, `SCHED_FIFO`) with sustained thermal equilibrium and zero throttling:
+
+* **Total Streamed Volume:** `1,000,000,000,000 TX` (`49.69 M TX/S` aggregate | `540.04 us` worst 4096-TX batch latency)
+* **Thermal Profile (`x86_pkg_temp`):** Start `34.0 °C` → Peak `81.0 °C` → Steady-State Equilibrium `73.0 °C – 76.0 °C` → End `37.0 °C` (`+3.0 °C` net delta, **0 thermal throttling**)
+* **Power & Energy Telemetry:** `5.95 W` average power (`120,527.35 J` total energy across 5.62 hours | `~8.30M TX/Joule`)
+* **4-Domain Routing & Edge Matrix:**
+  * **Edge-Matrix Audit:** `PASS` (1-cent to 10B-cent bounds, 64/1024 wrap-around replay, 0-nonce checks)
+  * **Safety (`LANE 0`):** `184,631,346,908 TX` (`EMS_SOS` + `VEH_SOFT_BRICK`)
+  * **SAT-DTN (`LANE 1`):** `339,355,471,032 TX` (1024-Slot DTN Window)
+  * **Commerce (`LANE 2`):** `292,785,643,708 TX` (`COUPON` / `SHIELD` / `NORMAL`)
+  * **Garbage Shield:** `183,227,538,352 TX` dropped (`18.32%` hostile/invalid blocked)
+* **Per-Worker Hardware SHA-256 Seals:**
+  * `W0`: `8cfb7a70636d144ab0440244109a2e5b353dce8011b6376f526736f217a9c3a7`
+  * `W1`: `e6e3a4d8e6de518c4075e31fc7485a4e6c97b155acf6077a8d0e663cf1010f5d`
+  * `W2`: `745f7106e4d2c7a0a58cd39692e2f4e65bffb5f3093d5d75eb4b52b5ed4baaef`
+  * `W3`: `901124fb3f25fce2445a8169fd2e0c7caeb3354967da058509fbfbb99767deab`
+
+
 #### Architectural Insights & Benchmark Notes
 
 * **Purpose of ISA Emulation:** Reflects software instruction translation (`QEMU TCG`) rather than native hardware clock speed, producing identical bit-exact SHA-256 state digests (`GOLDEN_SHA: MATCH`) with zero memory leaks.
