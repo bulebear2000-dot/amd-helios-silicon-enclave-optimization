@@ -3,7 +3,7 @@
 ### Project Shuzi (v8.5-EXTREME) — Real-World Operational Workflows
 
 ## Overview
-Beyond low-level hardware isolation and state-machine determinism, **Project Shuzi (v8.5-EXTREME)** is architected to solve critical operational bottlenecks across public safety, healthcare data privacy, offline edge commerce, and automotive security at scale—validated at 73.26 Million VEC/S (60% DDoS) and up to 98.07 Million VEC/S under extreme 90% adversarial jamming across 10Bvalidated up to 98.07 Million VEC/S under 90% adversarial saturation and verified across a continuous 1-Trillion (1T) transaction soak (5h 37m) at 5.95 W average power with sustained thermal equilibrium (73.0–76.0 °C, zero throttling)+ hostile vectors within a 77.0 °C air-cooled thermal envelope.
+Beyond low-level hardware isolation and state-machine determinism, Project Shuzi (v8.5-EXTREME) is architected to solve critical operational bottlenecks across public safety, healthcare data privacy, offline edge commerce, and automotive security at scale—validated at 73.26 Million VEC/S (60% DDoS), up to 98.07 Million VEC/S under 90% adversarial saturation, and verified across a continuous 1-Trillion (1T) transaction soak (5h 37m) at 5.95 W average power with sustained thermal equilibrium (73.0–76.0 °C, zero throttling).
 
 ## Use Case Summary
 * **Use Case 1 (Sub-Second Emergency Distress Dispatch):** Isolates human biometric distress signals under volumetric DDoS and extreme stress within 0.5 seconds.
