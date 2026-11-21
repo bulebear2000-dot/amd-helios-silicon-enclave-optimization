@@ -44,7 +44,7 @@
 - **Satellite Master Revival Signal Token:** Initializing Master Bus Recovery Protocol via `HELIOS_SYSTEM`. Successfully processed recovery token over the 128MB buffer plane, re-aligning the Hardware MUX bus and restoring primary mobile AP bus to vehicle systems.
 
 ### [SCENARIO 6] Reversible Soft-Brick and Interlock Check
-- **STAGE 1 (Verification):** Node 0 authorized with valid AMD Accelerator Bound at. Node 1 unauthenticated hardware blocked/blanked.
+- **STAGE 1 (Verification):** Node 0 authorized with valid AMD Accelerator Bound. Node 1 unauthenticated hardware blocked/blanked.
 - **STAGE 2 & 3 (Sensor & Audio Fusion):** Tier 2 Active Fall Vector validated. Audio spectrum analysis differentiates stable prank signatures (210 Hz) from genuine biometric distress cry (850 Hz).
 - **STAGE 4 & 5 (Hardening):** Market variance caught via hardware-isolated commerce register (REG_AUTO_COUPON active).
 - Core severance executed under locked Trade Secret parameter, actuating physical Hardware MUX bus line bypass to sever stock OS communication.
