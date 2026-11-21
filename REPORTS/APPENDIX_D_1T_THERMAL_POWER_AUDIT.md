@@ -37,6 +37,7 @@ Project Shuzi (v8.5-EXTREME) completed a continuous 1T transaction soak over ~5.
 | **GARBAGE SHIELD** | Hostile / Invalid Payloads Dropped | `183,227,538,352` | `18.32%` |
 | **TOTAL STREAMED** | **100% Bit-Exact Accounting** | **`1,000,000,000,000`** | **`100.00%`** |
 
+```text
 === [SHUZI v8.5-EXTREME: EXHAUSTIVE EDGE-CASE & 4-DOMAIN 1T AUDIT] ===
 OS_ISOLATION     : MLOCK=ON | SCHED_FIFO(50)=ON
 EDGE_MATRIX_AUDIT: PASS [1-cent..10B-cent | 64/1024 Wrap-Around Replay | 0-Nonce | Bounds]
@@ -54,4 +55,4 @@ W1_HW_SHA256     : e6e3a4d8e6de518c4075e31fc7485a4e6c97b155acf6077a8d0e663cf1010
 W2_HW_SHA256     : 745f7106e4d2c7a0a58cd39692e2f4e65bffb5f3093d5d75eb4b52b5ed4baaef
 W3_HW_SHA256     : 901124fb3f25fce2445a8169fd2e0c7caeb3354967da058509fbfbb99767deab
 ======================================================================
-
+```
