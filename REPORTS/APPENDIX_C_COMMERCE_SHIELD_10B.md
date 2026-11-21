@@ -1,7 +1,7 @@
 # APPENDIX C: 10-BILLION (10B) TRUE-RANDOM COMMERCE & PRICE PROTECTION AUDIT
 
 - **Architecture:** Project Shuzi (`v8.5-EXTREME`)
-- **Target Hardware Registers:** `REG_AUTO_COUPON_ADDR` (`0x40003500`) & `REG_PRICE_SHIELD_ADDR` (`0x40003600`)
+- **Target Hardware Registers:** `REG_AUTO_COUPON_ADDR` & `REG_PRICE_SHIELD_ADDR` 
 - **Workload Generator:** Hardware-Speed `SplitMix64` PRNG (10,000,000,000 Non-Deterministic Transactions)
 - **Audit Status:** Verified Exact Cent Parity (`0 Cent Drift` / `0 Faults`)
 
@@ -30,5 +30,5 @@ W0_STATE_SHA256  : 247f68ab8f7a27f69ccc471e53c515508212f633e820f2ae5025ca331beb2
 
 ## 3. Architectural Significance for Offline Edge & FinTech Silicon
 
-* **Zero Floating-Point Drift (`0 Cent Drift`):** Integer cent arithmetic inside isolated hardware registers (`0x40003500` / `0x40003600`) prevented rounding discrepancies across large-scale event streams.
+* **Zero Floating-Point Drift (`0 Cent Drift`):** Integer cent arithmetic inside isolated hardware registers  / prevented rounding discrepancies across large-scale event streams.
 * **Sub-Millisecond Fraud Interdiction:** Malformed payloads and duplicate coupon replay masks are filtered prior to state commitment without impacting high-throughput execution.
