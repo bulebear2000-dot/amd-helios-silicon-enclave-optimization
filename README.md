@@ -42,6 +42,30 @@ Benchmarks executed in a `SOCKET_LOCKED` sandbox (`MEM_CAP: 512 MB`) against hos
 | **Qualcomm Snapdragon** | `ARM64` | ISA Emulation (QEMU) | 1,839.16s | 5,437,275 VEC/s | 181,888 KB | **0** | **100% MATCH** |
 | **Apple Silicon (`ARMv8.5-A`)** | `ARM64` | ISA Emulation (QEMU) | 2,365.70s | 4,227,081 VEC/s | 182,016 KB | **0** | **100% MATCH** |
 
+### C. Extreme Jamming Saturation & Isolated Thermal/Power Audit (`v8.5-EXTREME`)
+
+To validate resilience under near-total signal saturation (**90% Adversarial Jamming/DDoS + 10% Valid Telemetry**, including **50 Standard SOS** and **20 Obfuscated Stealth SOS** payloads across **10,000,000,210 vectors** per architecture; **20,000,000,420 cumulative vectors** over a continuous **993s** run), the engine was audited with isolated hardware power (`RAPL`) and thermal (`hwmon`) telemetry:
+
+| Execution Environment | Wall Time | Aggregate Throughput | SOS Lock-On (Standard + Stealth) | Avg Power (Continuous Run) | Peak Package Temp | Energy Efficiency |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Native x86_64 (4x P-Core Pinned)** | **101.96s** | **98,073,069 VEC/s** | **70 / 70 (100%)** | **46.09 W** (+40.95 W Delta) | **91.0 °C** (993s Peak) | **2,167,712 VEC/J** |
+| **Qualcomm ARM64 (QEMU ISA Emulation)** | 892.91s | 11,199,386 VEC/s | **70 / 70 (100%)** | **46.09 W** (+40.95 W Delta) | 91.0 °C (15m Sustained) | 242,989 VEC/J |
+
+#### Key Engineering Takeaways for Data Center & Edge Silicon
+* **Inverse Jamming Scaling (L1 Early-Drop):** Increasing hostile jamming traffic from 60% to 90% boosted aggregate throughput by **+33.9% (`73.26M` → `98.07M VEC/s`)**. Malformed packets are rejected at L1 in sub-microsecond cycles without waking heavy L2 state-machine pipelines.
+* **Sub-Throttling Thermal Envelope (`91.0 °C`):** Because the entire **200 KB** binary remains 100% resident inside CPU L2 cache without DRAM bus thrashing, continuous 20B+ execution (993s sustained load) completes without thermal throttling (`91.0 °C` peak @ 46.09W avg), directly addressing modern data center power and cooling regulations.
+* **Audit Log Integrity Seals (`SHA-256`):**
+
+  * `1a6b72fa1cd0fdbbec6ac8a1043aab6f3bcd044f6ee23f7c156a6a04b80539e9` — `GEMINI_BOMB_NATIVE_X86_10B.log`
+  * `48fe755e51dbda532706800ddc27ac1d38c811104abe3e2d07470776ab59dd15` — `GEMINI_BOMB_QUALCOMM_ARM64_10B.log`
+
+### v8.5-EXTREME Per-Core Telemetry Breakdown (`SHUZI_V8_5_EXTREME_60DDOS_50SOS_10B.log`)
+* **Worker 0 (`CPU 00`):** `18,318,616 VEC/S` | Worst Latency (`__rdtsc`): `227.60 us` | `SOS_LOCK: 13` | `SHA256: 121f38ab4222648b...`
+* **Worker 1 (`CPU 02`):** `18,422,146 VEC/S` | Worst Latency (`__rdtsc`): `205.08 us` | `SOS_LOCK: 13` | `SHA256: 16efc3422236eb53...`
+* **Worker 2 (`CPU 04`):** `18,459,017 VEC/S` | Worst Latency (`__rdtsc`): `65.23 us` | `SOS_LOCK: 12` | `SHA256: b8ab689d98464a50...`
+* **Worker 3 (`CPU 06`):** `18,434,299 VEC/S` | Worst Latency (`__rdtsc`): `204.20 us` | `SOS_LOCK: 12` | `SHA256: 47ee82e93121d1d8...`
+* **Aggregate Audit Result:** `TOTAL_IN: 10,000,000,050` | `L1_DROP (60%): 6,003,125,000` | `L2_CLEAN: 3,996,875,050` | `EMS_LOCK: 50 / 50` | `ESC: 0, VULN: 0, L2_BLOCKED: 0, ECU_BRICK: 0` | `EMS_SYNCED: True` | **`GOLDEN_SHA: MATCH`**
+
 ### D. 100-Billion (100B) Extreme Sustained Load & Power Equilibrium Audit (v8.5-EXTREME)
 
 Scaling 10x beyond the 10B baseline, **Project Shuzi (v8.5-EXTREME)** was subjected to a continuous **100,000,000,050 (100B+)** hostile vector stream combining **60% volumetric DDoS floods** and **50 interleaved real-time SOS emergencies** over **1,477.74s (~24m 38s)** on 4x pinned P-Cores:
@@ -89,29 +113,7 @@ Extending endurance verification 10x beyond the 100B soak baseline, the engine c
 * **RISC (`ARM64`) Translation Efficiency:** Fixed-width 32-bit ARM64 targets translated **2.7x–3.5x faster** than variable-length x86_64 CISC binaries under software emulation.
 * **Disclaimer:** *Independent benchmark conducted under standardized 4-core parity workloads; results do not represent official vendor endorsements.*
 
-### C. Extreme Jamming Saturation & Isolated Thermal/Power Audit (`v8.5-EXTREME`)
 
-To validate resilience under near-total signal saturation (**90% Adversarial Jamming/DDoS + 10% Valid Telemetry**, including **50 Standard SOS** and **20 Obfuscated Stealth SOS** payloads across **10,000,000,210 vectors** per architecture; **20,000,000,420 cumulative vectors** over a continuous **993s** run), the engine was audited with isolated hardware power (`RAPL`) and thermal (`hwmon`) telemetry:
-
-| Execution Environment | Wall Time | Aggregate Throughput | SOS Lock-On (Standard + Stealth) | Avg Power (Continuous Run) | Peak Package Temp | Energy Efficiency |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Native x86_64 (4x P-Core Pinned)** | **101.96s** | **98,073,069 VEC/s** | **70 / 70 (100%)** | **46.09 W** (+40.95 W Delta) | **91.0 °C** (993s Peak) | **2,167,712 VEC/J** |
-| **Qualcomm ARM64 (QEMU ISA Emulation)** | 892.91s | 11,199,386 VEC/s | **70 / 70 (100%)** | **46.09 W** (+40.95 W Delta) | 91.0 °C (15m Sustained) | 242,989 VEC/J |
-
-#### Key Engineering Takeaways for Data Center & Edge Silicon
-* **Inverse Jamming Scaling (L1 Early-Drop):** Increasing hostile jamming traffic from 60% to 90% boosted aggregate throughput by **+33.9% (`73.26M` → `98.07M VEC/s`)**. Malformed packets are rejected at L1 in sub-microsecond cycles without waking heavy L2 state-machine pipelines.
-* **Sub-Throttling Thermal Envelope (`91.0 °C`):** Because the entire **200 KB** binary remains 100% resident inside CPU L2 cache without DRAM bus thrashing, continuous 20B+ execution (993s sustained load) completes without thermal throttling (`91.0 °C` peak @ 46.09W avg), directly addressing modern data center power and cooling regulations.
-* **Audit Log Integrity Seals (`SHA-256`):**
-
-  * `1a6b72fa1cd0fdbbec6ac8a1043aab6f3bcd044f6ee23f7c156a6a04b80539e9` — `GEMINI_BOMB_NATIVE_X86_10B.log`
-  * `48fe755e51dbda532706800ddc27ac1d38c811104abe3e2d07470776ab59dd15` — `GEMINI_BOMB_QUALCOMM_ARM64_10B.log`
-
-### v8.5-EXTREME Per-Core Telemetry Breakdown (`SHUZI_V8_5_EXTREME_60DDOS_50SOS_10B.log`)
-* **Worker 0 (`CPU 00`):** `18,318,616 VEC/S` | Worst Latency (`__rdtsc`): `227.60 us` | `SOS_LOCK: 13` | `SHA256: 121f38ab4222648b...`
-* **Worker 1 (`CPU 02`):** `18,422,146 VEC/S` | Worst Latency (`__rdtsc`): `205.08 us` | `SOS_LOCK: 13` | `SHA256: 16efc3422236eb53...`
-* **Worker 2 (`CPU 04`):** `18,459,017 VEC/S` | Worst Latency (`__rdtsc`): `65.23 us` | `SOS_LOCK: 12` | `SHA256: b8ab689d98464a50...`
-* **Worker 3 (`CPU 06`):** `18,434,299 VEC/S` | Worst Latency (`__rdtsc`): `204.20 us` | `SOS_LOCK: 12` | `SHA256: 47ee82e93121d1d8...`
-* **Aggregate Audit Result:** `TOTAL_IN: 10,000,000,050` | `L1_DROP (60%): 6,003,125,000` | `L2_CLEAN: 3,996,875,050` | `EMS_LOCK: 50 / 50` | `ESC: 0, VULN: 0, L2_BLOCKED: 0, ECU_BRICK: 0` | `EMS_SYNCED: True` | **`GOLDEN_SHA: MATCH`**
 
 ---
 
