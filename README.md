@@ -145,6 +145,7 @@ In `v8.5-EXTREME`, the architecture demonstrates simultaneous high-speed DDoS sh
 * **Protected IP & No-Release Policy Prior to Settlement:** Core C++ state-machine binaries, internal orchestration harnesses, and full raw execution traces are strictly withheld to protect pending patents and proprietary silicon-enclave logic. **Source code and binary executables are never released under NDA or escrow agreements alone.** Pre-settlement validation is conducted exclusively via **Track A (Black-Box Challenge-Response CSV Audit)**, and full IP/binary handover occurs **strictly upon verified Telegraphic Transfer (T/T) settlement** under Track B (including an optional **Pre-Publication Patent Buyout & Voluntary Withdrawal** prior to the 18-month publication window).
 
 ---
+### **Executive Strategy Brief (EXECUTIVE_BRIEF.md):** Macro power bottleneck analysis and 5-domain edge offloading overview.
 
 ## 4. Repository Documentation & Reports
 
