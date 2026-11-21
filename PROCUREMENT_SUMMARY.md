@@ -25,7 +25,7 @@ Unlike conventional hardware-security or ultra-low-latency silicon proposals tha
 
 ### 2. ENTERPRISE VALUE PROPOSITION & RISK MITIGATION ROI
 
-* **Extreme-Scale Throughput, Thermal Efficiency & Sub-Microsecond Determinism: Sustains 73.26 Million VEC/S under 60% volumetric DDoS flooding and scales up to 98.07 Million VEC/S under extreme 90% adversarial jamming saturation. During an extended 1-Trillion (1T) transaction continuous soak (5h 37m), it maintained an average of 5.95 W (~8.30M TX/Joule) within a sustained 73.0–76.0 °C thermal equilibrium without throttling.
+* **Extreme-Scale Throughput, Thermal Efficiency & Sub-Microsecond Determinism:** Sustains 73.26 Million VEC/S under 60% volumetric DDoS flooding and scales up to 98.07 Million VEC/S under extreme 90% adversarial jamming saturation. During an extended 1-Trillion (1T) transaction continuous soak (5h 37m), it maintained an average of 5.95 W (~8.30M TX/Joule) within a sustained 73.0–76.0 °C thermal equilibrium without throttling.
 
 * **Automotive Security:** Enforces deterministic ECU 12V/24V power-domain suppression (with >25V over-voltage transient clamping) and loss-free transmission under 5,000 packets/sec CAN-bus flooding stress.
 * **Healthcare Data Compliance:** Isolates Personal Health Information (PHI) inside a hardware-enforced 128MB MMIO sandbox with AES-256 end-to-end encryption.
