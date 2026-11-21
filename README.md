@@ -145,10 +145,9 @@ In `v8.5-EXTREME`, the architecture demonstrates simultaneous high-speed DDoS sh
 * **Protected IP & No-Release Policy Prior to Settlement:** Core C++ state-machine binaries, internal orchestration harnesses, and full raw execution traces are strictly withheld to protect pending patents and proprietary silicon-enclave logic. **Source code and binary executables are never released under NDA or escrow agreements alone.** Pre-settlement validation is conducted exclusively via **Track A (Black-Box Challenge-Response CSV Audit)**, and full IP/binary handover occurs **strictly upon verified Telegraphic Transfer (T/T) settlement** under Track B (including an optional **Pre-Publication Patent Buyout & Voluntary Withdrawal** prior to the 18-month publication window).
 
 ---
-### **Executive Strategy Brief (EXECUTIVE_BRIEF.md):** Macro power bottleneck analysis and 5-domain edge offloading overview.
 
 ## 4. Repository Documentation & Reports
-
+- **Executive Strategy Brief (EXECUTIVE_BRIEF.md):** Macro power bottleneck analysis and 5-domain edge offloading overview.
 * **10B Extreme & 1B/10M Dual-Layer Quarantine Audit Logs (`v8.5-EXTREME` & `v8.4`):** Raw SHA-256 verified black-box audit summaries across all 5 silicon vendors (`REPORTS/`).
 * **Cryptographic Integrity Manifest:** Standard SHA-256 checksums for verifying all raw log files (`sha256sum -c SHA256SUMS.txt`).
 * **Enterprise Procurement & IP Summary (`PROCUREMENT_SUMMARY.md`):** Patent status, clean-room IP governance, risk mitigation ROI, and HIL evaluation requirements.
