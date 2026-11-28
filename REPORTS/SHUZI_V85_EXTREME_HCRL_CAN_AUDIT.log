@@ -1,0 +1,13 @@
+=================================================================
+ [SHUZI v8.5-EXTREME : REAL HCRL CAR-HACKING CAN BUS AUDIT]
+=================================================================
+ Static Arena Allocated : 256 KB (256 KB Fixed)
+ Process Peak VmHWM     : 6492 KB
+ Total Flows Processed  : 7504631
+ Garbage Flows Dropped  : 7504481 (100.00% Blocked)
+ EMS SOS Planted        : 150
+ EMS SOS Rescued (Lane0): 150 (Missed: 0)
+ Wall Time              : 0.252 sec
+ Aggregate Throughput   : 29.74 M TX/S
+ Final State SHA-256    : 7d6ba7458e049c1d7b7fe36df9d871feaaeaa5db9e23931850dc57ee9388f095
+=================================================================

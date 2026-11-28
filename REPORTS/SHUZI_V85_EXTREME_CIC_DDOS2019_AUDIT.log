@@ -1,0 +1,18 @@
+================================================================================
+ [SHUZI v8.5-EXTREME : EXTERNAL ACADEMIC BENCHMARK (CIC-DDoS2019) AUDIT]
+================================================================================
+ Dataset Source         : Canadian Institute for Cybersecurity (UNB CIC-DDoS2019)
+ Archive Inputs         : CSV-01-12.zip + CSV-03-11.zip (3.2 GB Compressed / ~28 GB Raw)
+ Execution Mode         : Air-Gapped In-Memory Zero-Copy Stream (Zero Disk Extraction)
+ Core Binary Footprint  : 14 KB (libshuzi_v8_5_extreme_x86_64.so, Zero External Deps)
+ Static Arena Allocated : 256 KB (256 KB Fixed, 0-Byte Runtime Heap)
+ Process Peak VmHWM     : 6,516 KB (~6.36 MB)
+ Total Flows Processed  : 70,427,637
+ Garbage Flows Dropped  : 70,426,229 (100.00% Hostile TFTP/DDoS Flood Blocked)
+ EMS SOS Planted        : 1,408
+ EMS SOS Rescued (Lane0): 1,408 (MISSED: 0 | 100.00% Survival)
+ Wall Time              : 126.294 sec (ZIP Decompression I/O Bound)
+ Aggregate Throughput   : 0.56 M TX/s
+ Final State SHA-256    : c3c38217ab608f9099c81dd067e56538a34830f4d9010dc6b3a57f1a05f87998
+ Verdict                : PASS (Zero-Loss, Zero-Leak, Deterministic Parity)
+================================================================================

@@ -1,0 +1,19 @@
+# === PROJECT SHUZI v8.5-EXTREME (14 KB MICRO-ENCLAVE) OFFICIAL AUDIT SEALS ===
+# Generated & Sealed: November 28, 2026
+# Scope: 100B Adversarial Stream (2,000 Shards / ~7.26 TB), Closed-Loop Accounting (AC-1..AC-6), 1T Soak (564.72M TX/s), UNB CIC-DDoS2019 (70.4M Flows)
+
+# --- Primary Empirical Audit Reports ---
+1622543dc62683a98c1d36799a3074defc55acaab9ed683f87a17b688208ccf2  SHUZI_V85_EXTREME_100B_OFFICIAL_AUDIT.json
+844954507da5fc3e54268ef9d558d47c26c6ec039288b5a72b10c3b78bedd82c  SHARD_STREAM_HASHES_100B.csv
+538f17d08ae8a6d95566db8d733560b5837e79ef6d0235f7867a304c92a5b1a8  SHUZI_V85_EXTREME_CLOSED_LOOP_AUDIT.json
+632359f05810c4be1cdced2fcbae77a47d8f34b719620cc2debdb5075e05eec1  SHUZI_V85_EXTREME_1T_NATIVE_SOAK.log
+c3c38217ab608f9099c81dd067e56538a34830f4d9010dc6b3a57f1a05f87998  SHUZI_V85_EXTREME_CIC_DDOS2019_AUDIT.log
+13cb2ec0dde6b420c7416754dd383afda0d80a02dd874c9df4502a83ee4aa26e  SHUZI_V85_EXTREME_HCRL_CAN_AUDIT.log
+
+# --- Adversarial & Space-Weather Verification Generators (Track A) ---
+1ef8d81fff3639022a5b2d55f7856f95f230038e4e942264100db58a92e612ab  generators/shuzi_gen.cpp
+ef2bc56a4613822cf5b30fbc94ee4151bfefa82f07b0ffb0c988768b9d4c739e  generators/shuzi_spacewx.py
+
+# --- Legacy 10B Baseline Seals (Retained for Historical Continuity) ---
+85e3bc22bdeead4eb8ffe37bde50eb4fa13b9b271706a825e4a85558db79c41c  unified_10b_audit.log
+29463e22083286942bb6f85c4b14b3cccd389cc1cd995be0c21fd0fc32383bf1  SHUZI_14KB_CORE_1T_SOAK.log

@@ -1,0 +1,26 @@
+{
+  "version": "8.5-EXTREME",
+  "scale": "100B",
+  "seed": 4141248219644634296,
+  "seed_source": "OS_URANDOM_64BIT",
+  "shards_completed": 2000,
+  "total_records_sent": 100000000000,
+  "wall_time_seconds": 32260.38,
+  "aggregate_rate_rec_s": 3099777,
+  "must_total": 3188573,
+  "must_forwarded": 3188573,
+  "must_missed": 0,
+  "engine_crashes_or_stalls": 0,
+  "hardware_telemetry": {
+    "thermal_sensor": "x86_pkg_temp",
+    "temp_start_c": 43.0,
+    "temp_avg_c": 56.7,
+    "temp_peak_c": 63.0,
+    "temp_end_c": 41.0,
+    "temp_delta_c": -2.0,
+    "rapl_total_energy_joules": 829999.02,
+    "rapl_avg_power_watts": 25.73,
+    "rapl_peak_power_watts": 32.65
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,13 @@
+=================================================================
+ [SHUZI v8.5-EXTREME : BCCC-cPacket-Cloud-DDoS-2024 AUDIT]
+=================================================================
+ Static Arena Allocated : 256 KB (Bounded Static Vault)
+ Process Peak VmHWM     : 6456 KB
+ Total Flows Processed  : 2117219
+ Garbage Flows Dropped  : 2117008 (99.99% Blocked)
+ EMS SOS Planted        : 211
+ EMS SOS Rescued (Lane0): 211 (Missed: 0)
+ Wall Time              : 0.117 sec
+ Aggregate Throughput   : 18.04 M TX/S
+ Final State SHA-256    : c4764eea52c9ffaaf0b151a9b31815abf6ceb2805cfc74ed8058b24983626c8a
+=================================================================
